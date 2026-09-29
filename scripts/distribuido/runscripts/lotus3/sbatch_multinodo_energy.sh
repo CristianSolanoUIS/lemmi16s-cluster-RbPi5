@@ -2,7 +2,7 @@
 # ==============================================================================
 # sbatch_multinodo_energy.sh (LotuS3)
 # Distribuye MUESTRAS COMPLETAS (no reads divididos) entre los nodos idle
-# de partition1, una muestra por nodo, con telemetria PMIC pre/durante/post.
+# de partition1, una muestra por nodo, con telemetria PMIC (pre y activa en carga).
 #
 # LotuS3 agrupa lecturas en OTUs (dereplicacion + clustering) usando TODA la
 # muestra a la vez. Dividir los reads entre nodos cambiaria los clusters
@@ -195,11 +195,9 @@ total_reads_all = 0
 for sample, jid in zip(samples, job_ids):
     pre_match = list(medir_dir.glob(f'*baseline_pre*lotus3_{sample}*job{jid}*.csv'))
     run_match = list(medir_dir.glob(f'*LotuS3_multinodo_{sample}*job{jid}*.csv'))
-    post_match = list(medir_dir.glob(f'*baseline_post*lotus3_{sample}*job{jid}*.csv'))
 
     pre_f = pre_match[-1] if pre_match else None
     run_f = run_match[-1] if run_match else None
-    post_f = post_match[-1] if post_match else None
 
     node = 'unknown'
     if run_f:
@@ -210,11 +208,11 @@ for sample, jid in zip(samples, job_ids):
 
     pre_p = read_powers(pre_f)
     run_p = read_powers(run_f)
-    post_p = read_powers(post_f)
 
     avg_pre = sum(pre_p)/len(pre_p) if pre_p else 0.0
-    avg_post = sum(post_p)/len(post_p) if post_p else 0.0
-    avg_base = (avg_pre + avg_post)/2.0 if (avg_pre and avg_post) else (avg_pre or avg_post)
+    avg_carga = sum(run_p)/len(run_p) if run_p else 0.0
+    p_neta = max(0.0, avg_carga - avg_pre)
+    avg_base = avg_pre
 
     dur_s = len(run_p)
     gross_wh = sum(p/3600.0 for p in run_p)
@@ -235,7 +233,7 @@ for sample, jid in zip(samples, job_ids):
             break
     total_reads_all += s_reads
 
-    print(f'{sample:<10} | {jid:<8} | {node:<9} | {avg_pre:<7.3f} | {avg_post:<7.3f} | {avg_base:<7.3f} | {dur_s:<6} | {gross_wh:<9.4f} | {net_wh:<9.4f}')
+    print(f'{sample:<10} | {jid:<8} | {node:<9} | {avg_pre:<7.3f} | {avg_carga:<8.3f} | {p_neta:<7.3f} | {dur_s:<6} | {gross_wh:<9.4f} | {net_wh:<9.4f}')
 
 rw_gross = (total_reads_all / tot_gross_wh) if tot_gross_wh > 0 else 0
 rw_net = (total_reads_all / tot_net_wh) if tot_net_wh > 0 else 0
