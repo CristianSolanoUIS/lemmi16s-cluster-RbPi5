@@ -1,0 +1,24 @@
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          Kraken2_multinodo_c003_node_rbp5-3_job1485
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/kraken2
+Archivo de salida: energia_Kraken2_multinodo_c003_node_rbp5-3_job1485_20260924_160648.csv
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 16:06:49.961] [PMIC] Power:  2.24 W | Energia: 0.0006 Wh | Muestras: 1[2026-09-24 16:06:51.026] [PMIC] Power:  2.35 W | Energia: 0.0013 Wh | Muestras: 2[2026-09-24 16:06:52.084] [PMIC] Power:  2.38 W | Energia: 0.0020 Wh | Muestras: 3[2026-09-24 16:06:53.455] [PMIC] Power:  2.76 W | Energia: 0.0028 Wh | Muestras: 4[2026-09-24 16:06:55.461] [PMIC] Power:  2.87 W | Energia: 0.0039 Wh | Muestras: 5[2026-09-24 16:06:59.951] [PMIC] Power:  2.74 W | Energia: 0.0054 Wh | Muestras: 6[2026-09-24 16:07:01.241] [PMIC] Power:  2.35 W | Energia: 0.0084 Wh | Muestras: 7[2026-09-24 16:07:11.608] [PMIC] Power:  2.50 W | Energia: 0.0093 Wh | Muestras: 8[2026-09-24 16:07:16.077] [PMIC] Power:  3.04 W | Energia: 0.0180 Wh | Muestras: 9[2026-09-24 16:07:21.630] [PMIC] Advertencia: Lectura nula del conversor ADC[2026-09-24 16:07:23.149] [PMIC] Power:  2.53 W | Energia: 0.0219 Wh | Muestras: 10[2026-09-24 16:07:24.208] [PMIC] Power:  5.35 W | Energia: 0.0242 Wh | Muestras: 11[2026-09-24 16:07:25.313] [PMIC] Power:  5.22 W | Energia: 0.0257 Wh | Muestras: 12[2026-09-24 16:07:26.393] [PMIC] Power:  4.53 W | Energia: 0.0271 Wh | Muestras: 13[2026-09-24 16:07:27.465] [PMIC] Power:  4.50 W | Energia: 0.0285 Wh | Muestras: 14[2026-09-24 16:07:28.520] [PMIC] Power:  5.37 W | Energia: 0.0301 Wh | Muestras: 15[2026-09-24 16:07:33.130] [PMIC] Power:  2.70 W | Energia: 0.0308 Wh | Muestras: 16[2026-09-24 16:07:35.507] [PMIC] Power:  2.49 W | Energia: 0.0340 Wh | Muestras: 17[2026-09-24 16:07:36.556] [PMIC] Power:  3.13 W | Energia: 0.0361 Wh | Muestras: 18[2026-09-24 16:07:37.601] [PMIC] Power:  2.84 W | Energia: 0.0369 Wh | Muestras: 19[2026-09-24 16:07:38.647] [PMIC] Power:  1.89 W | Energia: 0.0375 Wh | Muestras: 20[2026-09-24 16:07:39.693] [PMIC] Power:  2.24 W | Energia: 0.0381 Wh | Muestras: 21
+
+=== Resumen de medicion (Kraken2_multinodo_c003_node_rbp5-3_job1485) ===
+Inicio:           2026-09-24 16:06:48.921874
+Fin:              2026-09-24 16:07:40.299108
+Duracion:         51.4 s (0.86 min)
+Muestras tomadas: 21
+Energia total:    0.0381 Wh
+Potencia promedio: 2.67 W
+CSV guardado en:  energia_Kraken2_multinodo_c003_node_rbp5-3_job1485_20260924_160648.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+

@@ -1,0 +1,189 @@
+==========================================================
+=== NODO rbp5-1 - LotuS3 muestra completa c001 (job 1455) ===
+==========================================================
+Hora inicio: Thu Sep 24 15:37:54 -05 2026
+[1/3] [rbp5-1] Baseline PRE (30s)...
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          baseline_pre_lotus3_c001_node_rbp5-1_job1455
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/lotus3
+Archivo de salida: energia_baseline_pre_lotus3_c001_node_rbp5-1_job1455_20260924_153754.csv
+Duracion fija:     30.0 s
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 15:37:55.802] [PMIC] Power:  2.21 W | Energia: 0.0006 Wh | Muestras: 1[2026-09-24 15:37:56.879] [PMIC] Power:  2.21 W | Energia: 0.0013 Wh | Muestras: 2[2026-09-24 15:37:57.921] [PMIC] Power:  2.29 W | Energia: 0.0019 Wh | Muestras: 3[2026-09-24 15:37:58.965] [PMIC] Power:  2.24 W | Energia: 0.0026 Wh | Muestras: 4[2026-09-24 15:38:00.007] [PMIC] Power:  2.85 W | Energia: 0.0034 Wh | Muestras: 5[2026-09-24 15:38:01.052] [PMIC] Power:  2.44 W | Energia: 0.0041 Wh | Muestras: 6[2026-09-24 15:38:02.094] [PMIC] Power:  2.49 W | Energia: 0.0048 Wh | Muestras: 7[2026-09-24 15:38:03.138] [PMIC] Power:  2.42 W | Energia: 0.0055 Wh | Muestras: 8[2026-09-24 15:38:04.180] [PMIC] Power:  2.50 W | Energia: 0.0063 Wh | Muestras: 9[2026-09-24 15:38:05.219] [PMIC] Power:  2.62 W | Energia: 0.0070 Wh | Muestras: 10[2026-09-24 15:38:06.263] [PMIC] Power:  2.24 W | Energia: 0.0077 Wh | Muestras: 11[2026-09-24 15:38:07.306] [PMIC] Power:  2.27 W | Energia: 0.0083 Wh | Muestras: 12[2026-09-24 15:38:08.362] [PMIC] Power:  2.20 W | Energia: 0.0090 Wh | Muestras: 13[2026-09-24 15:38:09.415] [PMIC] Power:  2.30 W | Energia: 0.0096 Wh | Muestras: 14[2026-09-24 15:38:10.450] [PMIC] Power:  2.88 W | Energia: 0.0105 Wh | Muestras: 15[2026-09-24 15:38:11.504] [PMIC] Power:  2.60 W | Energia: 0.0112 Wh | Muestras: 16[2026-09-24 15:38:12.556] [PMIC] Power:  2.54 W | Energia: 0.0120 Wh | Muestras: 17[2026-09-24 15:38:13.609] [PMIC] Power:  2.50 W | Energia: 0.0127 Wh | Muestras: 18[2026-09-24 15:38:14.661] [PMIC] Power:  2.54 W | Energia: 0.0135 Wh | Muestras: 19[2026-09-24 15:38:15.696] [PMIC] Power:  2.41 W | Energia: 0.0142 Wh | Muestras: 20[2026-09-24 15:38:16.750] [PMIC] Power:  2.44 W | Energia: 0.0149 Wh | Muestras: 21[2026-09-24 15:38:17.803] [PMIC] Power:  2.24 W | Energia: 0.0155 Wh | Muestras: 22[2026-09-24 15:38:18.856] [PMIC] Power:  2.23 W | Energia: 0.0162 Wh | Muestras: 23[2026-09-24 15:38:19.923] [PMIC] Power:  2.22 W | Energia: 0.0168 Wh | Muestras: 24[2026-09-24 15:38:20.958] [PMIC] Power:  2.21 W | Energia: 0.0175 Wh | Muestras: 25[2026-09-24 15:38:22.019] [PMIC] Power:  2.40 W | Energia: 0.0182 Wh | Muestras: 26[2026-09-24 15:38:23.073] [PMIC] Power:  2.44 W | Energia: 0.0189 Wh | Muestras: 27[2026-09-24 15:38:24.129] [PMIC] Power:  2.37 W | Energia: 0.0196 Wh | Muestras: 28[2026-09-24 15:38:25.171] [PMIC] Power:  2.45 W | Energia: 0.0203 Wh | Muestras: 29
+
+=== Resumen de medicion (baseline_pre_lotus3_c001_node_rbp5-1_job1455) ===
+Inicio:           2026-09-24 15:37:54.763188
+Fin:              2026-09-24 15:38:25.177898
+Duracion:         30.4 s (0.51 min)
+Muestras tomadas: 29
+Energia total:    0.0203 Wh
+Potencia promedio: 2.40 W
+CSV guardado en:  energia_baseline_pre_lotus3_c001_node_rbp5-1_job1455_20260924_153754.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+[2/3] [rbp5-1] Telemetria activa...
+[PIPELINE] [rbp5-1] Ejecutando LotuS3 (illumina) sobre HM_Contaminated_Soil-c001 completa...
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:01 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 2
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    2
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:01 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:11 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:11 Finished primary read processing with sdm:
+          Reads processed: 8,208; 8,208 (pair 1;pair 2)
+          Accepted (High qual): 189; 0 (0; 1 end-trimmed)
+          Rejected: 8,019; 8,208
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:12 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:12 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 Found 47 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:15 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:15 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 47 OTU's (1078 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:15 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:01:38 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 1078
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	100	100
+Class	100	100
+Order	100	100
+Family	100	100
+Genus	87	70
+Species	20	69
+
+--------------------------------------------------------------------------------
+ 00:01:38 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:01:40 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+[TELEMETRIA] [rbp5-1] Deteniendo (PID 2629)...
+[3/3] [rbp5-1] Baseline POST (30s)...
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          baseline_post_lotus3_c001_node_rbp5-1_job1455
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/lotus3
+Archivo de salida: energia_baseline_post_lotus3_c001_node_rbp5-1_job1455_20260924_154019.csv
+Duracion fija:     30.0 s
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 15:40:20.082] [PMIC] Power:  2.19 W | Energia: 0.0006 Wh | Muestras: 1[2026-09-24 15:40:21.146] [PMIC] Power:  2.33 W | Energia: 0.0013 Wh | Muestras: 2[2026-09-24 15:40:22.203] [PMIC] Power:  2.43 W | Energia: 0.0020 Wh | Muestras: 3[2026-09-24 15:40:23.261] [PMIC] Power:  2.44 W | Energia: 0.0027 Wh | Muestras: 4[2026-09-24 15:40:24.319] [PMIC] Power:  2.40 W | Energia: 0.0034 Wh | Muestras: 5[2026-09-24 15:40:25.362] [PMIC] Power:  2.45 W | Energia: 0.0041 Wh | Muestras: 6[2026-09-24 15:40:26.405] [PMIC] Power:  2.49 W | Energia: 0.0049 Wh | Muestras: 7[2026-09-24 15:40:27.448] [PMIC] Power:  2.50 W | Energia: 0.0056 Wh | Muestras: 8[2026-09-24 15:40:28.490] [PMIC] Power:  2.26 W | Energia: 0.0062 Wh | Muestras: 9[2026-09-24 15:40:29.534] [PMIC] Power:  2.21 W | Energia: 0.0069 Wh | Muestras: 10[2026-09-24 15:40:30.579] [PMIC] Power:  2.20 W | Energia: 0.0075 Wh | Muestras: 11[2026-09-24 15:40:31.626] [PMIC] Power:  2.23 W | Energia: 0.0082 Wh | Muestras: 12[2026-09-24 15:40:32.671] [PMIC] Power:  3.96 W | Energia: 0.0093 Wh | Muestras: 13[2026-09-24 15:40:33.715] [PMIC] Power:  2.41 W | Energia: 0.0100 Wh | Muestras: 14[2026-09-24 15:40:34.761] [PMIC] Power:  2.39 W | Energia: 0.0107 Wh | Muestras: 15[2026-09-24 15:40:35.804] [PMIC] Power:  2.49 W | Energia: 0.0114 Wh | Muestras: 16[2026-09-24 15:40:36.847] [PMIC] Power:  2.54 W | Energia: 0.0122 Wh | Muestras: 17[2026-09-24 15:40:37.891] [PMIC] Power:  2.42 W | Energia: 0.0129 Wh | Muestras: 18[2026-09-24 15:40:38.934] [PMIC] Power:  2.46 W | Energia: 0.0136 Wh | Muestras: 19[2026-09-24 15:40:39.977] [PMIC] Power:  2.22 W | Energia: 0.0142 Wh | Muestras: 20[2026-09-24 15:40:41.022] [PMIC] Power:  2.44 W | Energia: 0.0149 Wh | Muestras: 21[2026-09-24 15:40:42.068] [PMIC] Power:  2.19 W | Energia: 0.0156 Wh | Muestras: 22[2026-09-24 15:40:43.112] [PMIC] Power:  2.26 W | Energia: 0.0162 Wh | Muestras: 23[2026-09-24 15:40:44.151] [PMIC] Power:  2.55 W | Energia: 0.0170 Wh | Muestras: 24[2026-09-24 15:40:45.194] [PMIC] Power:  2.46 W | Energia: 0.0177 Wh | Muestras: 25[2026-09-24 15:40:46.239] [PMIC] Power:  2.50 W | Energia: 0.0184 Wh | Muestras: 26[2026-09-24 15:40:47.282] [PMIC] Power:  2.42 W | Energia: 0.0191 Wh | Muestras: 27[2026-09-24 15:40:48.326] [PMIC] Power:  2.48 W | Energia: 0.0198 Wh | Muestras: 28[2026-09-24 15:40:49.369] [PMIC] Power:  2.48 W | Energia: 0.0205 Wh | Muestras: 29
+
+=== Resumen de medicion (baseline_post_lotus3_c001_node_rbp5-1_job1455) ===
+Inicio:           2026-09-24 15:40:19.037899
+Fin:              2026-09-24 15:40:49.375417
+Duracion:         30.3 s (0.51 min)
+Muestras tomadas: 29
+Energia total:    0.0205 Wh
+Potencia promedio: 2.44 W
+CSV guardado en:  energia_baseline_post_lotus3_c001_node_rbp5-1_job1455_20260924_154019.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+=== NODO rbp5-1 COMPLETO muestra c001 en 105s (exit 0) ===

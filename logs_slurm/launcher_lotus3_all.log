@@ -1,0 +1,37 @@
+==========================================================
+=== LOTUS3 MULTINODO (muestra completa por nodo, PMIC) ===
+==========================================================
+[NODOS] Idle en partition1: rbp5-1 rbp5-2 rbp5-4 rbp5-5 (4 nodos)
+[MUESTRAS] c001 c002 e001 (3 muestras)
+----------------------------------------------------------
+[LANZANDO] Asignando 1 nodo exclusivo por muestra...
+----------------------------------------------------------
+[+] Muestra c001 -> Job 1455 asignado a nodo rbp5-1
+[+] Muestra c002 -> Job 1456 asignado a nodo rbp5-2
+[+] Muestra e001 -> Job 1457 asignado a nodo rbp5-4
+[+] Esperando finalizacion concurrente de: 1455,1456,1457
+[MONITOR 15:37:52] Tareas activas: 3   [MONITOR 15:37:57] Tareas activas: 3   [MONITOR 15:38:02] Tareas activas: 3   [MONITOR 15:38:08] Tareas activas: 3   [MONITOR 15:38:13] Tareas activas: 3   [MONITOR 15:38:18] Tareas activas: 3   [MONITOR 15:38:23] Tareas activas: 3   [MONITOR 15:38:28] Tareas activas: 3   [MONITOR 15:38:33] Tareas activas: 3   [MONITOR 15:38:38] Tareas activas: 3   [MONITOR 15:38:43] Tareas activas: 3   [MONITOR 15:38:48] Tareas activas: 3   [MONITOR 15:38:53] Tareas activas: 3   [MONITOR 15:38:58] Tareas activas: 3   [MONITOR 15:39:03] Tareas activas: 3   [MONITOR 15:39:08] Tareas activas: 3   [MONITOR 15:39:13] Tareas activas: 3   [MONITOR 15:39:18] Tareas activas: 3   [MONITOR 15:39:23] Tareas activas: 3   [MONITOR 15:39:28] Tareas activas: 3   [MONITOR 15:39:34] Tareas activas: 3   [MONITOR 15:39:39] Tareas activas: 3   [MONITOR 15:39:44] Tareas activas: 3   [MONITOR 15:39:49] Tareas activas: 3   [MONITOR 15:39:54] Tareas activas: 3   [MONITOR 15:39:59] Tareas activas: 3   [MONITOR 15:40:04] Tareas activas: 3   [MONITOR 15:40:09] Tareas activas: 3   [MONITOR 15:40:14] Tareas activas: 3   [MONITOR 15:40:19] Tareas activas: 3   [MONITOR 15:40:24] Tareas activas: 3   [MONITOR 15:40:29] Tareas activas: 3   [MONITOR 15:40:34] Tareas activas: 3   [MONITOR 15:40:39] Tareas activas: 3   [MONITOR 15:40:44] Tareas activas: 3   
+[+] Todas las muestras de LotuS3 finalizaron.
+==========================================================
+=== RESUMEN POR ARCHIVO DE PREDICCIONES ===
+==========================================================
+Muestra c001 (job 1455): 49 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-c001.predictions.tsv
+Muestra c002 (job 1456): 45 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-c002.predictions.tsv
+Muestra e001 (job 1457): 42 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-e001.predictions.tsv
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (LotuS3) ===
+==========================================================
+---------------------------------------------------------------------------
+Muestra    | Job      | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+---------------------------------------------------------------------------
+c001       | 1455     | rbp5-1    | 2.405   | 2.441   | 2.423   | 88     | 0.0675    | 0.0082   
+c002       | 1456     | rbp5-2    | 2.385   | 2.394   | 2.390   | 99     | 0.0769    | 0.0112   
+e001       | 1457     | rbp5-4    | 2.420   | 2.488   | 2.454   | 99     | 0.0754    | 0.0079   
+---------------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.2197 Wh (791.1 J)
+ENERGIA TOTAL NETA CLUSTER:    0.0273 Wh (98.3 J)
+TOTAL LECTURAS PROCESADAS:     29,783
+TIEMPO PARALELO (MAX MUESTRA): 99 s (1.65 min)
+EFICIENCIA BRUTA CLUSTER:      135,533.5 Reads/Wh
+EFICIENCIA NETA CLUSTER:       1,090,373.0 Reads/Wh
+===========================================================================

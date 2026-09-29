@@ -1,0 +1,48 @@
+=== INICIANDO BENCHMARK MULTINODO QIIME2 (5 MUESTRAS: c001, c002, c003, e001, e002) ===
+Thu Sep 24 16:11:19 -05 2026
+==========================================================
+=== QIIME2 MULTINODO (1 muestra exclusiva por nodo, PMIC) ===
+==========================================================
+[NODOS DISPONIBLES] Idle en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[MUESTRAS] c001 c002 c003 e001 e002 (5 muestras)
+----------------------------------------------------------
+[LANZANDO] Asignando 1 nodo exclusivo por muestra...
+----------------------------------------------------------
+[+] Muestra c001 -> Job 1491 asignado exclusivamente a nodo rbp5-1
+[+] Muestra c002 -> Job 1492 asignado exclusivamente a nodo rbp5-2
+[+] Muestra c003 -> Job 1493 asignado exclusivamente a nodo rbp5-3
+[+] Muestra e001 -> Job 1494 asignado exclusivamente a nodo rbp5-4
+[+] Muestra e002 -> Job 1495 asignado exclusivamente a nodo rbp5-5
+[+] Esperando finalizacion de los jobs: 1491,1492,1493,1494,1495
+[MONITOR 16:11:19] Tareas activas/en cola: 5   [MONITOR 16:11:35] Tareas activas/en cola: 5   [MONITOR 16:11:50] Tareas activas/en cola: 5   [MONITOR 16:12:05] Tareas activas/en cola: 5   [MONITOR 16:12:20] Tareas activas/en cola: 5   [MONITOR 16:12:35] Tareas activas/en cola: 5   [MONITOR 16:12:50] Tareas activas/en cola: 5   [MONITOR 16:13:05] Tareas activas/en cola: 5   [MONITOR 16:13:20] Tareas activas/en cola: 5   [MONITOR 16:13:35] Tareas activas/en cola: 5   [MONITOR 16:13:50] Tareas activas/en cola: 5   [MONITOR 16:14:05] Tareas activas/en cola: 5   [MONITOR 16:14:20] Tareas activas/en cola: 5   [MONITOR 16:14:35] Tareas activas/en cola: 5   [MONITOR 16:14:50] Tareas activas/en cola: 5   [MONITOR 16:15:05] Tareas activas/en cola: 5   [MONITOR 16:15:20] Tareas activas/en cola: 5   [MONITOR 16:15:35] Tareas activas/en cola: 5   [MONITOR 16:15:50] Tareas activas/en cola: 5   [MONITOR 16:16:05] Tareas activas/en cola: 5   [MONITOR 16:16:20] Tareas activas/en cola: 5   [MONITOR 16:16:35] Tareas activas/en cola: 5   [MONITOR 16:16:50] Tareas activas/en cola: 5   [MONITOR 16:17:05] Tareas activas/en cola: 5   [MONITOR 16:17:21] Tareas activas/en cola: 5   [MONITOR 16:17:36] Tareas activas/en cola: 5   [MONITOR 16:17:51] Tareas activas/en cola: 5   [MONITOR 16:18:06] Tareas activas/en cola: 5   [MONITOR 16:18:21] Tareas activas/en cola: 5   [MONITOR 16:18:36] Tareas activas/en cola: 5   [MONITOR 16:18:51] Tareas activas/en cola: 5   [MONITOR 16:19:06] Tareas activas/en cola: 5   [MONITOR 16:19:21] Tareas activas/en cola: 5   [MONITOR 16:19:36] Tareas activas/en cola: 5   [MONITOR 16:19:51] Tareas activas/en cola: 5   [MONITOR 16:20:06] Tareas activas/en cola: 5   [MONITOR 16:20:21] Tareas activas/en cola: 5   [MONITOR 16:20:36] Tareas activas/en cola: 5   [MONITOR 16:20:51] Tareas activas/en cola: 5   [MONITOR 16:21:06] Tareas activas/en cola: 5   [MONITOR 16:21:21] Tareas activas/en cola: 5   [MONITOR 16:21:36] Tareas activas/en cola: 5   [MONITOR 16:21:51] Tareas activas/en cola: 5   [MONITOR 16:22:06] Tareas activas/en cola: 5   [MONITOR 16:22:21] Tareas activas/en cola: 5   [MONITOR 16:22:36] Tareas activas/en cola: 5   [MONITOR 16:22:52] Tareas activas/en cola: 5   [MONITOR 16:23:07] Tareas activas/en cola: 5   [MONITOR 16:23:22] Tareas activas/en cola: 5   [MONITOR 16:23:37] Tareas activas/en cola: 5   [MONITOR 16:23:52] Tareas activas/en cola: 5   [MONITOR 16:24:07] Tareas activas/en cola: 5   [MONITOR 16:24:22] Tareas activas/en cola: 5   [MONITOR 16:24:37] Tareas activas/en cola: 5   [MONITOR 16:24:52] Tareas activas/en cola: 5   [MONITOR 16:25:07] Tareas activas/en cola: 5   [MONITOR 16:25:22] Tareas activas/en cola: 5   [MONITOR 16:25:37] Tareas activas/en cola: 5   [MONITOR 16:25:52] Tareas activas/en cola: 5   [MONITOR 16:26:07] Tareas activas/en cola: 5   [MONITOR 16:26:22] Tareas activas/en cola: 5   [MONITOR 16:26:37] Tareas activas/en cola: 5   [MONITOR 16:26:52] Tareas activas/en cola: 5   [MONITOR 16:27:07] Tareas activas/en cola: 5   [MONITOR 16:27:22] Tareas activas/en cola: 5   [MONITOR 16:27:37] Tareas activas/en cola: 5   [MONITOR 16:27:52] Tareas activas/en cola: 5   [MONITOR 16:28:07] Tareas activas/en cola: 5   [MONITOR 16:28:22] Tareas activas/en cola: 5   [MONITOR 16:28:38] Tareas activas/en cola: 5   [MONITOR 16:28:53] Tareas activas/en cola: 5   [MONITOR 16:29:08] Tareas activas/en cola: 5   [MONITOR 16:29:23] Tareas activas/en cola: 5   [MONITOR 16:29:38] Tareas activas/en cola: 5   [MONITOR 16:29:53] Tareas activas/en cola: 5   [MONITOR 16:30:08] Tareas activas/en cola: 5   [MONITOR 16:30:23] Tareas activas/en cola: 5   [MONITOR 16:30:38] Tareas activas/en cola: 5   [MONITOR 16:30:53] Tareas activas/en cola: 5   [MONITOR 16:31:08] Tareas activas/en cola: 5   [MONITOR 16:31:23] Tareas activas/en cola: 5   [MONITOR 16:31:38] Tareas activas/en cola: 5   [MONITOR 16:31:53] Tareas activas/en cola: 5   [MONITOR 16:32:08] Tareas activas/en cola: 5   [MONITOR 16:32:23] Tareas activas/en cola: 5   [MONITOR 16:32:38] Tareas activas/en cola: 5   [MONITOR 16:32:53] Tareas activas/en cola: 5   [MONITOR 16:33:08] Tareas activas/en cola: 5   [MONITOR 16:33:23] Tareas activas/en cola: 5   [MONITOR 16:33:38] Tareas activas/en cola: 5   [MONITOR 16:33:53] Tareas activas/en cola: 5   [MONITOR 16:34:08] Tareas activas/en cola: 5   [MONITOR 16:34:24] Tareas activas/en cola: 5   [MONITOR 16:34:39] Tareas activas/en cola: 5   [MONITOR 16:34:54] Tareas activas/en cola: 5   [MONITOR 16:35:09] Tareas activas/en cola: 5   [MONITOR 16:35:24] Tareas activas/en cola: 5   [MONITOR 16:35:39] Tareas activas/en cola: 5   [MONITOR 16:35:54] Tareas activas/en cola: 5   [MONITOR 16:36:09] Tareas activas/en cola: 5   [MONITOR 16:36:24] Tareas activas/en cola: 5   [MONITOR 16:36:39] Tareas activas/en cola: 5   [MONITOR 16:36:54] Tareas activas/en cola: 5   [MONITOR 16:37:09] Tareas activas/en cola: 5   [MONITOR 16:37:24] Tareas activas/en cola: 5   [MONITOR 16:37:39] Tareas activas/en cola: 5   [MONITOR 16:37:54] Tareas activas/en cola: 5   [MONITOR 16:38:09] Tareas activas/en cola: 5   [MONITOR 16:38:24] Tareas activas/en cola: 5   [MONITOR 16:38:39] Tareas activas/en cola: 5   [MONITOR 16:38:54] Tareas activas/en cola: 5   [MONITOR 16:39:09] Tareas activas/en cola: 5   [MONITOR 16:39:24] Tareas activas/en cola: 4   [MONITOR 16:39:39] Tareas activas/en cola: 4   [MONITOR 16:39:54] Tareas activas/en cola: 3   [MONITOR 16:40:09] Tareas activas/en cola: 3   [MONITOR 16:40:25] Tareas activas/en cola: 3   [MONITOR 16:40:40] Tareas activas/en cola: 1   
+[+] Todas las muestras de QIIME 2 finalizaron.
+==========================================================
+=== RESUMEN POR ARCHIVO DE PREDICCIONES ===
+==========================================================
+Muestra c001 (job 1491): 23 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2/qiime2_multinodo.alfa_v1v2_SILVA-c001.predictions.tsv
+Muestra c002 (job 1492): 22 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2/qiime2_multinodo.alfa_v1v2_SILVA-c002.predictions.tsv
+Muestra c003 (job 1493): 20 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2/qiime2_multinodo.alfa_v1v2_SILVA-c003.predictions.tsv
+Muestra e001 (job 1494): 18 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2/qiime2_multinodo.alfa_v1v2_SILVA-e001.predictions.tsv
+Muestra e002 (job 1495): 18 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2/qiime2_multinodo.alfa_v1v2_SILVA-e002.predictions.tsv
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (QIIME 2) ===
+==========================================================
+---------------------------------------------------------------------------
+Muestra    | Job      | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+---------------------------------------------------------------------------
+c001       | 1491     | rbp5-1    | 2.398   | 2.392   | 2.395   | 1515   | 1.5228    | 0.5149   
+c002       | 1492     | rbp5-2    | 2.360   | 2.440   | 2.400   | 1555   | 1.5767    | 0.5401   
+c003       | 1493     | rbp5-3    | 2.397   | 2.432   | 2.415   | 1587   | 1.5866    | 0.5222   
+e001       | 1494     | rbp5-4    | 2.378   | 2.371   | 2.374   | 1606   | 1.6188    | 0.5596   
+e002       | 1495     | rbp5-5    | 2.335   | 2.357   | 2.346   | 1587   | 1.5634    | 0.5292   
+---------------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   7.8683 Wh (28326.0 J)
+ENERGIA TOTAL NETA CLUSTER:    2.6661 Wh (9597.8 J)
+TOTAL LECTURAS PROCESADAS:     2,690,077
+TIEMPO PARALELO (MAX MUESTRA): 1606 s (26.77 min)
+EFICIENCIA BRUTA CLUSTER:      341,885.9 Reads/Wh
+EFICIENCIA NETA CLUSTER:       1,009,012.1 Reads/Wh
+===========================================================================
+
+=== BENCHMARK MULTINODO QIIME2 COMPLETADO CON EXITO ===
+Thu Sep 24 16:41:15 -05 2026

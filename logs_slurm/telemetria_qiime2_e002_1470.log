@@ -1,0 +1,24 @@
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          Qiime2_multinodo_e002_node_rbp5-1_job1470
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/qiime2
+Archivo de salida: energia_Qiime2_multinodo_e002_node_rbp5-1_job1470_20260924_155447.csv
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 15:54:48.239] [PMIC] Power:  2.41 W | Energia: 0.0007 Wh | Muestras: 1[2026-09-24 15:54:49.323] [PMIC] Power:  4.28 W | Energia: 0.0019 Wh | Muestras: 2[2026-09-24 15:54:50.374] [PMIC] Power:  2.92 W | Energia: 0.0028 Wh | Muestras: 3[2026-09-24 15:54:51.410] [PMIC] Power:  3.11 W | Energia: 0.0037 Wh | Muestras: 4[2026-09-24 15:54:52.475] [PMIC] Power:  2.29 W | Energia: 0.0044 Wh | Muestras: 5[2026-09-24 15:54:53.534] [PMIC] Power:  3.95 W | Energia: 0.0055 Wh | Muestras: 6[2026-09-24 15:54:54.584] [PMIC] Power:  2.45 W | Energia: 0.0062 Wh | Muestras: 7[2026-09-24 15:54:55.641] [PMIC] Power:  2.59 W | Energia: 0.0070 Wh | Muestras: 8[2026-09-24 15:54:56.678] [PMIC] Power:  3.14 W | Energia: 0.0079 Wh | Muestras: 9[2026-09-24 15:54:57.741] [PMIC] Power:  3.83 W | Energia: 0.0090 Wh | Muestras: 10[2026-09-24 15:54:58.805] [PMIC] Power:  2.65 W | Energia: 0.0098 Wh | Muestras: 11[2026-09-24 15:54:59.851] [PMIC] Power:  2.68 W | Energia: 0.0106 Wh | Muestras: 12[2026-09-24 15:55:00.897] [PMIC] Power:  2.74 W | Energia: 0.0114 Wh | Muestras: 13[2026-09-24 15:55:01.946] [PMIC] Power:  2.59 W | Energia: 0.0121 Wh | Muestras: 14[2026-09-24 15:55:03.002] [PMIC] Power:  3.88 W | Energia: 0.0133 Wh | Muestras: 15[2026-09-24 15:55:04.055] [PMIC] Power:  4.00 W | Energia: 0.0144 Wh | Muestras: 16[2026-09-24 15:55:05.108] [PMIC] Power:  3.97 W | Energia: 0.0156 Wh | Muestras: 17[2026-09-24 15:55:06.161] [PMIC] Power:  3.92 W | Energia: 0.0168 Wh | Muestras: 18[2026-09-24 15:55:07.231] [PMIC] Power:  5.11 W | Energia: 0.0182 Wh | Muestras: 19[2026-09-24 15:55:08.287] [PMIC] Power:  4.21 W | Energia: 0.0195 Wh | Muestras: 20[2026-09-24 15:55:09.389] [PMIC] Power:  4.38 W | Energia: 0.0208 Wh | Muestras: 21[2026-09-24 15:55:10.463] [PMIC] Power:  4.56 W | Energia: 0.0222 Wh | Muestras: 22[2026-09-24 15:55:11.506] [PMIC] Power:  4.21 W | Energia: 0.0234 Wh | Muestras: 23[2026-09-24 15:55:12.548] [PMIC] Power:  4.21 W | Energia: 0.0247 Wh | Muestras: 24[2026-09-24 15:55:13.619] [PMIC] Power:  4.06 W | Energia: 0.0258 Wh | Muestras: 25[2026-09-24 15:55:14.662] [PMIC] Power:  3.97 W | Energia: 0.0270 Wh | Muestras: 26[2026-09-24 15:55:15.705] [PMIC] Power:  3.98 W | Energia: 0.0282 Wh | Muestras: 27[2026-09-24 15:55:16.748] [PMIC] Power:  3.95 W | Energia: 0.0293 Wh | Muestras: 28[2026-09-24 15:55:17.791] [PMIC] Power:  4.18 W | Energia: 0.0305 Wh | Muestras: 29[2026-09-24 15:55:18.833] [PMIC] Power:  4.13 W | Energia: 0.0317 Wh | Muestras: 30[2026-09-24 15:55:19.901] [PMIC] Power:  4.22 W | Energia: 0.0329 Wh | Muestras: 31[2026-09-24 15:55:20.973] [PMIC] Power:  4.27 W | Energia: 0.0342 Wh | Muestras: 32[2026-09-24 15:55:22.028] [PMIC] Power:  4.94 W | Energia: 0.0357 Wh | Muestras: 33[2026-09-24 15:55:23.071] [PMIC] Power:  4.22 W | Energia: 0.0369 Wh | Muestras: 34[2026-09-24 15:55:24.118] [PMIC] Power:  5.08 W | Energia: 0.0384 Wh | Muestras: 35
+
+=== Resumen de medicion (Qiime2_multinodo_e002_node_rbp5-1_job1470) ===
+Inicio:           2026-09-24 15:54:47.200152
+Fin:              2026-09-24 15:55:24.725678
+Duracion:         37.5 s (0.63 min)
+Muestras tomadas: 35
+Energia total:    0.0384 Wh
+Potencia promedio: 3.68 W
+CSV guardado en:  energia_Qiime2_multinodo_e002_node_rbp5-1_job1470_20260924_155447.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+

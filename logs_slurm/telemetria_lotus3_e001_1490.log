@@ -1,0 +1,24 @@
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          LotuS3_multinodo_e001_node_rbp5-4_job1490
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/lotus3
+Archivo de salida: energia_LotuS3_multinodo_e001_node_rbp5-4_job1490_20260924_160934.csv
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 16:09:35.483] [PMIC] Power:  2.19 W | Energia: 0.0006 Wh | Muestras: 1[2026-09-24 16:09:36.552] [PMIC] Power:  2.45 W | Energia: 0.0013 Wh | Muestras: 2[2026-09-24 16:09:37.595] [PMIC] Power:  2.24 W | Energia: 0.0020 Wh | Muestras: 3[2026-09-24 16:09:38.639] [PMIC] Power:  2.22 W | Energia: 0.0026 Wh | Muestras: 4[2026-09-24 16:09:39.682] [PMIC] Power:  2.22 W | Energia: 0.0033 Wh | Muestras: 5[2026-09-24 16:09:40.726] [PMIC] Power:  2.41 W | Energia: 0.0040 Wh | Muestras: 6[2026-09-24 16:09:41.770] [PMIC] Power:  2.46 W | Energia: 0.0047 Wh | Muestras: 7[2026-09-24 16:09:42.813] [PMIC] Power:  2.45 W | Energia: 0.0054 Wh | Muestras: 8[2026-09-24 16:09:43.858] [PMIC] Power:  2.38 W | Energia: 0.0061 Wh | Muestras: 9[2026-09-24 16:09:44.903] [PMIC] Power:  2.50 W | Energia: 0.0068 Wh | Muestras: 10[2026-09-24 16:09:45.947] [PMIC] Power:  2.45 W | Energia: 0.0075 Wh | Muestras: 11[2026-09-24 16:09:46.991] [PMIC] Power:  2.60 W | Energia: 0.0083 Wh | Muestras: 12[2026-09-24 16:09:48.039] [PMIC] Power:  3.44 W | Energia: 0.0093 Wh | Muestras: 13[2026-09-24 16:09:49.097] [PMIC] Power:  3.61 W | Energia: 0.0103 Wh | Muestras: 14[2026-09-24 16:09:50.152] [PMIC] Power:  3.74 W | Energia: 0.0114 Wh | Muestras: 15[2026-09-24 16:09:51.207] [PMIC] Power:  3.66 W | Energia: 0.0125 Wh | Muestras: 16[2026-09-24 16:09:52.271] [PMIC] Power:  3.92 W | Energia: 0.0136 Wh | Muestras: 17[2026-09-24 16:09:53.395] [PMIC] Power:  4.04 W | Energia: 0.0148 Wh | Muestras: 18[2026-09-24 16:09:54.459] [PMIC] Power:  5.04 W | Energia: 0.0164 Wh | Muestras: 19[2026-09-24 16:09:55.507] [PMIC] Power:  5.36 W | Energia: 0.0180 Wh | Muestras: 20[2026-09-24 16:09:56.556] [PMIC] Power:  5.46 W | Energia: 0.0196 Wh | Muestras: 21[2026-09-24 16:09:57.589] [PMIC] Power:  3.86 W | Energia: 0.0207 Wh | Muestras: 22[2026-09-24 16:09:58.631] [PMIC] Power:  3.80 W | Energia: 0.0218 Wh | Muestras: 23[2026-09-24 16:09:59.682] [PMIC] Power:  3.58 W | Energia: 0.0228 Wh | Muestras: 24[2026-09-24 16:10:00.734] [PMIC] Power:  3.22 W | Energia: 0.0238 Wh | Muestras: 25[2026-09-24 16:10:01.792] [PMIC] Power:  3.06 W | Energia: 0.0247 Wh | Muestras: 26[2026-09-24 16:10:02.846] [PMIC] Power:  3.09 W | Energia: 0.0256 Wh | Muestras: 27[2026-09-24 16:10:03.902] [PMIC] Power:  2.21 W | Energia: 0.0262 Wh | Muestras: 28
+
+=== Resumen de medicion (LotuS3_multinodo_e001_node_rbp5-4_job1490) ===
+Inicio:           2026-09-24 16:09:34.442971
+Fin:              2026-09-24 16:10:04.813484
+Duracion:         30.4 s (0.51 min)
+Muestras tomadas: 28
+Energia total:    0.0262 Wh
+Potencia promedio: 3.11 W
+CSV guardado en:  energia_LotuS3_multinodo_e001_node_rbp5-4_job1490_20260924_160934.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+

@@ -1,0 +1,44 @@
+==========================================================
+=== KRAKEN 2 + BRACKEN MULTINODO (1 muestra por nodo) ===
+==========================================================
+[NODOS] Idle en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[MUESTRAS] c001 c002 c003 e001 e002 (5 muestras)
+----------------------------------------------------------
+[LANZANDO] Asignando 1 nodo exclusivo por muestra...
+----------------------------------------------------------
+[+] Muestra c001 -> Job 1440 asignado a nodo rbp5-1
+[+] Muestra c002 -> Job 1441 asignado a nodo rbp5-2
+[+] Muestra c003 -> Job 1442 asignado a nodo rbp5-3
+[+] Muestra e001 -> Job 1443 asignado a nodo rbp5-4
+[+] Muestra e002 -> Job 1444 asignado a nodo rbp5-5
+[+] Esperando finalizacion concurrente de: 1440,1441,1442,1443,1444
+[MONITOR 15:20:30] Tareas activas: 5   [MONITOR 15:20:35] Tareas activas: 4   [MONITOR 15:20:40] Tareas activas: 4   [MONITOR 15:20:45] Tareas activas: 4   [MONITOR 15:20:50] Tareas activas: 4   [MONITOR 15:20:55] Tareas activas: 4   [MONITOR 15:21:00] Tareas activas: 4   [MONITOR 15:21:05] Tareas activas: 4   [MONITOR 15:21:10] Tareas activas: 4   [MONITOR 15:21:15] Tareas activas: 4   [MONITOR 15:21:20] Tareas activas: 4   [MONITOR 15:21:25] Tareas activas: 4   [MONITOR 15:21:30] Tareas activas: 4   [MONITOR 15:21:35] Tareas activas: 4   [MONITOR 15:21:40] Tareas activas: 4   [MONITOR 15:21:46] Tareas activas: 4   [MONITOR 15:21:51] Tareas activas: 4   [MONITOR 15:21:56] Tareas activas: 4   [MONITOR 15:22:01] Tareas activas: 4   [MONITOR 15:22:06] Tareas activas: 4   [MONITOR 15:22:11] Tareas activas: 4   [MONITOR 15:22:16] Tareas activas: 4   [MONITOR 15:22:21] Tareas activas: 4   [MONITOR 15:22:26] Tareas activas: 4   [MONITOR 15:22:31] Tareas activas: 4   [MONITOR 15:22:36] Tareas activas: 4   [MONITOR 15:22:41] Tareas activas: 4   [MONITOR 15:22:46] Tareas activas: 4   [MONITOR 15:22:51] Tareas activas: 4   [MONITOR 15:22:56] Tareas activas: 4   
+[+] Todas las muestras de Kraken 2 finalizaron.
+==========================================================
+=== RESUMEN POR ARCHIVO DE PREDICCIONES ===
+==========================================================
+Muestra c001 (job 1440): 379 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c001.predictions.tsv
+Muestra c002 (job 1441): 450 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c002.predictions.tsv
+/shared/users/grupo1/scripts/distribuido/runscripts/kraken2/sbatch_multinodo_energy.sh: line 154: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c003.predictions.tsv: No such file or directory
+Muestra c003 (job 1442): 0 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c003.predictions.tsv
+Muestra e001 (job 1443): 449 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-e001.predictions.tsv
+Muestra e002 (job 1444): 459 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-e002.predictions.tsv
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (KRAKEN 2) ===
+==========================================================
+-------------------------------------------------------------------------------------
+Muestra    | Job      | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+-------------------------------------------------------------------------------------
+c001       | 1440     | rbp5-1    | 2.416   | 2.396   | 2.406   | 42     | 0.0336    | 0.0056   
+c002       | 1441     | rbp5-2    | 2.463   | 2.364   | 2.414   | 45     | 0.0353    | 0.0051   
+c003       | 1442     | unknown   | 0.000   | 0.000   | 0.000   | 0      | 0.0000    | 0.0000   
+e001       | 1443     | rbp5-4    | 2.434   | 2.381   | 2.408   | 40     | 0.0317    | 0.0050   
+e002       | 1444     | rbp5-5    | 2.349   | 2.426   | 2.388   | 41     | 0.0317    | 0.0045   
+-------------------------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.1324 Wh (476.5 J)
+ENERGIA TOTAL NETA CLUSTER:    0.0202 Wh (72.6 J)
+TOTAL LECTURAS PROCESADAS:     2,453,431
+TIEMPO PARALELO (MAX MUESTRA): 45 s (0.75 min)
+EFICIENCIA BRUTA CLUSTER:      18,535,967.8 Reads/Wh
+EFICIENCIA NETA CLUSTER:       121,620,707.5 Reads/Wh
+=====================================================================================

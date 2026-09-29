@@ -1,0 +1,64 @@
++ set -e
++ technology=illumina
++ sample_folder=HM_Contaminated_Soil-c002
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-c002.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters['AVGQUAL']=20
++ parameters['HEADCROP']=12
++ parameters['LEADING']=3
++ parameters['TRAILING']=3
++ parameters['MINLEN']=75
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_HM_Contaminated_Soil-c002
++ cd tmp_HM_Contaminated_Soil-c002
++ '[' -z x ']'
++ '[' illumina = illumina ']'
++ echo 'running illumina'
++ mkdir -p reads
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002/queryReads1.fq reads/.
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002/queryReads2.fq reads/.
++ touch reads/miSeqMap.sm.txt
++ echo -e '#SampleID\tfastqFile\tSequencingRun'
++ echo -e 'Sample1\tqueryReads1.fq,queryReads2.fq\tRun1'
++ lotus3 -derepMin 1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/ -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv -t 2
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+ 
+tput: No value for $TERM and no -T specified
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+ 
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+ 
+cat: reads-output//tmpFiles//lulu_match_list.txt.rm: No such file or directory
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
++ biom convert -i reads-output/OTU.biom -o results.txt --to-tsv --header-key taxonomy
++ editResult.py results.txt results.tsv summary_taxonomy.tsv
+/shared/users/grupo1/lemmi16s/resources/candidate_containers/lotus_303_lemmi16s/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-c002.predictions.tsv

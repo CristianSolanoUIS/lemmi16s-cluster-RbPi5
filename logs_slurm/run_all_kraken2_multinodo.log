@@ -1,0 +1,394 @@
+=== INICIANDO BENCHMARK MULTINODO KRAKEN 2 (5 MUESTRAS) ===
+Wed Sep 23 17:04:12 -05 2026
+==========================================================
+>>> INICIANDO MUESTRA: c001 a las Wed Sep 23 17:04:12 -05 2026
+==========================================================
+==========================================================
+=== BENCHMARK MULTINODO DISTRIBUIDO (LEMMI16s + PMIC) ===
+==========================================================
+Pipeline:          kraken2 (kraken_213_lemmi16s)
+Muestra:           HOMD_v4_GTDB-c001
+Directorio datos:  /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c001
+Directorio salida: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c001.predictions.tsv
+Fecha inicio:      Wed Sep 23 17:04:12 -05 2026
+[NODOS] Nodos 'idle' detectados en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[CONFIG] Chunks configurados dinamicamente = 5 (1 chunk por nodo idle)
+----------------------------------------------------------
+[PASO 1] Particionando queryReads en 5 chunks equilibrados...
+----------------------------------------------------------
+[*] Analizando dataset en /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c001...
+[*] Modo: Paired-End
+[*] Total de lecturas identificadas: 480,704
+[*] Distribución de lecturas en 5 chunks: [96141, 96141, 96141, 96141, 96140]
+    [+] Chunk 1: 96,141 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c001/chunk_1
+    [+] Chunk 2: 96,141 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c001/chunk_2
+    [+] Chunk 3: 96,141 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c001/chunk_3
+    [+] Chunk 4: 96,141 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c001/chunk_4
+    [+] Chunk 5: 96,140 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c001/chunk_5
+[OK] Partición completada con éxito en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c001
+----------------------------------------------------------
+[PASO 2] Enviando Slurm Job Array (1-5) a partition1...
+Nodos asignados: rbp5-1,rbp5-2,rbp5-3,rbp5-4,rbp5-5
+----------------------------------------------------------
+[+] Job Array enviado con ID: 1255
+[+] Esperando a que todos los nodos completen sus tareas...
+[MONITOR 17:04:23] Tareas activas: 1 | [ PENDING 0:00 ]   [MONITOR 17:04:28] Tareas activas: 5 | [rbp5-5 RUNNING 0:04 rbp5-4 RUNNING 0:04 rbp5-3 RUNNING 0:04 rbp5-2 RUNNING 0:04 rbp5-1 RUNNING 0:05 ]   [MONITOR 17:04:33] Tareas activas: 5 | [rbp5-5 RUNNING 0:09 rbp5-4 RUNNING 0:09 rbp5-3 RUNNING 0:09 rbp5-2 RUNNING 0:09 rbp5-1 RUNNING 0:10 ]   [MONITOR 17:04:38] Tareas activas: 5 | [rbp5-5 RUNNING 0:14 rbp5-4 RUNNING 0:14 rbp5-3 RUNNING 0:14 rbp5-2 RUNNING 0:14 rbp5-1 RUNNING 0:15 ]   [MONITOR 17:04:44] Tareas activas: 5 | [rbp5-5 RUNNING 0:20 rbp5-4 RUNNING 0:20 rbp5-3 RUNNING 0:20 rbp5-2 RUNNING 0:20 rbp5-1 RUNNING 0:21 ]   [MONITOR 17:04:50] Tareas activas: 5 | [rbp5-5 RUNNING 0:26 rbp5-4 RUNNING 0:26 rbp5-3 RUNNING 0:26 rbp5-2 RUNNING 0:26 rbp5-1 RUNNING 0:27 ]   [MONITOR 17:04:55] Tareas activas: 5 | [rbp5-5 RUNNING 0:31 rbp5-4 RUNNING 0:31 rbp5-3 RUNNING 0:31 rbp5-2 RUNNING 0:31 rbp5-1 RUNNING 0:32 ]   [MONITOR 17:05:00] Tareas activas: 5 | [rbp5-5 RUNNING 0:36 rbp5-4 RUNNING 0:36 rbp5-3 RUNNING 0:36 rbp5-2 RUNNING 0:36 rbp5-1 RUNNING 0:37 ]   [MONITOR 17:05:06] Tareas activas: 5 | [rbp5-5 RUNNING 0:42 rbp5-4 RUNNING 0:42 rbp5-3 RUNNING 0:42 rbp5-2 RUNNING 0:42 rbp5-1 RUNNING 0:43 ]   [MONITOR 17:05:11] Tareas activas: 5 | [rbp5-5 RUNNING 0:47 rbp5-4 RUNNING 0:47 rbp5-3 RUNNING 0:47 rbp5-2 RUNNING 0:47 rbp5-1 RUNNING 0:48 ]   [MONITOR 17:05:16] Tareas activas: 5 | [rbp5-5 RUNNING 0:52 rbp5-4 RUNNING 0:52 rbp5-3 RUNNING 0:52 rbp5-2 RUNNING 0:52 rbp5-1 RUNNING 0:53 ]   [MONITOR 17:05:21] Tareas activas: 5 | [rbp5-5 RUNNING 0:57 rbp5-4 RUNNING 0:57 rbp5-3 RUNNING 0:57 rbp5-2 RUNNING 0:57 rbp5-1 RUNNING 0:58 ]   [MONITOR 17:05:26] Tareas activas: 5 | [rbp5-5 RUNNING 1:02 rbp5-4 RUNNING 1:02 rbp5-3 RUNNING 1:02 rbp5-2 RUNNING 1:02 rbp5-1 RUNNING 1:03 ]   [MONITOR 17:05:31] Tareas activas: 5 | [rbp5-5 RUNNING 1:07 rbp5-4 RUNNING 1:07 rbp5-3 RUNNING 1:07 rbp5-2 RUNNING 1:07 rbp5-1 RUNNING 1:08 ]   [MONITOR 17:05:36] Tareas activas: 5 | [rbp5-5 RUNNING 1:12 rbp5-4 RUNNING 1:12 rbp5-3 RUNNING 1:12 rbp5-2 RUNNING 1:12 rbp5-1 RUNNING 1:13 ]   [MONITOR 17:05:41] Tareas activas: 5 | [rbp5-5 RUNNING 1:17 rbp5-4 RUNNING 1:17 rbp5-3 RUNNING 1:17 rbp5-2 RUNNING 1:17 rbp5-1 RUNNING 1:18 ]   [MONITOR 17:05:46] Tareas activas: 5 | [rbp5-5 RUNNING 1:22 rbp5-4 RUNNING 1:22 rbp5-3 RUNNING 1:22 rbp5-2 RUNNING 1:22 rbp5-1 RUNNING 1:23 ]   [MONITOR 17:05:51] Tareas activas: 4 | [rbp5-4 RUNNING 1:27 rbp5-3 RUNNING 1:27 rbp5-2 RUNNING 1:27 rbp5-1 RUNNING 1:28 ]   [MONITOR 17:05:56] Tareas activas: 4 | [rbp5-4 RUNNING 1:32 rbp5-3 RUNNING 1:32 rbp5-2 RUNNING 1:32 rbp5-1 RUNNING 1:33 ]   
+[+] Todas las tareas del Job Array 1255 han finalizado!
+----------------------------------------------------------
+[PASO 3] Fusionando predicciones de los 5 chunks...
+----------------------------------------------------------
+==================================================
+=== COMBINACION DE PREDICCIONES DE LOS 5 NODOS ===
+==================================================
+[*] Nodo/Chunk 1 (chunk_1.predictions.tsv): 88,251 reads | 139 taxones
+[*] Nodo/Chunk 2 (chunk_2.predictions.tsv): 94,379 reads | 127 taxones
+[*] Nodo/Chunk 3 (chunk_3.predictions.tsv): 93,617 reads | 172 taxones
+[*] Nodo/Chunk 4 (chunk_4.predictions.tsv): 94,229 reads | 106 taxones
+[*] Nodo/Chunk 5 (chunk_5.predictions.tsv): 93,889 reads | 113 taxones
+--------------------------------------------------
+[+] Total acumulado (5 nodos): 464,365 reads clasificados
+[+] Total de taxones unicos:   352
+[OK] Prediccion final reconstituida guardada en:
+     /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c001.predictions.tsv
+==================================================
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (JOB 1255) ===
+==========================================================
+Pipeline:           kraken2
+Muestra:            HOMD_v4_GTDB-c001
+Total de Chunks:    5
+----------------------------------------------------------------------
+Chunk   | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+----------------------------------------------------------------------
+1       | rbp5-1    | 2.460   | 2.389   | 2.425   | 9      | 0.0067    | 0.0007   
+2       | rbp5-2    | 2.423   | 2.386   | 2.405   | 11     | 0.0096    | 0.0022   
+3       | rbp5-3    | 2.332   | 2.303   | 2.317   | 9      | 0.0069    | 0.0011   
+4       | rbp5-4    | 2.391   | 2.433   | 2.412   | 20     | 0.0133    | 0.0000   
+5       | rbp5-5    | 2.307   | 2.339   | 2.323   | 26     | 0.0169    | 0.0001   
+----------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0533 Wh
+ENERGIA TOTAL NETA CLUSTER:    0.0041 Wh
+TOTAL LECTURAS PROCESADAS:     480,704
+TIEMPO PARALELO (MAX CHUNK):   26 s (0.43 min)
+EFICIENCIA BRUTA CLUSTER:      9,010,665.8 Reads/Wh
+EFICIENCIA NETA CLUSTER:       117,582,076.2 Reads/Wh
+======================================================================
+==========================================================
+Predicciones unificadas: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c001.predictions.tsv
+Total lineas generadas:  354
+==========================================================
+>>> MUESTRA c001 FINALIZADA a las Wed Sep 23 17:06:03 -05 2026
+==========================================================
+>>> INICIANDO MUESTRA: c002 a las Wed Sep 23 17:06:08 -05 2026
+==========================================================
+==========================================================
+=== BENCHMARK MULTINODO DISTRIBUIDO (LEMMI16s + PMIC) ===
+==========================================================
+Pipeline:          kraken2 (kraken_213_lemmi16s)
+Muestra:           HOMD_v4_GTDB-c002
+Directorio datos:  /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c002
+Directorio salida: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c002.predictions.tsv
+Fecha inicio:      Wed Sep 23 17:06:08 -05 2026
+[NODOS] Nodos 'idle' detectados en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[CONFIG] Chunks configurados dinamicamente = 5 (1 chunk por nodo idle)
+----------------------------------------------------------
+[PASO 1] Particionando queryReads en 5 chunks equilibrados...
+----------------------------------------------------------
+[*] Analizando dataset en /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c002...
+[*] Modo: Paired-End
+[*] Total de lecturas identificadas: 496,437
+[*] Distribución de lecturas en 5 chunks: [99288, 99288, 99287, 99287, 99287]
+    [+] Chunk 1: 99,288 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c002/chunk_1
+    [+] Chunk 2: 99,288 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c002/chunk_2
+    [+] Chunk 3: 99,287 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c002/chunk_3
+    [+] Chunk 4: 99,287 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c002/chunk_4
+    [+] Chunk 5: 99,287 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c002/chunk_5
+[OK] Partición completada con éxito en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c002
+----------------------------------------------------------
+[PASO 2] Enviando Slurm Job Array (1-5) a partition1...
+Nodos asignados: rbp5-1,rbp5-2,rbp5-3,rbp5-4,rbp5-5
+----------------------------------------------------------
+[+] Job Array enviado con ID: 1260
+[+] Esperando a que todos los nodos completen sus tareas...
+[MONITOR 17:06:17] Tareas activas: 1 | [ PENDING 0:00 ]   [MONITOR 17:06:22] Tareas activas: 5 | [rbp5-5 RUNNING 0:04 rbp5-4 RUNNING 0:04 rbp5-3 RUNNING 0:04 rbp5-2 RUNNING 0:04 rbp5-1 RUNNING 0:05 ]   [MONITOR 17:06:27] Tareas activas: 5 | [rbp5-5 RUNNING 0:09 rbp5-4 RUNNING 0:09 rbp5-3 RUNNING 0:09 rbp5-2 RUNNING 0:09 rbp5-1 RUNNING 0:10 ]   [MONITOR 17:06:32] Tareas activas: 5 | [rbp5-5 RUNNING 0:14 rbp5-4 RUNNING 0:14 rbp5-3 RUNNING 0:14 rbp5-2 RUNNING 0:14 rbp5-1 RUNNING 0:15 ]   [MONITOR 17:06:37] Tareas activas: 5 | [rbp5-5 RUNNING 0:19 rbp5-4 RUNNING 0:19 rbp5-3 RUNNING 0:19 rbp5-2 RUNNING 0:19 rbp5-1 RUNNING 0:20 ]   [MONITOR 17:06:42] Tareas activas: 5 | [rbp5-5 RUNNING 0:24 rbp5-4 RUNNING 0:24 rbp5-3 RUNNING 0:24 rbp5-2 RUNNING 0:24 rbp5-1 RUNNING 0:25 ]   [MONITOR 17:06:47] Tareas activas: 5 | [rbp5-5 RUNNING 0:29 rbp5-4 RUNNING 0:29 rbp5-3 RUNNING 0:29 rbp5-2 RUNNING 0:29 rbp5-1 RUNNING 0:30 ]   [MONITOR 17:06:53] Tareas activas: 5 | [rbp5-5 RUNNING 0:35 rbp5-4 RUNNING 0:35 rbp5-3 RUNNING 0:35 rbp5-2 RUNNING 0:35 rbp5-1 RUNNING 0:36 ]   [MONITOR 17:06:58] Tareas activas: 5 | [rbp5-5 RUNNING 0:40 rbp5-4 RUNNING 0:40 rbp5-3 RUNNING 0:40 rbp5-2 RUNNING 0:40 rbp5-1 RUNNING 0:41 ]   [MONITOR 17:07:03] Tareas activas: 5 | [rbp5-5 RUNNING 0:45 rbp5-4 RUNNING 0:45 rbp5-3 RUNNING 0:45 rbp5-2 RUNNING 0:45 rbp5-1 RUNNING 0:46 ]   [MONITOR 17:07:08] Tareas activas: 5 | [rbp5-5 RUNNING 0:50 rbp5-4 RUNNING 0:50 rbp5-3 RUNNING 0:50 rbp5-2 RUNNING 0:50 rbp5-1 RUNNING 0:51 ]   [MONITOR 17:07:13] Tareas activas: 5 | [rbp5-5 RUNNING 0:55 rbp5-4 RUNNING 0:55 rbp5-3 RUNNING 0:55 rbp5-2 RUNNING 0:55 rbp5-1 RUNNING 0:56 ]   [MONITOR 17:07:19] Tareas activas: 5 | [rbp5-5 RUNNING 1:01 rbp5-4 RUNNING 1:01 rbp5-3 RUNNING 1:01 rbp5-2 RUNNING 1:01 rbp5-1 RUNNING 1:02 ]   [MONITOR 17:07:24] Tareas activas: 5 | [rbp5-5 RUNNING 1:06 rbp5-4 RUNNING 1:06 rbp5-3 RUNNING 1:06 rbp5-2 RUNNING 1:06 rbp5-1 RUNNING 1:07 ]   [MONITOR 17:07:29] Tareas activas: 5 | [rbp5-5 RUNNING 1:11 rbp5-4 RUNNING 1:11 rbp5-3 RUNNING 1:11 rbp5-2 RUNNING 1:11 rbp5-1 RUNNING 1:12 ]   [MONITOR 17:07:34] Tareas activas: 5 | [rbp5-5 RUNNING 1:16 rbp5-4 RUNNING 1:16 rbp5-3 RUNNING 1:16 rbp5-2 RUNNING 1:16 rbp5-1 RUNNING 1:17 ]   [MONITOR 17:07:39] Tareas activas: 5 | [rbp5-5 RUNNING 1:21 rbp5-4 RUNNING 1:21 rbp5-3 RUNNING 1:21 rbp5-2 RUNNING 1:21 rbp5-1 RUNNING 1:22 ]   [MONITOR 17:07:44] Tareas activas: 5 | [rbp5-5 RUNNING 1:26 rbp5-4 RUNNING 1:26 rbp5-3 RUNNING 1:26 rbp5-2 RUNNING 1:26 rbp5-1 RUNNING 1:27 ]   [MONITOR 17:07:49] Tareas activas: 4 | [rbp5-5 RUNNING 1:31 rbp5-3 RUNNING 1:31 rbp5-2 RUNNING 1:31 rbp5-1 RUNNING 1:32 ]   [MONITOR 17:07:54] Tareas activas: 4 | [rbp5-5 RUNNING 1:36 rbp5-3 RUNNING 1:36 rbp5-2 RUNNING 1:36 rbp5-1 RUNNING 1:37 ]   [MONITOR 17:07:59] Tareas activas: 4 | [rbp5-5 RUNNING 1:41 rbp5-3 RUNNING 1:41 rbp5-2 RUNNING 1:41 rbp5-1 RUNNING 1:42 ]   
+[+] Todas las tareas del Job Array 1260 han finalizado!
+----------------------------------------------------------
+[PASO 3] Fusionando predicciones de los 5 chunks...
+----------------------------------------------------------
+==================================================
+=== COMBINACION DE PREDICCIONES DE LOS 5 NODOS ===
+==================================================
+[*] Nodo/Chunk 1 (chunk_1.predictions.tsv): 97,027 reads | 119 taxones
+[*] Nodo/Chunk 2 (chunk_2.predictions.tsv): 97,656 reads | 154 taxones
+[*] Nodo/Chunk 3 (chunk_3.predictions.tsv): 92,460 reads | 148 taxones
+[*] Nodo/Chunk 4 (chunk_4.predictions.tsv): 95,215 reads | 94 taxones
+[*] Nodo/Chunk 5 (chunk_5.predictions.tsv): 94,323 reads | 230 taxones
+--------------------------------------------------
+[+] Total acumulado (5 nodos): 476,681 reads clasificados
+[+] Total de taxones unicos:   421
+[OK] Prediccion final reconstituida guardada en:
+     /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c002.predictions.tsv
+==================================================
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (JOB 1260) ===
+==========================================================
+Pipeline:           kraken2
+Muestra:            HOMD_v4_GTDB-c002
+Total de Chunks:    5
+----------------------------------------------------------------------
+Chunk   | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+----------------------------------------------------------------------
+1       | rbp5-1    | 2.446   | 2.448   | 2.447   | 29     | 0.0197    | 0.0000   
+2       | rbp5-2    | 2.379   | 2.399   | 2.389   | 14     | 0.0093    | 0.0000   
+3       | rbp5-3    | 2.311   | 2.289   | 2.300   | 29     | 0.0184    | 0.0000   
+4       | rbp5-4    | 2.420   | 2.463   | 2.441   | 7      | 0.0061    | 0.0013   
+5       | rbp5-5    | 2.381   | 2.367   | 2.374   | 29     | 0.0191    | 0.0000   
+----------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0726 Wh
+ENERGIA TOTAL NETA CLUSTER:    0.0013 Wh
+TOTAL LECTURAS PROCESADAS:     496,437
+TIEMPO PARALELO (MAX CHUNK):   29 s (0.48 min)
+EFICIENCIA BRUTA CLUSTER:      6,841,692.4 Reads/Wh
+EFICIENCIA NETA CLUSTER:       370,804,301.7 Reads/Wh
+======================================================================
+==========================================================
+Predicciones unificadas: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c002.predictions.tsv
+Total lineas generadas:  423
+==========================================================
+>>> MUESTRA c002 FINALIZADA a las Wed Sep 23 17:08:05 -05 2026
+==========================================================
+>>> INICIANDO MUESTRA: c003 a las Wed Sep 23 17:08:10 -05 2026
+==========================================================
+==========================================================
+=== BENCHMARK MULTINODO DISTRIBUIDO (LEMMI16s + PMIC) ===
+==========================================================
+Pipeline:          kraken2 (kraken_213_lemmi16s)
+Muestra:           HOMD_v4_GTDB-c003
+Directorio datos:  /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c003
+Directorio salida: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c003.predictions.tsv
+Fecha inicio:      Wed Sep 23 17:08:11 -05 2026
+[NODOS] Nodos 'idle' detectados en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[CONFIG] Chunks configurados dinamicamente = 5 (1 chunk por nodo idle)
+----------------------------------------------------------
+[PASO 1] Particionando queryReads en 5 chunks equilibrados...
+----------------------------------------------------------
+[*] Analizando dataset en /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c003...
+[*] Modo: Paired-End
+[*] Total de lecturas identificadas: 474,342
+[*] Distribución de lecturas en 5 chunks: [94869, 94869, 94868, 94868, 94868]
+    [+] Chunk 1: 94,869 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c003/chunk_1
+    [+] Chunk 2: 94,869 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c003/chunk_2
+    [+] Chunk 3: 94,868 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c003/chunk_3
+    [+] Chunk 4: 94,868 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c003/chunk_4
+    [+] Chunk 5: 94,868 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c003/chunk_5
+[OK] Partición completada con éxito en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-c003
+----------------------------------------------------------
+[PASO 2] Enviando Slurm Job Array (1-5) a partition1...
+Nodos asignados: rbp5-1,rbp5-2,rbp5-3,rbp5-4,rbp5-5
+----------------------------------------------------------
+[+] Job Array enviado con ID: 1265
+[+] Esperando a que todos los nodos completen sus tareas...
+[MONITOR 17:08:21] Tareas activas: 1 | [ PENDING 0:00 ]   [MONITOR 17:08:26] Tareas activas: 5 | [rbp5-5 RUNNING 0:04 rbp5-4 RUNNING 0:04 rbp5-3 RUNNING 0:04 rbp5-2 RUNNING 0:04 rbp5-1 RUNNING 0:05 ]   [MONITOR 17:08:31] Tareas activas: 5 | [rbp5-5 RUNNING 0:09 rbp5-4 RUNNING 0:09 rbp5-3 RUNNING 0:09 rbp5-2 RUNNING 0:09 rbp5-1 RUNNING 0:10 ]   [MONITOR 17:08:36] Tareas activas: 5 | [rbp5-5 RUNNING 0:14 rbp5-4 RUNNING 0:14 rbp5-3 RUNNING 0:14 rbp5-2 RUNNING 0:14 rbp5-1 RUNNING 0:15 ]   [MONITOR 17:08:41] Tareas activas: 5 | [rbp5-5 RUNNING 0:19 rbp5-4 RUNNING 0:19 rbp5-3 RUNNING 0:19 rbp5-2 RUNNING 0:19 rbp5-1 RUNNING 0:20 ]   [MONITOR 17:08:46] Tareas activas: 5 | [rbp5-5 RUNNING 0:24 rbp5-4 RUNNING 0:24 rbp5-3 RUNNING 0:24 rbp5-2 RUNNING 0:24 rbp5-1 RUNNING 0:25 ]   [MONITOR 17:08:51] Tareas activas: 5 | [rbp5-5 RUNNING 0:29 rbp5-4 RUNNING 0:29 rbp5-3 RUNNING 0:29 rbp5-2 RUNNING 0:29 rbp5-1 RUNNING 0:30 ]   [MONITOR 17:08:57] Tareas activas: 5 | [rbp5-5 RUNNING 0:35 rbp5-4 RUNNING 0:35 rbp5-3 RUNNING 0:35 rbp5-2 RUNNING 0:35 rbp5-1 RUNNING 0:36 ]   [MONITOR 17:09:02] Tareas activas: 5 | [rbp5-5 RUNNING 0:40 rbp5-4 RUNNING 0:40 rbp5-3 RUNNING 0:40 rbp5-2 RUNNING 0:40 rbp5-1 RUNNING 0:41 ]   [MONITOR 17:09:07] Tareas activas: 5 | [rbp5-5 RUNNING 0:45 rbp5-4 RUNNING 0:45 rbp5-3 RUNNING 0:45 rbp5-2 RUNNING 0:45 rbp5-1 RUNNING 0:46 ]   [MONITOR 17:09:12] Tareas activas: 5 | [rbp5-5 RUNNING 0:50 rbp5-4 RUNNING 0:50 rbp5-3 RUNNING 0:50 rbp5-2 RUNNING 0:50 rbp5-1 RUNNING 0:51 ]   [MONITOR 17:09:19] Tareas activas: 5 | [rbp5-5 RUNNING 0:57 rbp5-4 RUNNING 0:57 rbp5-3 RUNNING 0:57 rbp5-2 RUNNING 0:57 rbp5-1 RUNNING 0:58 ]   [MONITOR 17:09:24] Tareas activas: 5 | [rbp5-5 RUNNING 1:02 rbp5-4 RUNNING 1:02 rbp5-3 RUNNING 1:02 rbp5-2 RUNNING 1:02 rbp5-1 RUNNING 1:03 ]   [MONITOR 17:09:30] Tareas activas: 5 | [rbp5-5 RUNNING 1:08 rbp5-4 RUNNING 1:08 rbp5-3 RUNNING 1:08 rbp5-2 RUNNING 1:08 rbp5-1 RUNNING 1:09 ]   [MONITOR 17:09:35] Tareas activas: 5 | [rbp5-5 RUNNING 1:13 rbp5-4 RUNNING 1:13 rbp5-3 RUNNING 1:13 rbp5-2 RUNNING 1:13 rbp5-1 RUNNING 1:14 ]   [MONITOR 17:09:40] Tareas activas: 5 | [rbp5-5 RUNNING 1:18 rbp5-4 RUNNING 1:18 rbp5-3 RUNNING 1:18 rbp5-2 RUNNING 1:18 rbp5-1 RUNNING 1:19 ]   [MONITOR 17:09:45] Tareas activas: 5 | [rbp5-5 RUNNING 1:23 rbp5-4 RUNNING 1:23 rbp5-3 RUNNING 1:23 rbp5-2 RUNNING 1:23 rbp5-1 RUNNING 1:24 ]   [MONITOR 17:09:50] Tareas activas: 5 | [rbp5-5 RUNNING 1:28 rbp5-4 RUNNING 1:28 rbp5-3 RUNNING 1:28 rbp5-2 RUNNING 1:28 rbp5-1 RUNNING 1:29 ]   [MONITOR 17:09:55] Tareas activas: 5 | [rbp5-5 RUNNING 1:33 rbp5-4 RUNNING 1:33 rbp5-3 RUNNING 1:33 rbp5-2 RUNNING 1:33 rbp5-1 RUNNING 1:34 ]   [MONITOR 17:10:00] Tareas activas: 5 | [rbp5-5 RUNNING 1:38 rbp5-4 RUNNING 1:38 rbp5-3 RUNNING 1:38 rbp5-2 RUNNING 1:38 rbp5-1 RUNNING 1:39 ]   [MONITOR 17:10:05] Tareas activas: 5 | [rbp5-5 RUNNING 1:43 rbp5-4 RUNNING 1:43 rbp5-3 RUNNING 1:43 rbp5-2 RUNNING 1:43 rbp5-1 RUNNING 1:44 ]   [MONITOR 17:10:10] Tareas activas: 5 | [rbp5-5 RUNNING 1:48 rbp5-4 RUNNING 1:48 rbp5-3 RUNNING 1:48 rbp5-2 RUNNING 1:48 rbp5-1 RUNNING 1:49 ]   [MONITOR 17:10:15] Tareas activas: 5 | [rbp5-5 RUNNING 1:53 rbp5-4 RUNNING 1:53 rbp5-3 RUNNING 1:53 rbp5-2 RUNNING 1:53 rbp5-1 RUNNING 1:54 ]   
+[+] Todas las tareas del Job Array 1265 han finalizado!
+----------------------------------------------------------
+[PASO 3] Fusionando predicciones de los 5 chunks...
+----------------------------------------------------------
+==================================================
+=== COMBINACION DE PREDICCIONES DE LOS 5 NODOS ===
+==================================================
+[*] Nodo/Chunk 1 (chunk_1.predictions.tsv): 91,293 reads | 156 taxones
+[*] Nodo/Chunk 2 (chunk_2.predictions.tsv): 93,394 reads | 109 taxones
+[*] Nodo/Chunk 3 (chunk_3.predictions.tsv): 93,085 reads | 77 taxones
+[*] Nodo/Chunk 4 (chunk_4.predictions.tsv): 90,484 reads | 178 taxones
+[*] Nodo/Chunk 5 (chunk_5.predictions.tsv): 91,920 reads | 134 taxones
+--------------------------------------------------
+[+] Total acumulado (5 nodos): 460,176 reads clasificados
+[+] Total de taxones unicos:   341
+[OK] Prediccion final reconstituida guardada en:
+     /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c003.predictions.tsv
+==================================================
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (JOB 1265) ===
+==========================================================
+Pipeline:           kraken2
+Muestra:            HOMD_v4_GTDB-c003
+Total de Chunks:    5
+----------------------------------------------------------------------
+Chunk   | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+----------------------------------------------------------------------
+1       | rbp5-1    | 2.416   | 2.431   | 2.424   | 28     | 0.0189    | 0.0001   
+2       | rbp5-2    | 2.369   | 2.400   | 2.384   | 28     | 0.0187    | 0.0001   
+3       | rbp5-3    | 2.318   | 2.355   | 2.336   | 23     | 0.0148    | 0.0000   
+4       | rbp5-4    | 2.436   | 2.384   | 2.410   | 24     | 0.0162    | 0.0002   
+5       | rbp5-5    | 2.332   | 2.336   | 2.334   | 10     | 0.0074    | 0.0009   
+----------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0761 Wh
+ENERGIA TOTAL NETA CLUSTER:    0.0013 Wh
+TOTAL LECTURAS PROCESADAS:     474,342
+TIEMPO PARALELO (MAX CHUNK):   28 s (0.47 min)
+EFICIENCIA BRUTA CLUSTER:      6,237,033.6 Reads/Wh
+EFICIENCIA NETA CLUSTER:       364,884,958.8 Reads/Wh
+======================================================================
+==========================================================
+Predicciones unificadas: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-c003.predictions.tsv
+Total lineas generadas:  343
+==========================================================
+>>> MUESTRA c003 FINALIZADA a las Wed Sep 23 17:10:22 -05 2026
+==========================================================
+>>> INICIANDO MUESTRA: e001 a las Wed Sep 23 17:10:27 -05 2026
+==========================================================
+==========================================================
+=== BENCHMARK MULTINODO DISTRIBUIDO (LEMMI16s + PMIC) ===
+==========================================================
+Pipeline:          kraken2 (kraken_213_lemmi16s)
+Muestra:           HOMD_v4_GTDB-e001
+Directorio datos:  /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e001
+Directorio salida: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-e001.predictions.tsv
+Fecha inicio:      Wed Sep 23 17:10:27 -05 2026
+[NODOS] Nodos 'idle' detectados en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[CONFIG] Chunks configurados dinamicamente = 5 (1 chunk por nodo idle)
+----------------------------------------------------------
+[PASO 1] Particionando queryReads en 5 chunks equilibrados...
+----------------------------------------------------------
+[*] Analizando dataset en /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e001...
+[*] Modo: Paired-End
+[*] Total de lecturas identificadas: 514,955
+[*] Distribución de lecturas en 5 chunks: [102991, 102991, 102991, 102991, 102991]
+    [+] Chunk 1: 102,991 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e001/chunk_1
+    [+] Chunk 2: 102,991 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e001/chunk_2
+    [+] Chunk 3: 102,991 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e001/chunk_3
+    [+] Chunk 4: 102,991 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e001/chunk_4
+    [+] Chunk 5: 102,991 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e001/chunk_5
+[OK] Partición completada con éxito en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e001
+----------------------------------------------------------
+[PASO 2] Enviando Slurm Job Array (1-5) a partition1...
+Nodos asignados: rbp5-1,rbp5-2,rbp5-3,rbp5-4,rbp5-5
+----------------------------------------------------------
+[+] Job Array enviado con ID: 1270
+[+] Esperando a que todos los nodos completen sus tareas...
+[MONITOR 17:10:39] Tareas activas: 1 | [ PENDING 0:00 ]   [MONITOR 17:10:44] Tareas activas: 5 | [rbp5-5 RUNNING 0:04 rbp5-4 RUNNING 0:04 rbp5-3 RUNNING 0:04 rbp5-2 RUNNING 0:04 rbp5-1 RUNNING 0:05 ]   [MONITOR 17:10:49] Tareas activas: 5 | [rbp5-5 RUNNING 0:09 rbp5-4 RUNNING 0:09 rbp5-3 RUNNING 0:09 rbp5-2 RUNNING 0:09 rbp5-1 RUNNING 0:10 ]   [MONITOR 17:10:54] Tareas activas: 5 | [rbp5-5 RUNNING 0:14 rbp5-4 RUNNING 0:14 rbp5-3 RUNNING 0:14 rbp5-2 RUNNING 0:14 rbp5-1 RUNNING 0:15 ]   [MONITOR 17:10:59] Tareas activas: 5 | [rbp5-5 RUNNING 0:19 rbp5-4 RUNNING 0:19 rbp5-3 RUNNING 0:19 rbp5-2 RUNNING 0:19 rbp5-1 RUNNING 0:20 ]   [MONITOR 17:11:07] Tareas activas: 5 | [rbp5-5 RUNNING 0:27 rbp5-4 RUNNING 0:27 rbp5-3 RUNNING 0:27 rbp5-2 RUNNING 0:27 rbp5-1 RUNNING 0:28 ]   [MONITOR 17:11:12] Tareas activas: 5 | [rbp5-5 RUNNING 0:32 rbp5-4 RUNNING 0:32 rbp5-3 RUNNING 0:32 rbp5-2 RUNNING 0:32 rbp5-1 RUNNING 0:33 ]   [MONITOR 17:11:17] Tareas activas: 5 | [rbp5-5 RUNNING 0:37 rbp5-4 RUNNING 0:37 rbp5-3 RUNNING 0:37 rbp5-2 RUNNING 0:37 rbp5-1 RUNNING 0:38 ]   [MONITOR 17:11:23] Tareas activas: 5 | [rbp5-5 RUNNING 0:43 rbp5-4 RUNNING 0:43 rbp5-3 RUNNING 0:43 rbp5-2 RUNNING 0:43 rbp5-1 RUNNING 0:44 ]   [MONITOR 17:11:29] Tareas activas: 5 | [rbp5-5 RUNNING 0:49 rbp5-4 RUNNING 0:49 rbp5-3 RUNNING 0:49 rbp5-2 RUNNING 0:49 rbp5-1 RUNNING 0:50 ]   [MONITOR 17:11:34] Tareas activas: 5 | [rbp5-5 RUNNING 0:54 rbp5-4 RUNNING 0:54 rbp5-3 RUNNING 0:54 rbp5-2 RUNNING 0:54 rbp5-1 RUNNING 0:55 ]   [MONITOR 17:11:39] Tareas activas: 5 | [rbp5-5 RUNNING 0:59 rbp5-4 RUNNING 0:59 rbp5-3 RUNNING 0:59 rbp5-2 RUNNING 0:59 rbp5-1 RUNNING 1:00 ]   [MONITOR 17:11:44] Tareas activas: 5 | [rbp5-5 RUNNING 1:04 rbp5-4 RUNNING 1:04 rbp5-3 RUNNING 1:04 rbp5-2 RUNNING 1:04 rbp5-1 RUNNING 1:05 ]   [MONITOR 17:11:49] Tareas activas: 5 | [rbp5-5 RUNNING 1:09 rbp5-4 RUNNING 1:09 rbp5-3 RUNNING 1:09 rbp5-2 RUNNING 1:09 rbp5-1 RUNNING 1:10 ]   [MONITOR 17:11:54] Tareas activas: 5 | [rbp5-5 RUNNING 1:14 rbp5-4 RUNNING 1:14 rbp5-3 RUNNING 1:14 rbp5-2 RUNNING 1:14 rbp5-1 RUNNING 1:15 ]   [MONITOR 17:12:00] Tareas activas: 5 | [rbp5-5 RUNNING 1:20 rbp5-4 RUNNING 1:20 rbp5-3 RUNNING 1:20 rbp5-2 RUNNING 1:20 rbp5-1 RUNNING 1:21 ]   [MONITOR 17:12:05] Tareas activas: 5 | [rbp5-5 RUNNING 1:25 rbp5-4 RUNNING 1:25 rbp5-3 RUNNING 1:25 rbp5-2 RUNNING 1:25 rbp5-1 RUNNING 1:26 ]   [MONITOR 17:12:10] Tareas activas: 5 | [rbp5-5 RUNNING 1:30 rbp5-4 RUNNING 1:30 rbp5-3 RUNNING 1:30 rbp5-2 RUNNING 1:30 rbp5-1 RUNNING 1:31 ]   [MONITOR 17:12:15] Tareas activas: 5 | [rbp5-5 RUNNING 1:35 rbp5-4 RUNNING 1:35 rbp5-3 RUNNING 1:35 rbp5-2 RUNNING 1:35 rbp5-1 RUNNING 1:36 ]   [MONITOR 17:12:22] Tareas activas: 5 | [rbp5-5 RUNNING 1:42 rbp5-4 RUNNING 1:42 rbp5-3 RUNNING 1:42 rbp5-2 RUNNING 1:42 rbp5-1 RUNNING 1:43 ]   [MONITOR 17:12:27] Tareas activas: 5 | [rbp5-5 RUNNING 1:47 rbp5-4 RUNNING 1:47 rbp5-3 RUNNING 1:47 rbp5-2 RUNNING 1:47 rbp5-1 RUNNING 1:48 ]   [MONITOR 17:12:32] Tareas activas: 5 | [rbp5-5 RUNNING 1:52 rbp5-4 RUNNING 1:52 rbp5-3 RUNNING 1:52 rbp5-2 RUNNING 1:52 rbp5-1 RUNNING 1:53 ]   [MONITOR 17:12:37] Tareas activas: 5 | [rbp5-5 RUNNING 1:57 rbp5-4 RUNNING 1:57 rbp5-3 RUNNING 1:57 rbp5-2 RUNNING 1:57 rbp5-1 RUNNING 1:58 ]   [MONITOR 17:12:42] Tareas activas: 5 | [rbp5-5 RUNNING 2:02 rbp5-4 RUNNING 2:02 rbp5-3 RUNNING 2:02 rbp5-2 RUNNING 2:02 rbp5-1 RUNNING 2:03 ]   [MONITOR 17:12:47] Tareas activas: 5 | [rbp5-5 RUNNING 2:07 rbp5-4 RUNNING 2:07 rbp5-3 RUNNING 2:07 rbp5-2 RUNNING 2:07 rbp5-1 RUNNING 2:08 ]   [MONITOR 17:12:52] Tareas activas: 5 | [rbp5-5 RUNNING 2:12 rbp5-4 RUNNING 2:12 rbp5-3 RUNNING 2:12 rbp5-2 RUNNING 2:12 rbp5-1 RUNNING 2:13 ]   
+[+] Todas las tareas del Job Array 1270 han finalizado!
+----------------------------------------------------------
+[PASO 3] Fusionando predicciones de los 5 chunks...
+----------------------------------------------------------
+==================================================
+=== COMBINACION DE PREDICCIONES DE LOS 5 NODOS ===
+==================================================
+[*] Nodo/Chunk 1 (chunk_1.predictions.tsv): 100,700 reads | 152 taxones
+[*] Nodo/Chunk 2 (chunk_2.predictions.tsv): 99,892 reads | 144 taxones
+[*] Nodo/Chunk 3 (chunk_3.predictions.tsv): 102,991 reads | 1 taxones
+[*] Nodo/Chunk 4 (chunk_4.predictions.tsv): 100,345 reads | 167 taxones
+[*] Nodo/Chunk 5 (chunk_5.predictions.tsv): 98,693 reads | 266 taxones
+--------------------------------------------------
+[+] Total acumulado (5 nodos): 502,621 reads clasificados
+[+] Total de taxones unicos:   411
+[OK] Prediccion final reconstituida guardada en:
+     /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-e001.predictions.tsv
+==================================================
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (JOB 1270) ===
+==========================================================
+Pipeline:           kraken2
+Muestra:            HOMD_v4_GTDB-e001
+Total de Chunks:    5
+----------------------------------------------------------------------
+Chunk   | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+----------------------------------------------------------------------
+1       | rbp5-1    | 2.434   | 2.432   | 2.433   | 8      | 0.0067    | 0.0013   
+2       | rbp5-2    | 2.447   | 2.389   | 2.418   | 14     | 0.0095    | 0.0001   
+3       | rbp5-3    | 2.339   | 2.294   | 2.316   | 9      | 0.0067    | 0.0009   
+4       | rbp5-4    | 2.410   | 2.363   | 2.386   | 14     | 0.0094    | 0.0001   
+5       | rbp5-5    | 2.390   | 2.337   | 2.364   | 10     | 0.0072    | 0.0007   
+----------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0395 Wh
+ENERGIA TOTAL NETA CLUSTER:    0.0031 Wh
+TOTAL LECTURAS PROCESADAS:     514,955
+TIEMPO PARALELO (MAX CHUNK):   14 s (0.23 min)
+EFICIENCIA BRUTA CLUSTER:      13,026,666.9 Reads/Wh
+EFICIENCIA NETA CLUSTER:       166,995,460.9 Reads/Wh
+======================================================================
+==========================================================
+Predicciones unificadas: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-e001.predictions.tsv
+Total lineas generadas:  413
+==========================================================
+>>> MUESTRA e001 FINALIZADA a las Wed Sep 23 17:12:58 -05 2026
+==========================================================
+>>> INICIANDO MUESTRA: e002 a las Wed Sep 23 17:13:03 -05 2026
+==========================================================
+==========================================================
+=== BENCHMARK MULTINODO DISTRIBUIDO (LEMMI16s + PMIC) ===
+==========================================================
+Pipeline:          kraken2 (kraken_213_lemmi16s)
+Muestra:           HOMD_v4_GTDB-e002
+Directorio datos:  /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002
+Directorio salida: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-e002.predictions.tsv
+Fecha inicio:      Wed Sep 23 17:13:03 -05 2026
+[NODOS] Nodos 'idle' detectados en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[CONFIG] Chunks configurados dinamicamente = 5 (1 chunk por nodo idle)
+----------------------------------------------------------
+[PASO 1] Particionando queryReads en 5 chunks equilibrados...
+----------------------------------------------------------
+[*] Analizando dataset en /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002...
+[*] Modo: Paired-End
+[*] Total de lecturas identificadas: 486,993
+[*] Distribución de lecturas en 5 chunks: [97399, 97399, 97399, 97398, 97398]
+    [+] Chunk 1: 97,399 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e002/chunk_1
+    [+] Chunk 2: 97,399 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e002/chunk_2
+    [+] Chunk 3: 97,399 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e002/chunk_3
+    [+] Chunk 4: 97,398 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e002/chunk_4
+    [+] Chunk 5: 97,398 pares guardados en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e002/chunk_5
+[OK] Partición completada con éxito en /shared/users/grupo1/lemmi16s/benchmark/tmp/distribuido_kraken2_HOMD_v4_GTDB-e002
+----------------------------------------------------------
+[PASO 2] Enviando Slurm Job Array (1-5) a partition1...
+Nodos asignados: rbp5-1,rbp5-2,rbp5-3,rbp5-4,rbp5-5
+----------------------------------------------------------
+[+] Job Array enviado con ID: 1275
+[+] Esperando a que todos los nodos completen sus tareas...
+[MONITOR 17:13:16] Tareas activas: 1 | [ PENDING 0:00 ]   [MONITOR 17:13:21] Tareas activas: 5 | [rbp5-5 RUNNING 0:04 rbp5-4 RUNNING 0:04 rbp5-3 RUNNING 0:04 rbp5-2 RUNNING 0:04 rbp5-1 RUNNING 0:04 ]   [MONITOR 17:13:26] Tareas activas: 5 | [rbp5-5 RUNNING 0:09 rbp5-4 RUNNING 0:09 rbp5-3 RUNNING 0:09 rbp5-2 RUNNING 0:09 rbp5-1 RUNNING 0:09 ]   [MONITOR 17:13:31] Tareas activas: 5 | [rbp5-5 RUNNING 0:14 rbp5-4 RUNNING 0:14 rbp5-3 RUNNING 0:14 rbp5-2 RUNNING 0:14 rbp5-1 RUNNING 0:14 ]   [MONITOR 17:13:36] Tareas activas: 5 | [rbp5-5 RUNNING 0:19 rbp5-4 RUNNING 0:19 rbp5-3 RUNNING 0:19 rbp5-2 RUNNING 0:19 rbp5-1 RUNNING 0:19 ]   [MONITOR 17:13:41] Tareas activas: 5 | [rbp5-5 RUNNING 0:24 rbp5-4 RUNNING 0:24 rbp5-3 RUNNING 0:24 rbp5-2 RUNNING 0:24 rbp5-1 RUNNING 0:24 ]   [MONITOR 17:13:46] Tareas activas: 5 | [rbp5-5 RUNNING 0:29 rbp5-4 RUNNING 0:29 rbp5-3 RUNNING 0:29 rbp5-2 RUNNING 0:29 rbp5-1 RUNNING 0:29 ]   [MONITOR 17:13:51] Tareas activas: 5 | [rbp5-5 RUNNING 0:34 rbp5-4 RUNNING 0:34 rbp5-3 RUNNING 0:34 rbp5-2 RUNNING 0:34 rbp5-1 RUNNING 0:34 ]   [MONITOR 17:13:56] Tareas activas: 5 | [rbp5-5 RUNNING 0:39 rbp5-4 RUNNING 0:39 rbp5-3 RUNNING 0:39 rbp5-2 RUNNING 0:39 rbp5-1 RUNNING 0:39 ]   [MONITOR 17:14:02] Tareas activas: 5 | [rbp5-5 RUNNING 0:44 rbp5-4 RUNNING 0:44 rbp5-3 RUNNING 0:44 rbp5-2 RUNNING 0:44 rbp5-1 RUNNING 0:44 ]   [MONITOR 17:14:07] Tareas activas: 5 | [rbp5-5 RUNNING 0:50 rbp5-4 RUNNING 0:50 rbp5-3 RUNNING 0:50 rbp5-2 RUNNING 0:50 rbp5-1 RUNNING 0:50 ]   [MONITOR 17:14:12] Tareas activas: 5 | [rbp5-5 RUNNING 0:55 rbp5-4 RUNNING 0:55 rbp5-3 RUNNING 0:55 rbp5-2 RUNNING 0:55 rbp5-1 RUNNING 0:55 ]   [MONITOR 17:14:17] Tareas activas: 5 | [rbp5-5 RUNNING 1:00 rbp5-4 RUNNING 1:00 rbp5-3 RUNNING 1:00 rbp5-2 RUNNING 1:00 rbp5-1 RUNNING 1:00 ]   [MONITOR 17:14:22] Tareas activas: 5 | [rbp5-5 RUNNING 1:05 rbp5-4 RUNNING 1:05 rbp5-3 RUNNING 1:05 rbp5-2 RUNNING 1:05 rbp5-1 RUNNING 1:05 ]   [MONITOR 17:14:27] Tareas activas: 5 | [rbp5-5 RUNNING 1:10 rbp5-4 RUNNING 1:10 rbp5-3 RUNNING 1:10 rbp5-2 RUNNING 1:10 rbp5-1 RUNNING 1:10 ]   [MONITOR 17:14:32] Tareas activas: 5 | [rbp5-5 RUNNING 1:15 rbp5-4 RUNNING 1:15 rbp5-3 RUNNING 1:15 rbp5-2 RUNNING 1:15 rbp5-1 RUNNING 1:15 ]   [MONITOR 17:14:37] Tareas activas: 5 | [rbp5-5 RUNNING 1:20 rbp5-4 RUNNING 1:20 rbp5-3 RUNNING 1:20 rbp5-2 RUNNING 1:20 rbp5-1 RUNNING 1:20 ]   [MONITOR 17:14:42] Tareas activas: 5 | [rbp5-5 RUNNING 1:25 rbp5-4 RUNNING 1:25 rbp5-3 RUNNING 1:25 rbp5-2 RUNNING 1:25 rbp5-1 RUNNING 1:25 ]   [MONITOR 17:14:47] Tareas activas: 5 | [rbp5-5 RUNNING 1:30 rbp5-4 RUNNING 1:30 rbp5-3 RUNNING 1:30 rbp5-2 RUNNING 1:30 rbp5-1 RUNNING 1:30 ]   [MONITOR 17:14:52] Tareas activas: 5 | [rbp5-5 RUNNING 1:35 rbp5-4 RUNNING 1:35 rbp5-3 RUNNING 1:35 rbp5-2 RUNNING 1:35 rbp5-1 RUNNING 1:35 ]   [MONITOR 17:14:57] Tareas activas: 5 | [rbp5-5 RUNNING 1:40 rbp5-4 RUNNING 1:40 rbp5-3 RUNNING 1:40 rbp5-2 RUNNING 1:40 rbp5-1 RUNNING 1:40 ]   [MONITOR 17:15:02] Tareas activas: 5 | [rbp5-5 RUNNING 1:45 rbp5-4 RUNNING 1:45 rbp5-3 RUNNING 1:45 rbp5-2 RUNNING 1:45 rbp5-1 RUNNING 1:45 ]   [MONITOR 17:15:07] Tareas activas: 5 | [rbp5-5 RUNNING 1:50 rbp5-4 RUNNING 1:50 rbp5-3 RUNNING 1:50 rbp5-2 RUNNING 1:50 rbp5-1 RUNNING 1:50 ]   [MONITOR 17:15:13] Tareas activas: 5 | [rbp5-5 RUNNING 1:56 rbp5-4 RUNNING 1:56 rbp5-3 RUNNING 1:56 rbp5-2 RUNNING 1:56 rbp5-1 RUNNING 1:56 ]   
+[+] Todas las tareas del Job Array 1275 han finalizado!
+----------------------------------------------------------
+[PASO 3] Fusionando predicciones de los 5 chunks...
+----------------------------------------------------------
+==================================================
+=== COMBINACION DE PREDICCIONES DE LOS 5 NODOS ===
+==================================================
+[*] Nodo/Chunk 1 (chunk_1.predictions.tsv): 93,766 reads | 187 taxones
+[*] Nodo/Chunk 2 (chunk_2.predictions.tsv): 94,698 reads | 207 taxones
+[*] Nodo/Chunk 3 (chunk_3.predictions.tsv): 93,639 reads | 170 taxones
+[*] Nodo/Chunk 4 (chunk_4.predictions.tsv): 94,041 reads | 161 taxones
+[*] Nodo/Chunk 5 (chunk_5.predictions.tsv): 92,237 reads | 125 taxones
+--------------------------------------------------
+[+] Total acumulado (5 nodos): 468,381 reads clasificados
+[+] Total de taxones unicos:   432
+[OK] Prediccion final reconstituida guardada en:
+     /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-e002.predictions.tsv
+==================================================
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (JOB 1275) ===
+==========================================================
+Pipeline:           kraken2
+Muestra:            HOMD_v4_GTDB-e002
+Total de Chunks:    5
+----------------------------------------------------------------------
+Chunk   | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+----------------------------------------------------------------------
+1       | rbp5-1    | 2.417   | 2.494   | 2.455   | 9      | 0.0076    | 0.0015   
+2       | rbp5-2    | 2.416   | 2.393   | 2.405   | 28     | 0.0186    | 0.0000   
+3       | rbp5-3    | 2.326   | 2.295   | 2.310   | 6      | 0.0039    | 0.0000   
+4       | rbp5-4    | 2.429   | 2.411   | 2.420   | 28     | 0.0187    | 0.0000   
+5       | rbp5-5    | 2.384   | 2.353   | 2.369   | 28     | 0.0183    | 0.0000   
+----------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0672 Wh
+ENERGIA TOTAL NETA CLUSTER:    0.0015 Wh
+TOTAL LECTURAS PROCESADAS:     486,993
+TIEMPO PARALELO (MAX CHUNK):   28 s (0.47 min)
+EFICIENCIA BRUTA CLUSTER:      7,251,445.8 Reads/Wh
+EFICIENCIA NETA CLUSTER:       323,633,521.8 Reads/Wh
+======================================================================
+==========================================================
+Predicciones unificadas: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_distribuido.HOMD_v4_GTDB-e002.predictions.tsv
+Total lineas generadas:  434
+==========================================================
+>>> MUESTRA e002 FINALIZADA a las Wed Sep 23 17:15:19 -05 2026
+=== BENCHMARK MULTINODO KRAKEN 2 COMPLETADO (5/5 MUESTRAS) ===
+Wed Sep 23 17:15:24 -05 2026

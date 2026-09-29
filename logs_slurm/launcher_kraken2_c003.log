@@ -1,0 +1,31 @@
+==========================================================
+=== KRAKEN 2 + BRACKEN MULTINODO (1 muestra por nodo) ===
+==========================================================
+[NODOS] Idle en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[MUESTRAS] c003 (1 muestras)
+----------------------------------------------------------
+[LANZANDO] Asignando 1 nodo exclusivo por muestra...
+----------------------------------------------------------
+[+] Muestra c003 -> Job 1445 asignado a nodo rbp5-1
+[+] Esperando finalizacion concurrente de: 1445
+[MONITOR 15:23:29] Tareas activas: 1   [MONITOR 15:23:34] Tareas activas: 1   [MONITOR 15:23:39] Tareas activas: 1   [MONITOR 15:23:44] Tareas activas: 1   [MONITOR 15:23:50] Tareas activas: 1   [MONITOR 15:23:55] Tareas activas: 1   [MONITOR 15:24:00] Tareas activas: 1   [MONITOR 15:24:05] Tareas activas: 1   [MONITOR 15:24:10] Tareas activas: 1   [MONITOR 15:24:15] Tareas activas: 1   [MONITOR 15:24:20] Tareas activas: 1   [MONITOR 15:24:25] Tareas activas: 1   [MONITOR 15:24:30] Tareas activas: 1   [MONITOR 15:24:35] Tareas activas: 1   [MONITOR 15:24:40] Tareas activas: 1   [MONITOR 15:24:45] Tareas activas: 1   [MONITOR 15:24:50] Tareas activas: 1   [MONITOR 15:24:55] Tareas activas: 1   
+[+] Todas las muestras de Kraken 2 finalizaron.
+==========================================================
+=== RESUMEN POR ARCHIVO DE PREDICCIONES ===
+==========================================================
+Muestra c003 (job 1445): 381 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c003.predictions.tsv
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (KRAKEN 2) ===
+==========================================================
+-------------------------------------------------------------------------------------
+Muestra    | Job      | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+-------------------------------------------------------------------------------------
+c003       | 1445     | rbp5-1    | 2.374   | 2.414   | 2.394   | 15     | 0.0152    | 0.0052   
+-------------------------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0152 Wh (54.8 J)
+ENERGIA TOTAL NETA CLUSTER:    0.0052 Wh (18.9 J)
+TOTAL LECTURAS PROCESADAS:     474,342
+TIEMPO PARALELO (MAX MUESTRA): 15 s (0.25 min)
+EFICIENCIA BRUTA CLUSTER:      31,164,565.5 Reads/Wh
+EFICIENCIA NETA CLUSTER:       90,421,217.8 Reads/Wh
+=====================================================================================

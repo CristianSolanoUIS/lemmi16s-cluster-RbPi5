@@ -1,0 +1,78 @@
+==========================================================
+=== NODO rbp5-4 - Kraken 2 muestra completa e001 (job 1486) ===
+==========================================================
+Hora inicio: Thu Sep 24 16:06:16 -05 2026
+[1/3] [rbp5-4] Baseline PRE (30s)...
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          baseline_pre_kraken2_e001_node_rbp5-4_job1486
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/kraken2
+Archivo de salida: energia_baseline_pre_kraken2_e001_node_rbp5-4_job1486_20260924_160616.csv
+Duracion fija:     30.0 s
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 16:06:17.846] [PMIC] Power:  2.31 W | Energia: 0.0006 Wh | Muestras: 1[2026-09-24 16:06:18.910] [PMIC] Power:  2.50 W | Energia: 0.0014 Wh | Muestras: 2[2026-09-24 16:06:19.965] [PMIC] Power:  2.45 W | Energia: 0.0021 Wh | Muestras: 3[2026-09-24 16:06:21.021] [PMIC] Power:  2.44 W | Energia: 0.0028 Wh | Muestras: 4[2026-09-24 16:06:22.075] [PMIC] Power:  2.46 W | Energia: 0.0035 Wh | Muestras: 5[2026-09-24 16:06:23.134] [PMIC] Power:  2.81 W | Energia: 0.0044 Wh | Muestras: 6[2026-09-24 16:06:24.191] [PMIC] Power:  2.58 W | Energia: 0.0051 Wh | Muestras: 7[2026-09-24 16:06:25.248] [PMIC] Power:  2.22 W | Energia: 0.0058 Wh | Muestras: 8[2026-09-24 16:06:26.303] [PMIC] Power:  2.23 W | Energia: 0.0064 Wh | Muestras: 9[2026-09-24 16:06:27.339] [PMIC] Power:  2.29 W | Energia: 0.0071 Wh | Muestras: 10[2026-09-24 16:06:28.392] [PMIC] Power:  2.28 W | Energia: 0.0077 Wh | Muestras: 11[2026-09-24 16:06:29.435] [PMIC] Power:  2.28 W | Energia: 0.0084 Wh | Muestras: 12[2026-09-24 16:06:30.480] [PMIC] Power:  2.45 W | Energia: 0.0091 Wh | Muestras: 13[2026-09-24 16:06:31.523] [PMIC] Power:  2.49 W | Energia: 0.0098 Wh | Muestras: 14[2026-09-24 16:06:32.559] [PMIC] Power:  2.66 W | Energia: 0.0106 Wh | Muestras: 15[2026-09-24 16:06:33.603] [PMIC] Power:  2.40 W | Energia: 0.0113 Wh | Muestras: 16[2026-09-24 16:06:34.645] [PMIC] Power:  2.53 W | Energia: 0.0120 Wh | Muestras: 17[2026-09-24 16:06:35.689] [PMIC] Power:  2.58 W | Energia: 0.0128 Wh | Muestras: 18[2026-09-24 16:06:36.734] [PMIC] Power:  2.45 W | Energia: 0.0135 Wh | Muestras: 19[2026-09-24 16:06:37.769] [PMIC] Power:  2.35 W | Energia: 0.0142 Wh | Muestras: 20[2026-09-24 16:06:38.813] [PMIC] Power:  2.21 W | Energia: 0.0148 Wh | Muestras: 21[2026-09-24 16:06:39.858] [PMIC] Power:  2.21 W | Energia: 0.0155 Wh | Muestras: 22[2026-09-24 16:06:40.902] [PMIC] Power:  2.29 W | Energia: 0.0161 Wh | Muestras: 23[2026-09-24 16:06:41.946] [PMIC] Power:  2.29 W | Energia: 0.0168 Wh | Muestras: 24[2026-09-24 16:06:42.981] [PMIC] Power:  2.56 W | Energia: 0.0175 Wh | Muestras: 25[2026-09-24 16:06:44.025] [PMIC] Power:  2.45 W | Energia: 0.0182 Wh | Muestras: 26[2026-09-24 16:06:45.072] [PMIC] Power:  2.49 W | Energia: 0.0190 Wh | Muestras: 27[2026-09-24 16:06:46.114] [PMIC] Power:  2.97 W | Energia: 0.0198 Wh | Muestras: 28[2026-09-24 16:06:47.158] [PMIC] Power:  2.48 W | Energia: 0.0205 Wh | Muestras: 29
+
+=== Resumen de medicion (baseline_pre_kraken2_e001_node_rbp5-4_job1486) ===
+Inicio:           2026-09-24 16:06:16.798034
+Fin:              2026-09-24 16:06:47.163078
+Duracion:         30.4 s (0.51 min)
+Muestras tomadas: 29
+Energia total:    0.0205 Wh
+Potencia promedio: 2.43 W
+CSV guardado en:  energia_baseline_pre_kraken2_e001_node_rbp5-4_job1486_20260924_160616.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+[2/3] [rbp5-4] Telemetria activa...
+[PIPELINE] [rbp5-4] Ejecutando Kraken2+Bracken sobre HOMD_v4_GTDB-e001 completa (4 cores)...
+ >> Checking for Valid Options...
+ >> Running Bracken 
+      >> python src/est_abundance.py -i query.report -o query.bracken -k /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database/database150mers.kmer_distrib -l G -t 10
+PROGRAM START TIME: 09-24-2026 21:07:23
+BRACKEN SUMMARY (Kraken report: query.report)
+    >>> Threshold: 10 
+    >>> Number of genuses in sample: 963 
+	  >> Number of genuses with reads > threshold: 447 
+	  >> Number of genuses with reads < threshold: 516 
+    >>> Total reads in sample: 514955
+	  >> Total reads kept at genuses level (reads > threshold): 307600
+	  >> Total reads discarded (genuses reads < threshold): 1540
+	  >> Reads distributed: 200116
+	  >> Reads not distributed (eg. no genuses above threshold): 5699
+	  >> Unclassified reads: 0
+BRACKEN OUTPUT PRODUCED: query.bracken
+PROGRAM END TIME: 09-24-2026 21:07:24
+  Bracken complete.
+[TELEMETRIA] [rbp5-4] Deteniendo (PID 4187)...
+[3/3] [rbp5-4] Baseline POST (30s)...
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          baseline_post_kraken2_e001_node_rbp5-4_job1486
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/kraken2
+Archivo de salida: energia_baseline_post_kraken2_e001_node_rbp5-4_job1486_20260924_160731.csv
+Duracion fija:     30.0 s
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 16:07:35.489] [PMIC] Power:  2.43 W | Energia: 0.0013 Wh | Muestras: 1[2026-09-24 16:07:36.543] [PMIC] Power:  2.25 W | Energia: 0.0029 Wh | Muestras: 2[2026-09-24 16:07:37.594] [PMIC] Power:  2.30 W | Energia: 0.0036 Wh | Muestras: 3[2026-09-24 16:07:38.644] [PMIC] Power:  2.28 W | Energia: 0.0042 Wh | Muestras: 4[2026-09-24 16:07:39.689] [PMIC] Power:  2.19 W | Energia: 0.0049 Wh | Muestras: 5[2026-09-24 16:07:40.741] [PMIC] Power:  2.27 W | Energia: 0.0055 Wh | Muestras: 6[2026-09-24 16:07:41.788] [PMIC] Power:  2.40 W | Energia: 0.0062 Wh | Muestras: 7[2026-09-24 16:07:42.832] [PMIC] Power:  2.48 W | Energia: 0.0070 Wh | Muestras: 8[2026-09-24 16:07:43.875] [PMIC] Power:  2.47 W | Energia: 0.0077 Wh | Muestras: 9[2026-09-24 16:07:44.918] [PMIC] Power:  2.52 W | Energia: 0.0084 Wh | Muestras: 10[2026-09-24 16:07:45.962] [PMIC] Power:  2.53 W | Energia: 0.0091 Wh | Muestras: 11[2026-09-24 16:07:47.005] [PMIC] Power:  2.48 W | Energia: 0.0099 Wh | Muestras: 12[2026-09-24 16:07:48.049] [PMIC] Power:  2.47 W | Energia: 0.0106 Wh | Muestras: 13[2026-09-24 16:07:49.093] [PMIC] Power:  2.21 W | Energia: 0.0112 Wh | Muestras: 14[2026-09-24 16:07:50.138] [PMIC] Power:  2.33 W | Energia: 0.0119 Wh | Muestras: 15[2026-09-24 16:07:51.184] [PMIC] Power:  2.23 W | Energia: 0.0125 Wh | Muestras: 16[2026-09-24 16:07:52.230] [PMIC] Power:  2.24 W | Energia: 0.0132 Wh | Muestras: 17[2026-09-24 16:07:53.276] [PMIC] Power:  2.50 W | Energia: 0.0139 Wh | Muestras: 18[2026-09-24 16:07:54.315] [PMIC] Power:  2.50 W | Energia: 0.0146 Wh | Muestras: 19[2026-09-24 16:07:55.359] [PMIC] Power:  2.79 W | Energia: 0.0154 Wh | Muestras: 20[2026-09-24 16:07:56.405] [PMIC] Power:  2.48 W | Energia: 0.0162 Wh | Muestras: 21[2026-09-24 16:07:57.449] [PMIC] Power:  2.38 W | Energia: 0.0169 Wh | Muestras: 22[2026-09-24 16:07:58.492] [PMIC] Power:  2.42 W | Energia: 0.0176 Wh | Muestras: 23[2026-09-24 16:07:59.537] [PMIC] Power:  2.46 W | Energia: 0.0183 Wh | Muestras: 24[2026-09-24 16:08:00.584] [PMIC] Power:  2.27 W | Energia: 0.0189 Wh | Muestras: 25[2026-09-24 16:08:01.631] [PMIC] Power:  2.22 W | Energia: 0.0196 Wh | Muestras: 26[2026-09-24 16:08:02.782] [PMIC] Power:  2.30 W | Energia: 0.0202 Wh | Muestras: 27
+
+=== Resumen de medicion (baseline_post_kraken2_e001_node_rbp5-4_job1486) ===
+Inicio:           2026-09-24 16:07:31.999199
+Fin:              2026-09-24 16:08:02.789028
+Duracion:         30.8 s (0.51 min)
+Muestras tomadas: 27
+Energia total:    0.0202 Wh
+Potencia promedio: 2.37 W
+CSV guardado en:  energia_baseline_post_kraken2_e001_node_rbp5-4_job1486_20260924_160731.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+=== NODO rbp5-4 COMPLETO muestra e001 en 35s (exit 0) ===

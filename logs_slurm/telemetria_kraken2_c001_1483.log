@@ -1,0 +1,24 @@
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          Kraken2_multinodo_c001_node_rbp5-1_job1483
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/kraken2
+Archivo de salida: energia_Kraken2_multinodo_c001_node_rbp5-1_job1483_20260924_160649.csv
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-24 16:06:50.504] [PMIC] Power:  2.48 W | Energia: 0.0007 Wh | Muestras: 1[2026-09-24 16:06:51.627] [PMIC] Power:  4.80 W | Energia: 0.0021 Wh | Muestras: 2[2026-09-24 16:06:52.803] [PMIC] Power:  3.11 W | Energia: 0.0030 Wh | Muestras: 3[2026-09-24 16:06:55.458] [PMIC] Power:  6.70 W | Energia: 0.0052 Wh | Muestras: 4[2026-09-24 16:06:58.542] [PMIC] Power:  3.18 W | Energia: 0.0076 Wh | Muestras: 5[2026-09-24 16:07:00.253] [PMIC] Power:  2.52 W | Energia: 0.0097 Wh | Muestras: 6[2026-09-24 16:07:01.625] [PMIC] Power:  2.57 W | Energia: 0.0110 Wh | Muestras: 7[2026-09-24 16:07:11.603] [PMIC] Power:  2.79 W | Energia: 0.0120 Wh | Muestras: 8[2026-09-24 16:07:16.069] [PMIC] Power:  2.21 W | Energia: 0.0182 Wh | Muestras: 9[2026-09-24 16:07:21.889] [PMIC] Power:  2.82 W | Energia: 0.0217 Wh | Muestras: 10[2026-09-24 16:07:23.857] [PMIC] Power:  2.70 W | Energia: 0.0260 Wh | Muestras: 11[2026-09-24 16:07:24.906] [PMIC] Power:  3.42 W | Energia: 0.0279 Wh | Muestras: 12[2026-09-24 16:07:25.990] [PMIC] Power:  2.22 W | Energia: 0.0285 Wh | Muestras: 13[2026-09-24 16:07:27.069] [PMIC] Power:  2.22 W | Energia: 0.0292 Wh | Muestras: 14
+
+=== Resumen de medicion (Kraken2_multinodo_c001_node_rbp5-1_job1483) ===
+Inicio:           2026-09-24 16:06:49.464738
+Fin:              2026-09-24 16:07:27.575456
+Duracion:         38.1 s (0.64 min)
+Muestras tomadas: 14
+Energia total:    0.0292 Wh
+Potencia promedio: 2.76 W
+CSV guardado en:  energia_Kraken2_multinodo_c001_node_rbp5-1_job1483_20260924_160649.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+

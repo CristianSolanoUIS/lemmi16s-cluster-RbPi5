@@ -1,0 +1,33 @@
++ set -e
++ sample_folder=alfa_v1v2_SILVA-c001
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c001
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/qiime2_alfa_v1v2_SILVA/tmp_alfa_v1v2_SILVA
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2/qiime2_multinodo.alfa_v1v2_SILVA-c001.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters[type]='SampleData[PairedEndSequencesWithQuality]'
++ parameters[format]=PairedEndFastqManifestPhred33
++ parameters[trim_length]=120
++ parameters["tax_level"]=7
++ parameters["q_score"]=20
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_alfa_v1v2_SILVA-c001
++ cd tmp_alfa_v1v2_SILVA-c001
++ '[' -z x ']'
++ echo '=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 2 NUCLEOS ==='
++ echo sample-id,absolute-filepath,direction
++ echo -e alfa-v1v2-SILVA-c001,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c001/queryReads1.fq,forward
++ echo -e alfa-v1v2-SILVA-c001,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c001/queryReads2.fq,reverse
++ echo '[PASO 1/5] Importando secuencias demux...'
++ qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path manifest.tsv --output-path demux.qza --input-format PairedEndFastqManifestPhred33
+slurmstepd-rbp5-1: error: *** JOB 1474 ON rbp5-1 CANCELLED AT 2026-09-24T15:57:50 ***
+Terminated

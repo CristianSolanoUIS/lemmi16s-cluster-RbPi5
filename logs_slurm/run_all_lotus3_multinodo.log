@@ -1,0 +1,42 @@
+=== INICIANDO BENCHMARK MULTINODO LOTUS3 (3 MUESTRAS: c001, c002, e001) ===
+Wed Sep 23 19:04:46 -05 2026
+==========================================================
+=== LOTUS3 MULTINODO (muestra completa por nodo, PMIC) ===
+==========================================================
+[NODOS] Idle en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[MUESTRAS] c001 c002 e001 (3 muestras)
+----------------------------------------------------------
+[LANZANDO] Asignando 1 nodo exclusivo por muestra...
+----------------------------------------------------------
+[+] Muestra c001 -> Job 1284 asignado a nodo rbp5-1
+[+] Muestra c002 -> Job 1285 asignado a nodo rbp5-2
+[+] Muestra e001 -> Job 1286 asignado a nodo rbp5-3
+[+] Esperando finalizacion concurrente de: 1284,1285,1286
+[MONITOR 19:04:46] Tareas activas: 3   [MONITOR 19:04:51] Tareas activas: 3   [MONITOR 19:04:57] Tareas activas: 3   [MONITOR 19:05:02] Tareas activas: 3   [MONITOR 19:05:07] Tareas activas: 3   [MONITOR 19:05:12] Tareas activas: 3   [MONITOR 19:05:17] Tareas activas: 3   [MONITOR 19:05:22] Tareas activas: 3   [MONITOR 19:05:27] Tareas activas: 3   [MONITOR 19:05:32] Tareas activas: 3   [MONITOR 19:05:37] Tareas activas: 3   [MONITOR 19:05:42] Tareas activas: 3   [MONITOR 19:05:47] Tareas activas: 3   [MONITOR 19:05:52] Tareas activas: 3   [MONITOR 19:05:57] Tareas activas: 3   [MONITOR 19:06:02] Tareas activas: 3   [MONITOR 19:06:07] Tareas activas: 3   [MONITOR 19:06:12] Tareas activas: 3   [MONITOR 19:06:17] Tareas activas: 3   [MONITOR 19:06:22] Tareas activas: 3   [MONITOR 19:06:27] Tareas activas: 3   [MONITOR 19:06:32] Tareas activas: 3   [MONITOR 19:06:37] Tareas activas: 2   [MONITOR 19:06:43] Tareas activas: 2   [MONITOR 19:06:48] Tareas activas: 2   [MONITOR 19:06:53] Tareas activas: 2   [MONITOR 19:06:58] Tareas activas: 2   [MONITOR 19:07:03] Tareas activas: 2   [MONITOR 19:07:08] Tareas activas: 2   [MONITOR 19:07:13] Tareas activas: 2   [MONITOR 19:07:18] Tareas activas: 2   [MONITOR 19:07:23] Tareas activas: 2   [MONITOR 19:07:28] Tareas activas: 2   [MONITOR 19:07:33] Tareas activas: 2   [MONITOR 19:07:38] Tareas activas: 2   
+[+] Todas las muestras de LotuS3 finalizaron.
+==========================================================
+=== RESUMEN POR ARCHIVO DE PREDICCIONES ===
+==========================================================
+Muestra c001 (job 1284): 49 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-c001.predictions.tsv
+Muestra c002 (job 1285): 44 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-c002.predictions.tsv
+Muestra e001 (job 1286): 42 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus3/lotus3_multinodo.HM_Contaminated_Soil-e001.predictions.tsv
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (LotuS3) ===
+==========================================================
+---------------------------------------------------------------------------
+Muestra    | Job      | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+---------------------------------------------------------------------------
+c001       | 1284     | rbp5-1    | 2.366   | 2.431   | 2.399   | 94     | 0.0731    | 0.0105   
+c002       | 1285     | rbp5-2    | 2.419   | 2.453   | 2.436   | 90     | 0.0691    | 0.0082   
+e001       | 1286     | rbp5-3    | 2.339   | 2.299   | 2.319   | 38     | 0.0300    | 0.0055   
+---------------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.1722 Wh (619.9 J)
+ENERGIA TOTAL NETA CLUSTER:    0.0242 Wh (87.1 J)
+TOTAL LECTURAS PROCESADAS:     29,783
+TIEMPO PARALELO (MAX MUESTRA): 94 s (1.57 min)
+EFICIENCIA BRUTA CLUSTER:      172,952.0 Reads/Wh
+EFICIENCIA NETA CLUSTER:       1,230,958.1 Reads/Wh
+===========================================================================
+
+=== BENCHMARK MULTINODO LOTUS3 COMPLETADO CON EXITO ===
+Wed Sep 23 19:07:43 -05 2026

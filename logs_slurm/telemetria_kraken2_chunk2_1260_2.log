@@ -1,0 +1,24 @@
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          kraken2_Cluster_chunk2_node_rbp5-2_job1260_task2
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/kraken2
+Archivo de salida: energia_kraken2_Cluster_chunk2_node_rbp5-2_job1260_task2_20260923_170709.csv
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-23 17:07:10.604] [PMIC] Power:  2.50 W | Energia: 0.0007 Wh | Muestras: 1[2026-09-23 17:07:11.724] [PMIC] Power:  5.31 W | Energia: 0.0022 Wh | Muestras: 2[2026-09-23 17:07:12.787] [PMIC] Power:  3.49 W | Energia: 0.0033 Wh | Muestras: 3[2026-09-23 17:07:16.397] [PMIC] Power:  2.21 W | Energia: 0.0040 Wh | Muestras: 4[2026-09-23 17:07:17.540] [PMIC] Power:  2.23 W | Energia: 0.0062 Wh | Muestras: 5[2026-09-23 17:07:18.586] [PMIC] Power:  2.39 W | Energia: 0.0070 Wh | Muestras: 6[2026-09-23 17:07:20.894] [PMIC] Power:  3.85 W | Energia: 0.0081 Wh | Muestras: 7[2026-09-23 17:07:24.975] [PMIC] Power:  2.63 W | Energia: 0.0098 Wh | Muestras: 8[2026-09-23 17:07:26.029] [PMIC] Power:  2.57 W | Energia: 0.0127 Wh | Muestras: 9
+
+=== Resumen de medicion (kraken2_Cluster_chunk2_node_rbp5-2_job1260_task2) ===
+Inicio:           2026-09-23 17:07:09.562510
+Fin:              2026-09-23 17:07:27.034457
+Duracion:         17.5 s (0.29 min)
+Muestras tomadas: 9
+Energia total:    0.0127 Wh
+Potencia promedio: 2.61 W
+CSV guardado en:  energia_kraken2_Cluster_chunk2_node_rbp5-2_job1260_task2_20260923_170709.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
