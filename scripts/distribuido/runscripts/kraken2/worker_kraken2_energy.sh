@@ -14,9 +14,12 @@ echo "Hora inicio: $(date)"
 TAG_PRE="baseline_pre_kraken2_${SAMPLE}_node_${NODE}_job${SLURM_JOB_ID}"
 TAG_RUN="Kraken2_multinodo_${SAMPLE}_node_${NODE}_job${SLURM_JOB_ID}"
 
-echo "[1/2] [${NODE}] Baseline PRE (30s)..."
-sg video -c "python3 \"${ENERGY_SCRIPT}\" -e \"$TAG_PRE\" -i 1.0 -d 30 -o \"${MEDIR_DIR}\""
-sleep 2
+echo "[ESTABILIZACION] [${NODE}] Esperando 60s de reposo antes del baseline..."
+sleep 60
+
+echo "[1/2] [${NODE}] Baseline PRE (300s / 5 minutos)..."
+sg video -c "python3 \"${ENERGY_SCRIPT}\" -e \"$TAG_PRE\" -i 1.0 -d 300 -o \"${MEDIR_DIR}\""
+sleep 3
 
 echo "[2/2] [${NODE}] Telemetria activa en carga..."
 sg video -c "python3 \"${ENERGY_SCRIPT}\" -e \"$TAG_RUN\" -i 1.0 -o \"${MEDIR_DIR}\"" \
