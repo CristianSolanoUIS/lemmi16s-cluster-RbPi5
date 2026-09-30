@@ -2,13 +2,13 @@
 
 > **Proyecto de Grado / Tesis de Ingeniería de Sistemas e Informática**  
 > **Universidad Industrial de Santander (UIS)**  
-> 👥 **Autores:** Cristian Alberto Solano Torres & Zamir Francisco Granados Peñaloza  
-> 📅 **Fecha:** Septiembre de 2026  
-> 🔬 **Título:** Implementación y evaluación de pipelines bioinformáticos para análisis de amplicones 16S en un clúster de bajo consumo energético basado en Raspberry Pi 5 frente a arquitectura x86_64.
+> **Autores:** Cristian Alberto Solano Torres & Zamir Francisco Granados Peñaloza  
+> **Fecha:** Septiembre de 2026  
+> **Título:** Implementación y evaluación de pipelines bioinformáticos para análisis de amplicones 16S en un clúster de bajo consumo energético basado en Raspberry Pi 5 frente a arquitectura x86_64.
 
 ---
 
-## 📌 Descripción General
+## Descripción General
 
 Este repositorio contiene todos los recursos desarrollados para la ejecución, orquestación y medición energética de pipelines metagenómicos de 16S rRNA en un clúster de placas monoplaca (*Single-Board Computers*, SBC) de arquitectura **ARM64 (Raspberry Pi 5)**:
 
@@ -21,7 +21,7 @@ Este repositorio contiene todos los recursos desarrollados para la ejecución, o
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 lemmi16s-cluster-backup/
