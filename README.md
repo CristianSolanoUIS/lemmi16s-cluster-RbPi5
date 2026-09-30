@@ -40,11 +40,6 @@ lemmi16s-cluster-backup/
 │   ├── kraken2/                        # sbatch_multinodo_energy.sh, worker_kraken2_energy.sh, split/merge
 │   ├── lotus3/                         # sbatch_multinodo_energy.sh, worker_lotus3_energy.sh, run_all
 │   └── qiime2/                         # sbatch_multinodo_energy.sh, worker_qiime2_energy.sh, run_all
-├── scripts_cluster_5nodos/             # Scripts auxiliares de particionado y pruebas locales
-│   ├── sbatch_5nodos_pipeline.sh       # Lanzador por lotes para 5 nodos
-│   ├── split_query_reads_5.py          # Particionador equitativo de FASTQ en 5 fragmentos
-│   ├── merge_predictions_5.py          # Reensamblador de predicciones TSV
-│   └── run_5chunks_native.sh           # Ejecución nativa secuencial de 5 chunks
 ├── benchmark/analysis_outputs/         # 13 Predicciones oficiales obtenidas en el clúster
 │   ├── kraken2/                        # 5 muestras HOMD_v4_GTDB (c001 a e002)
 │   ├── lotus3/                         # 3 muestras HM_Contaminated_Soil (c001, c002, e001)
@@ -54,17 +49,14 @@ lemmi16s-cluster-backup/
 │   ├── reposo_5min/                    # Mediciones de consumo en reposo (stand-by) de los 5 nodos
 │   ├── kraken2/                        # Telemetría baseline 5m + corrida activa (5 muestras)
 │   ├── lotus3/                         # Telemetría baseline 5m + corrida activa (3 muestras)
-│   └── qiime2/                         # Telemetría baseline 5m + corrida activa (5 muestras)
-├── mediciones_historicas/              # Registros CSV históricos de fases preliminares
+│   ├── qiime2/                         # Telemetría baseline 5m + corrida activa (5 muestras)
+│   └── Resumenes_MEDICION_Rapl.txt     # Registros de consumo RAPL de la estación x86 (Laptop ASUS TUF)
 ├── logs_slurm/                         # Salidas completas (stdout / stderr) de las corridas Slurm
 ├── build/                              # Binarios y código fuente adaptado para ARM64
 │   ├── LCA/                            # Herramienta Lowest Common Ancestor compilada en AArch64
 │   └── usearch12/                      # Binario nativo usearch12 para Linux ARM64
-├── local/                              # Bibliotecas de compatibilidad para Squashfuse
-├── Pi-Monitor/                         # Servicio web ligero Flask para monitoreo en tiempo real
 ├── lemmi16s_env_environment.yml        # Entorno Conda para LEMMI16s (Python 3.10, Snakemake)
 ├── qiime2_arm64_environment.yml        # Entorno Conda para QIIME 2 Amplicon en ARM64
-├── Resumenes_MEDICION_Rapl.txt         # Registros de consumo RAPL de la estación x86 (Laptop ASUS TUF)
 └── README.md                           # Este documento
 ```
 
