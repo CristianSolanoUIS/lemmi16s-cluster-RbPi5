@@ -110,9 +110,9 @@ Todas las predicciones taxonómicas están preservadas en `benchmark/analysis_ou
 
 | Pipeline | Versión de Software | Dataset Evaluado | Muestras Procesadas | Lecturas Totales | Formato Salida | Estado |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Kraken 2 + Bracken** | Kraken 2 v2.1.3 + Bracken v3.0.1 | `HOMD_v4_GTDB` | `c001`, `c002`, `c003`, `e001`, `e002` (5 muestras) | 2,453,431 | `.predictions.tsv` | ✅ Completado |
-| **LotuS3** | LotuS3 v3.03 (UDB pre-indexada) | `HM_Contaminated_Soil` | `c001`, `c002`, `e001` (3 muestras) | 29,783 | `.predictions.tsv` | ✅ Completado |
-| **QIIME 2** | QIIME 2 Amplicon ARM64 | `alfa_v1v2_SILVA` | `c001`, `c002`, `c003`, `e001`, `e002` (5 muestras) | 2,690,077 | `.predictions.tsv` | ✅ Completado |
+| **Kraken 2 + Bracken** | Kraken 2 v2.1.3 + Bracken v3.0.1 | `HOMD_v4_GTDB` | `c001`, `c002`, `c003`, `e001`, `e002` (5 muestras) | 2,453,431 | `.predictions.tsv` | Completado |
+| **LotuS3** | LotuS3 v3.03 (UDB pre-indexada) | `HM_Contaminated_Soil` | `c001`, `c002`, `e001` (3 muestras) | 29,783 | `.predictions.tsv` | Completado |
+| **QIIME 2** | QIIME 2 Amplicon ARM64 | `alfa_v1v2_SILVA` | `c001`, `c002`, `c003`, `e001`, `e002` (5 muestras) | 2,690,077 | `.predictions.tsv` | Completado |
 
 ---
 
@@ -185,6 +185,6 @@ sbatch scripts/distribuido/runscripts/qiime2/sbatch_multinodo_energy.sh
   - [Guía 03: Pipeline QIIME 2 Amplicon](proyecto_Guia/03_guia_pipeline_qiime2.md)
   - [Guía 04: Clúster Slurm HPC, Red y Telemetría PMIC](proyecto_Guia/04_guia_cluster_slurm_hpc.md)
   - [Guía 05: Portabilidad del Framework LEMMI16s](proyecto_Guia/05_guia_framework_lemmi16s.md)
-- 📊 [Índice de Resultados Cuantitativos](Resultados/README.md)
+- [Índice de Resultados Cuantitativos](Resultados/README.md)
   - [Informe 01: Evaluación de Rendimiento y Eficiencia Energética (Reads/Wh)](Resultados/01_resultados_eficiencia_energetica.md)
   - [Informe 02: Evaluación de Fidelidad Biológica y Concordancia Taxonómica](Resultados/02_resultados_fidelidad_biologica.md)
