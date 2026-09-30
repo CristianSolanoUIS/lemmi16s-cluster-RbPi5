@@ -1,4 +1,4 @@
-# 🍓 Respaldo Oficial del Clúster ARM64 — Benchmark LEMMI16s (HPC Verde)
+# Repositorio Oficial del Clúster ARM64 — Benchmark LEMMI16s (HPC)
 
 > **Proyecto de Grado / Tesis de Ingeniería de Sistemas e Informática**  
 > **Universidad Industrial de Santander (UIS)**  
@@ -10,7 +10,7 @@
 
 ## 📌 Descripción General
 
-Este repositorio contiene el **respaldo integral y definitivo** de todos los recursos desarrollados para la ejecución, orquestación y medición energética de pipelines metagenómicos de 16S rRNA en un clúster de placas monoplaca (*Single-Board Computers*, SBC) de arquitectura **ARM64 (Raspberry Pi 5)**:
+Este repositorio contiene todos los recursos desarrollados para la ejecución, orquestación y medición energética de pipelines metagenómicos de 16S rRNA en un clúster de placas monoplaca (*Single-Board Computers*, SBC) de arquitectura **ARM64 (Raspberry Pi 5)**:
 
 1. **Guías Técnicas y Manuales Operacionales:** Procedimientos detallados de instalación, preparación de bases de datos y ejecución reproducible paso a paso en clúster y en estación x86.
 2. **Resultados Cuantitativos Consolidados:** Matrices de tiempo de ejecución, potencia dinámica, consumo energético neto/bruto, métricas verdes (*Reads/Wh*) y validación de fidelidad biológica.
@@ -25,31 +25,31 @@ Este repositorio contiene el **respaldo integral y definitivo** de todos los rec
 
 ```text
 lemmi16s-cluster-backup/
-├── proyecto_Guia/                      # 📚 Guías técnicas oficiales de reproducción y operación
+├── proyecto_Guia/                      # Guías técnicas oficiales de reproducción y operación
 │   ├── 01_guia_pipeline_kraken2.md     # Manual completo: Kraken 2 v2.1.3 + Bracken v3.0.1
 │   ├── 02_guia_pipeline_lotus3.md      # Manual completo: LotuS3 v3.03 (base UDB pre-indexada)
 │   ├── 03_guia_pipeline_qiime2.md      # Manual completo: QIIME 2 Amplicon (clasificador 62k seqs)
 │   ├── 04_guia_cluster_slurm_hpc.md    # Arquitectura del clúster, Slurm, NFS, PMIC y red
 │   ├── 05_guia_framework_lemmi16s.md   # Portabilidad del framework LEMMI16s a ARM64
 │   └── README.md                       # Índice y navegación de guías
-├── Resultados/                         # 📊 Informes consolidados de métricas y evaluación
+├── Resultados/                         # Informes consolidados de métricas y evaluación
 │   ├── 01_resultados_eficiencia_energetica.md # Comparativa energética tripartita y Reads/Wh
 │   ├── 02_resultados_fidelidad_biologica.md   # Validación biológica (F1, Bray-Curtis, OTUs)
 │   └── README.md                       # Índice de resultados experimentales
-├── scripts/distribuido/runscripts/     # 🚀 Orquestación Slurm distribuida multinodo (5 nodos)
+├── scripts/distribuido/runscripts/     # Orquestación Slurm distribuida multinodo (5 nodos)
 │   ├── kraken2/                        # sbatch_multinodo_energy.sh, worker_kraken2_energy.sh, split/merge
 │   ├── lotus3/                         # sbatch_multinodo_energy.sh, worker_lotus3_energy.sh, run_all
 │   └── qiime2/                         # sbatch_multinodo_energy.sh, worker_qiime2_energy.sh, run_all
-├── scripts_cluster_5nodos/             # 🛠️ Scripts auxiliares de particionado y pruebas locales
+├── scripts_cluster_5nodos/             # Scripts auxiliares de particionado y pruebas locales
 │   ├── sbatch_5nodos_pipeline.sh       # Lanzador por lotes para 5 nodos
 │   ├── split_query_reads_5.py          # Particionador equitativo de FASTQ en 5 fragmentos
 │   ├── merge_predictions_5.py          # Reensamblador de predicciones TSV
 │   └── run_5chunks_native.sh           # Ejecución nativa secuencial de 5 chunks
-├── benchmark/analysis_outputs/         # 🧬 13 Predicciones oficiales obtenidas en el clúster
+├── benchmark/analysis_outputs/         # 13 Predicciones oficiales obtenidas en el clúster
 │   ├── kraken2/                        # 5 muestras HOMD_v4_GTDB (c001 a e002)
 │   ├── lotus3/                         # 3 muestras HM_Contaminated_Soil (c001, c002, e001)
 │   └── qiime2/                         # 5 muestras alfa_v1v2_SILVA (c001 a e002)
-├── medicion_energia/                   # ⚡ Telemetría energética oficial con PMIC (5 min baseline)
+├── medicion_energia/                   # Telemetría energética oficial con PMIC (5 min baseline)
 │   ├── medir_energia_pmic.py           # Polling de voltaje, corriente y potencia vía PMIC DA9091 (1.0 Hz)
 │   ├── reposo_5min/                    # Mediciones de consumo en reposo (stand-by) de los 5 nodos
 │   ├── kraken2/                        # Telemetría baseline 5m + corrida activa (5 muestras)
@@ -70,7 +70,7 @@ lemmi16s-cluster-backup/
 
 ---
 
-## 🍓 1. Especificaciones de Hardware del Clúster ARM64
+## 1. Especificaciones de Hardware del Clúster ARM64
 
 El clúster fue configurado como un entorno de computación de alto rendimiento (*HPC*) de bajo consumo dedicado:
 
@@ -87,7 +87,7 @@ El clúster fue configurado como un entorno de computación de alto rendimiento 
 
 ---
 
-## 🔬 2. Portabilidad Nativa a ARM64 y Entornos Conda
+## 2. Portabilidad Nativa a ARM64 y Entornos Conda
 
 En la infraestructura original de LEMMI16s, la ejecución depende de contenedores Apptainer/Singularity empaquetados para x86_64. En el clúster ARM64, las restricciones de seguridad de Ubuntu 24.04 (bloqueo de *unprivileged user namespaces* en el kernel 6.8+ por AppArmor) y la sobrecarga de emulación QEMU obligaron a adoptar una **estrategia de ejecución nativa**:
 
@@ -104,7 +104,7 @@ En la infraestructura original de LEMMI16s, la ejecución depende de contenedore
 
 ---
 
-## 🧬 3. Resumen de las 13 Predicciones Obtenidas en el Clúster
+## 3. Resumen de las 13 Predicciones Obtenidas en el Clúster
 
 Todas las predicciones taxonómicas están preservadas en `benchmark/analysis_outputs/` en formato TSV compatible con LEMMI16s:
 
@@ -116,7 +116,7 @@ Todas las predicciones taxonómicas están preservadas en `benchmark/analysis_ou
 
 ---
 
-## 🚀 4. Protocolo de Telemetría y Ejecución Distribuida en Slurm
+## 4. Protocolo de Telemetría y Ejecución Distribuida en Slurm
 
 Para garantizar rigor científico y reproducibilidad absoluta, las mediciones energéticas se rigen bajo el **Protocolo Estandarizado de 5 Minutos**:
 
@@ -153,7 +153,7 @@ sbatch scripts/distribuido/runscripts/qiime2/sbatch_multinodo_energy.sh
 
 ---
 
-## 📊 5. Resultados Clave: Eficiencia Energética y Fidelidad Biológica
+## 5. Resultados Clave: Eficiencia Energética y Fidelidad Biológica
 
 ### Rendimiento y Ganancia Verde (Laptop x86 vs. Clúster ARM64)
 
@@ -177,9 +177,9 @@ sbatch scripts/distribuido/runscripts/qiime2/sbatch_multinodo_energy.sh
 
 ---
 
-## 📖 6. Enlaces a Guías y Reportes Completos
+## 6. Enlaces a Guías y Reportes Completos
 
-- 📘 [Índice de Guías Técnicas de Operación](proyecto_Guia/README.md)
+- [Índice de Guías Técnicas de Operación](proyecto_Guia/README.md)
   - [Guía 01: Pipeline Kraken 2 + Bracken](proyecto_Guia/01_guia_pipeline_kraken2.md)
   - [Guía 02: Pipeline LotuS3](proyecto_Guia/02_guia_pipeline_lotus3.md)
   - [Guía 03: Pipeline QIIME 2 Amplicon](proyecto_Guia/03_guia_pipeline_qiime2.md)
