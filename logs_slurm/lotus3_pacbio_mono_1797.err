@@ -1,0 +1,10 @@
+/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil_PacBio/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
+/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil_PacBio/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
+/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil_PacBio/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
+/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil_PacBio/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
+/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil_PacBio/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')

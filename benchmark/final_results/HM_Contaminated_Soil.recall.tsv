@@ -1,0 +1,14 @@
+#LEMMI16s_dm:v1.0
+toolname	sample	rank	value
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-e001	family	0.8125
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-e001	genus	0.8055555555555556
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-e002	family	0.8125
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-e002	genus	0.9117647058823529
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-e001	family	0.8125
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-e001	genus	0.8055555555555556
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-e002	family	0.8125
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-e002	genus	0.9117647058823529
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil	family	0.8125
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil	genus	0.8586601307189543
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil	family	0.8125
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil	genus	0.8586601307189543

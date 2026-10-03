@@ -1,0 +1,14 @@
+{
+    "toolname":{
+        "0":"lotus3_pacbio_mono_cluster",
+        "1":"lotus3_pacbio_multi_cluster"
+    },
+    "sample":{
+        "0":"HM_Contaminated_Soil",
+        "1":"HM_Contaminated_Soil"
+    },
+    "value":{
+        "0":1,
+        "1":1
+    }
+}

@@ -1,0 +1,14 @@
+#LEMMI16s_dm|SILVA:release_138.1:v1.0
+toolname	sample	rank	value
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-c001	family	1.6690126050420169
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-c002	family	1.6070620555914674
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-c003	family	1.5896471949103528
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-c001	genus	1.727049747637983
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-c002	genus	1.4800399313330348
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-c003	genus	1.5474959680842033
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-c001	family	1.580094537815126
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-c002	family	1.520483193277311
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-c003	family	1.6031484962406015
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-c001	genus	1.727049747637983
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-c002	genus	1.4687324338947056
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-c003	genus	1.574242424242424

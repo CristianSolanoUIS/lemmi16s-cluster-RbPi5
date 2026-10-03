@@ -1,0 +1,7 @@
+#LEMMI16_dm:v1.0|SILVA:release_138.1
+taxa	reads	abundance	correct_prediction
+0	s__Mycobacterium_tuberculosis	17746.0	0.3529926600759851	1	True
+1	na__na	27900.0	0.5549698645396137	1	False
+2	s__Streptococcus_pyogenes	4334.0	0.0862092972370855	1	True
+3	s__Streptococcus_agalactiae	237.0	0.0047142601396375	1	True
+4	s__Neisseria_meningitidis	56.0	0.001113918007678	1	True

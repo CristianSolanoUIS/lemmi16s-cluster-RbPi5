@@ -1,0 +1,85 @@
+==========================================================================
+=== REPORTE DE CONCORDANCIA BIOLÓGICA: PC (x86_64) vs CLÚSTER (ARM64) ===
+==========================================================================
+
+==================================================
+1. QIIME 2 (Instancia: alfa_v1v2_SILVA)
+==================================================
+Muestra c001:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 21
+Muestra c002:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 20
+Muestra c003:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 18
+Muestra e001:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 16
+Muestra e002:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 16
+
+Métricas F1 Oficiales LEMMI:
+  - Familia: 0.8286
+  - Género:  0.7083
+  - Especie: 0.4500
+
+==================================================
+2. KRAKEN 2 (Instancia: HOMD_v4_GTDB)
+==================================================
+Muestra c001:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 377
+Muestra c002:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 448
+Muestra c003:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 379
+Muestra e001:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 447
+Muestra e002:
+  - Concordancia PC vs Clúster Multinodo: 100% IDÉNTICO (Bit-por-bit)
+  - Concordancia PC vs Clúster Mononodo:  100% IDÉNTICO (Bit-por-bit)
+  - Número de clados taxonómicos: 457
+
+Métricas F1 Oficiales LEMMI:
+  - Familia: 0.5223
+  - Género:  0.3545
+  - Especie: 0.0000
+
+==================================================
+3. LOTUS3 PACBIO (Instancia: HM_Contaminated_Soil_PacBio)
+==================================================
+Muestra c001:
+  - Clúster Multi vs Mono: Jaccard=99.21% | Correlación de Abundancia r=99.9714%
+  - Clúster Multi vs PC:   Jaccard=49.84% | Correlación de Abundancia r=98.0002%
+Muestra c002:
+  - Clúster Multi vs Mono: Jaccard=100.00% | Correlación de Abundancia r=99.9989%
+  - Clúster Multi vs PC:   Jaccard=53.28% | Correlación de Abundancia r=98.8504%
+Muestra c003:
+  - Clúster Multi vs Mono: Jaccard=99.63% | Correlación de Abundancia r=99.9985%
+  - Clúster Multi vs PC:   Jaccard=47.58% | Correlación de Abundancia r=98.1130%
+Muestra e001:
+  - Clúster Multi vs Mono: Jaccard=100.00% | Correlación de Abundancia r=99.9989%
+  - Clúster Multi vs PC:   Jaccard=50.78% | Correlación de Abundancia r=97.8344%
+Muestra e002:
+  - Clúster Multi vs Mono: Jaccard=99.22% | Correlación de Abundancia r=99.9328%
+  - Clúster Multi vs PC:   Jaccard=50.78% | Correlación de Abundancia r=98.0211%
+
+Métricas F1 Oficiales LEMMI (PacBio Clúster):
+  - Familia: 0.8667
+  - Género:  0.8762
+*(Nota: En PC se utilizó secuenciación corta Illumina, obteniendo F1 Familia: 0.8144, Género: 0.8348)*

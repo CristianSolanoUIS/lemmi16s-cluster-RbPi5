@@ -1,0 +1,8 @@
+#LEMMI16s_dm:v1.0|SILVA:release_138.1
+toolname	rank	value
+kraken2_multi_cluster	family	267
+kraken2_multi_cluster	genus	132
+kraken2_multi_cluster	species	-1
+kraken2_mono_cluster	family	267
+kraken2_mono_cluster	genus	132
+kraken2_mono_cluster	species	-1

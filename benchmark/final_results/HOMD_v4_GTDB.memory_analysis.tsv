@@ -1,0 +1,8 @@
+#LEMMI16s_dm:v1.0
+toolname	sample	value
+kraken2_multi_cluster	HOMD_v4_GTDB-e001	2500000
+kraken2_multi_cluster	HOMD_v4_GTDB-e002	2500000
+kraken2_mono_cluster	HOMD_v4_GTDB-e001	2500000
+kraken2_mono_cluster	HOMD_v4_GTDB-e002	2500000
+kraken2_multi_cluster	HOMD_v4_GTDB	2500000.0
+kraken2_mono_cluster	HOMD_v4_GTDB	2500000.0

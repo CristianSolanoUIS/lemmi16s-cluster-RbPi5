@@ -1,0 +1,13 @@
+Class	Sample1
+Bacteria;?;?	1
+Bacteria;Acidobacteriota;Acidobacteriae	2
+Bacteria;Actinobacteriota;Actinobacteria	948
+Bacteria;Bacteroidota;Bacteroidia	310
+Bacteria;Chloroflexi;Anaerolineae	23
+Bacteria;Chloroflexi;Ktedonobacteria	1
+Bacteria;Firmicutes;Bacilli	1852
+Bacteria;Firmicutes;Clostridia	270
+Bacteria;Gemmatimonadota;Gemmatimonadetes	36
+Bacteria;Proteobacteria;?	2
+Bacteria;Proteobacteria;Gammaproteobacteria	1242
+noHit;	1

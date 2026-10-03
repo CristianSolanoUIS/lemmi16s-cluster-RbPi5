@@ -1,0 +1,8 @@
+#LEMMI16s
+	evaluation_taxa	reads	abundance	GCN_mean
+0	na__na	35491.0	0.8032182139139094	1
+1	s__Neisseria_meningitidis	3365.0	0.07615534332141402	1
+2	s__Streptococcus_agalactiae	4382.0	0.09917168333861404	1
+3	s__Mycobacterium_tuberculosis	641.0	0.014506857375639342	1
+4	s__Streptococcus_pyogenes	210.0	0.004752636581722718	1
+5	s__Moraxella_catarrhalis	97.0	0.0021952654687004934	1

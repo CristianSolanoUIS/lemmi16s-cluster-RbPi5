@@ -1,0 +1,13 @@
+#LEMMI16_dm:v1.0|SILVA:release_138.1
+taxa	reads	abundance	correct_prediction
+0	f__Pasteurellaceae	18663.0	0.4039610389610389	1	True
+1	na__na	10203.0	0.2208441558441558	1	False
+2	f__Staphylococcaceae	4852.0	0.105021645021645	1	True
+3	f__Moraxellaceae	7554.0	0.1635064935064935	1	True
+4	f__Mycobacteriaceae	1630.0	0.0352813852813852	1	True
+5	f__Streptococcaceae	1694.0	0.0366666666666666	1	True
+6	f__Enterobacteriaceae	934.0	0.0202164502164502	1	True
+7	f__Enterococcaceae	407.0	0.0088095238095238	1	True
+8	f__Neisseriaceae	154.0	0.0033333333333333	1	True
+9	f__Pseudomonadaceae	87.0	0.0018831168831168	1	True
+10	f__Bacillaceae	22.0	0.0004761904761904	1	True

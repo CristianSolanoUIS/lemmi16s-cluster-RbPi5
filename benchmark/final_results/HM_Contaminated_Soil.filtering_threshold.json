@@ -1,0 +1,20 @@
+{
+    "toolname":{
+        "0":"lotus3_pacbio_multi_cluster",
+        "1":"lotus3_pacbio_multi_cluster",
+        "2":"lotus3_pacbio_mono_cluster",
+        "3":"lotus3_pacbio_mono_cluster"
+    },
+    "rank":{
+        "0":"family",
+        "1":"genus",
+        "2":"family",
+        "3":"genus"
+    },
+    "value":{
+        "0":3,
+        "1":0,
+        "2":3,
+        "3":0
+    }
+}

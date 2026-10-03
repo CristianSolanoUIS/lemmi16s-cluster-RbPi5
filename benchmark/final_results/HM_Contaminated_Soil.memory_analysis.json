@@ -1,0 +1,26 @@
+{
+    "toolname":{
+        "0":"lotus3_pacbio_mono_cluster",
+        "1":"lotus3_pacbio_mono_cluster",
+        "2":"lotus3_pacbio_multi_cluster",
+        "3":"lotus3_pacbio_multi_cluster",
+        "4":"lotus3_pacbio_mono_cluster",
+        "5":"lotus3_pacbio_multi_cluster"
+    },
+    "sample":{
+        "0":"HM_Contaminated_Soil-e001",
+        "1":"HM_Contaminated_Soil-e002",
+        "2":"HM_Contaminated_Soil-e001",
+        "3":"HM_Contaminated_Soil-e002",
+        "4":"HM_Contaminated_Soil",
+        "5":"HM_Contaminated_Soil"
+    },
+    "value":{
+        "0":4200000.0,
+        "1":4200000.0,
+        "2":4200000.0,
+        "3":4200000.0,
+        "4":4200000.0,
+        "5":4200000.0
+    }
+}

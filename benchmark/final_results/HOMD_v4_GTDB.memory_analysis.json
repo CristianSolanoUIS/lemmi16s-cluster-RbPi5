@@ -1,0 +1,26 @@
+{
+    "toolname":{
+        "0":"kraken2_multi_cluster",
+        "1":"kraken2_multi_cluster",
+        "2":"kraken2_mono_cluster",
+        "3":"kraken2_mono_cluster",
+        "4":"kraken2_multi_cluster",
+        "5":"kraken2_mono_cluster"
+    },
+    "sample":{
+        "0":"HOMD_v4_GTDB-e001",
+        "1":"HOMD_v4_GTDB-e002",
+        "2":"HOMD_v4_GTDB-e001",
+        "3":"HOMD_v4_GTDB-e002",
+        "4":"HOMD_v4_GTDB",
+        "5":"HOMD_v4_GTDB"
+    },
+    "value":{
+        "0":2500000.0,
+        "1":2500000.0,
+        "2":2500000.0,
+        "3":2500000.0,
+        "4":2500000.0,
+        "5":2500000.0
+    }
+}

@@ -1,0 +1,14 @@
+#LEMMI16_dm:v1.0|SILVA:release_138.1
+taxa	reads	abundance	correct_prediction
+0	na__na	9491.0	0.2147965418910967	1	False
+1	g__Haemophilus	6808.0	0.1540759516588964	1	True
+2	g__Streptococcus	8490.0	0.1921423075182184	1	True
+3	g__Neisseria	6849.0	0.1550038473724709	1	True
+4	g__Enterococcus	4773.0	0.1080206400217263	1	True
+5	g__Staphylococcus	2065.0	0.0467342597202733	1	True
+6	g__Pseudomonas	2830.0	0.0640474358394061	1	True
+7	g__Acinetobacter	1863.0	0.0421626759607115	1	True
+8	g__Mycobacterium	641.0	0.0145068573756393	1	True
+9	g__Bacillus	244.0	0.0055221110759063	1	True
+10	g__Moraxella	97.0	0.0021952654687004	1	True
+11	g__Escherichia-Shigella	35.0	0.0007921060969537	1	True

@@ -1,0 +1,8 @@
+#LEMMI16s_dm:v1.0
+toolname	sample	value
+qiime2_mono_cluster	alfa_v1v2_SILVA-e001	3800000
+qiime2_mono_cluster	alfa_v1v2_SILVA-e002	3800000
+qiime2_multi_cluster	alfa_v1v2_SILVA-e001	3800000
+qiime2_multi_cluster	alfa_v1v2_SILVA-e002	3800000
+qiime2_mono_cluster	alfa_v1v2_SILVA	3800000.0
+qiime2_multi_cluster	alfa_v1v2_SILVA	3800000.0

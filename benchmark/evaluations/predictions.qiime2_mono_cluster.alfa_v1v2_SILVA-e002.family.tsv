@@ -1,0 +1,11 @@
+#LEMMI16s
+	evaluation_taxa	reads	abundance	GCN_mean
+0	f__Mycobacteriaceae	17746.0	0.3529926600759851	1
+1	na__na	14049.0	0.27945418017623774	1
+2	f__Moraxellaceae	12643.0	0.25148688162632027	1
+3	f__Streptococcaceae	4777.0	0.09502118433353887	1
+4	f__Pseudomonadaceae	598.0	0.01189505301056233	1
+5	f__Enterobacteriaceae	192.0	0.0038191474548962662	1
+6	f__Enterococcaceae	119.0	0.002367075766315915	1
+7	f__Neisseriaceae	105.0	0.0020885962643963957	1
+8	f__Pasteurellaceae	44.0	0.000875221291747061	1

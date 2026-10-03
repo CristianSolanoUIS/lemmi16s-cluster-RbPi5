@@ -1,0 +1,24 @@
+LotuS3 PacBio (5 muestras de Cristian) en el cluster - plan preparado el 2026-10-02
+==============================================================================
+Cuando el cluster este encendido, en este orden (cada paso con OK de Zamir):
+
+0. Inventario (solo lee):  bash 00_inventario_lotus3.sh
+1. Limpieza SOLO de LotuS3 (Kraken2 y QIIME2 no se tocan):
+   - Se deja la ultima corrida multinodo (29-09, jobs 1651-1653) y el mononodo (01-10, job 1749),
+     porque las dos estan en el libro.
+   - Lo viejo se comprime y se descarga al PC ANTES de borrarlo en el cluster:
+     datos_energia\cluster_rpi5\lotus3\otras_corridas\respaldo_cluster_<fecha>.tar.gz
+2. Subir paquete_cristian\paquete_lotus3_pacbio_5muestras.tar.gz (1 GB) y correr
+   02_preparar_pacbio_cluster.sh: instancia + 21 MD5, entorno clon lemmi16s_pacbio_env con los
+   wrappers de Cristian (lemmi16s_env no se toca), carpetas y base indexada.
+3. Prueba corta sin medir en un nodo (pocas lecturas): confirma wrappers e indice lambda en ARM.
+4. Corrida medida: bash lanzar_lotus3_pacbio_5nodos.sh  (c001->rbp5-1 ... e002->rbp5-5, 4 hilos)
+
+Donde queda todo en el cluster (/shared/users/grupo1/lemmi16s):
+  benchmark/instances/HM_Contaminated_Soil_PacBio/      lecturas + referencia (igual por MD5 a WSL)
+  benchmark/analysis_outputs/lotus3_pacbio/             predicciones *.job<id>.predictions.tsv
+  medicion_energia/lotus3_pacbio/                       CSV de la corrida + marcas por muestra
+  medicion_energia/lotus3_pacbio/pre/                   reposo de 5 min por nodo
+  benchmark/tmp/lotus3_pacbio/                          trabajo (multinodo_<muestra>) e indice
+  /shared/users/grupo1/logs_slurm/lotus3_pacbio_*       logs de Slurm
+Copia local al terminar: datos_energia\cluster_rpi5\lotus3\pacbio_5muestras\ (CSV arriba, pre\).

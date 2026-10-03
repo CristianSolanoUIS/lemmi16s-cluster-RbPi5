@@ -1,0 +1,9 @@
+Phylum	Sample1
+Bacteria;Acidobacteriota	8
+Bacteria;Actinobacteriota	976
+Bacteria;Bacteroidota	321
+Bacteria;Chloroflexi	22
+Bacteria;Firmicutes	2090
+Bacteria;Gemmatimonadota	31
+Bacteria;Proteobacteria	1278
+noHit;	4

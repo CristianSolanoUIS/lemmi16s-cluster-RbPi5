@@ -1,0 +1,443 @@
+==========================================================
+=== LOTUS3 MONONODO SECUENCIAL (rbp5-2, Job 1749) ===
+==========================================================
+Nodo asignado: rbp5-2
+Inicio ejecucion: Thu Oct  1 13:48:03 -05 2026
+Muestras a procesar: c001 c002 e001
+Hilos asignados: 2
+==========================================================
+[1/4] [ESTABILIZACION] Esperando 60s en reposo antes del baseline...
+[2/4] [BASELINE] Midiendo 300s (5 min) de reposo con PMIC a 1.0 Hz...
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          baseline_pre_lotus3_mononodo_node_rbp5-2_job1749
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/mononodo/lotus3
+Archivo de salida: energia_baseline_pre_lotus3_mononodo_node_rbp5-2_job1749_20261001_134903.csv
+Duracion fija:     300.0 s
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-10-01 13:49:04.219] [PMIC] Power:  2.20 W | Energia: 0.0006 Wh | Muestras: 1[2026-10-01 13:49:05.264] [PMIC] Power:  2.21 W | Energia: 0.0012 Wh | Muestras: 2[2026-10-01 13:49:06.318] [PMIC] Power:  2.41 W | Energia: 0.0019 Wh | Muestras: 3[2026-10-01 13:49:07.362] [PMIC] Power:  2.43 W | Energia: 0.0027 Wh | Muestras: 4[2026-10-01 13:49:08.407] [PMIC] Power:  2.42 W | Energia: 0.0034 Wh | Muestras: 5[2026-10-01 13:49:09.448] [PMIC] Power:  2.38 W | Energia: 0.0041 Wh | Muestras: 6[2026-10-01 13:49:10.484] [PMIC] Power:  2.42 W | Energia: 0.0048 Wh | Muestras: 7[2026-10-01 13:49:11.556] [PMIC] Power:  2.47 W | Energia: 0.0055 Wh | Muestras: 8[2026-10-01 13:49:12.607] [PMIC] Power:  2.47 W | Energia: 0.0062 Wh | Muestras: 9[2026-10-01 13:49:13.646] [PMIC] Power:  2.27 W | Energia: 0.0069 Wh | Muestras: 10[2026-10-01 13:49:14.687] [PMIC] Power:  2.27 W | Energia: 0.0075 Wh | Muestras: 11[2026-10-01 13:49:15.735] [PMIC] Power:  2.24 W | Energia: 0.0082 Wh | Muestras: 12[2026-10-01 13:49:16.775] [PMIC] Power:  2.26 W | Energia: 0.0088 Wh | Muestras: 13[2026-10-01 13:49:17.810] [PMIC] Power:  2.22 W | Energia: 0.0095 Wh | Muestras: 14[2026-10-01 13:49:18.854] [PMIC] Power:  2.47 W | Energia: 0.0102 Wh | Muestras: 15[2026-10-01 13:49:19.890] [PMIC] Power:  2.44 W | Energia: 0.0109 Wh | Muestras: 16[2026-10-01 13:49:20.928] [PMIC] Power:  2.42 W | Energia: 0.0116 Wh | Muestras: 17[2026-10-01 13:49:22.071] [PMIC] Power:  2.43 W | Energia: 0.0123 Wh | Muestras: 18[2026-10-01 13:49:23.105] [PMIC] Power:  2.21 W | Energia: 0.0130 Wh | Muestras: 19[2026-10-01 13:49:24.143] [PMIC] Power:  3.00 W | Energia: 0.0138 Wh | Muestras: 20[2026-10-01 13:49:25.178] [PMIC] Power:  2.24 W | Energia: 0.0145 Wh | Muestras: 21[2026-10-01 13:49:26.217] [PMIC] Power:  2.22 W | Energia: 0.0151 Wh | Muestras: 22[2026-10-01 13:49:27.259] [PMIC] Power:  2.27 W | Energia: 0.0158 Wh | Muestras: 23[2026-10-01 13:49:28.292] [PMIC] Power:  2.22 W | Energia: 0.0164 Wh | Muestras: 24[2026-10-01 13:49:29.327] [PMIC] Power:  2.23 W | Energia: 0.0171 Wh | Muestras: 25[2026-10-01 13:49:30.361] [PMIC] Power:  2.46 W | Energia: 0.0178 Wh | Muestras: 26[2026-10-01 13:49:31.395] [PMIC] Power:  2.46 W | Energia: 0.0185 Wh | Muestras: 27[2026-10-01 13:49:32.429] [PMIC] Power:  2.45 W | Energia: 0.0192 Wh | Muestras: 28[2026-10-01 13:49:33.464] [PMIC] Power:  2.36 W | Energia: 0.0199 Wh | Muestras: 29[2026-10-01 13:49:34.499] [PMIC] Power:  2.46 W | Energia: 0.0206 Wh | Muestras: 30[2026-10-01 13:49:35.533] [PMIC] Power:  2.49 W | Energia: 0.0213 Wh | Muestras: 31[2026-10-01 13:49:36.561] [PMIC] Power:  2.51 W | Energia: 0.0220 Wh | Muestras: 32[2026-10-01 13:49:37.600] [PMIC] Power:  2.25 W | Energia: 0.0226 Wh | Muestras: 33[2026-10-01 13:49:38.634] [PMIC] Power:  2.26 W | Energia: 0.0233 Wh | Muestras: 34[2026-10-01 13:49:39.669] [PMIC] Power:  2.22 W | Energia: 0.0239 Wh | Muestras: 35[2026-10-01 13:49:40.705] [PMIC] Power:  2.19 W | Energia: 0.0246 Wh | Muestras: 36[2026-10-01 13:49:41.754] [PMIC] Power:  2.45 W | Energia: 0.0253 Wh | Muestras: 37[2026-10-01 13:49:42.788] [PMIC] Power:  2.49 W | Energia: 0.0260 Wh | Muestras: 38[2026-10-01 13:49:43.822] [PMIC] Power:  2.45 W | Energia: 0.0267 Wh | Muestras: 39[2026-10-01 13:49:44.856] [PMIC] Power:  2.46 W | Energia: 0.0274 Wh | Muestras: 40[2026-10-01 13:49:45.891] [PMIC] Power:  2.40 W | Energia: 0.0281 Wh | Muestras: 41[2026-10-01 13:49:46.928] [PMIC] Power:  2.47 W | Energia: 0.0288 Wh | Muestras: 42[2026-10-01 13:49:47.976] [PMIC] Power:  2.61 W | Energia: 0.0296 Wh | Muestras: 43[2026-10-01 13:49:49.020] [PMIC] Power:  2.24 W | Energia: 0.0302 Wh | Muestras: 44[2026-10-01 13:49:50.071] [PMIC] Power:  2.25 W | Energia: 0.0309 Wh | Muestras: 45[2026-10-01 13:49:51.117] [PMIC] Power:  2.24 W | Energia: 0.0315 Wh | Muestras: 46[2026-10-01 13:49:52.143] [PMIC] Power:  2.23 W | Energia: 0.0322 Wh | Muestras: 47[2026-10-01 13:49:53.189] [PMIC] Power:  2.22 W | Energia: 0.0328 Wh | Muestras: 48[2026-10-01 13:49:54.236] [PMIC] Power:  2.54 W | Energia: 0.0335 Wh | Muestras: 49[2026-10-01 13:49:55.286] [PMIC] Power:  2.50 W | Energia: 0.0343 Wh | Muestras: 50[2026-10-01 13:49:56.324] [PMIC] Power:  2.45 W | Energia: 0.0350 Wh | Muestras: 51[2026-10-01 13:49:57.350] [PMIC] Power:  2.42 W | Energia: 0.0357 Wh | Muestras: 52[2026-10-01 13:49:58.385] [PMIC] Power:  2.46 W | Energia: 0.0364 Wh | Muestras: 53[2026-10-01 13:49:59.423] [PMIC] Power:  2.47 W | Energia: 0.0371 Wh | Muestras: 54[2026-10-01 13:50:00.462] [PMIC] Power:  2.42 W | Energia: 0.0378 Wh | Muestras: 55[2026-10-01 13:50:01.510] [PMIC] Power:  2.23 W | Energia: 0.0384 Wh | Muestras: 56[2026-10-01 13:50:02.552] [PMIC] Power:  2.24 W | Energia: 0.0391 Wh | Muestras: 57[2026-10-01 13:50:03.591] [PMIC] Power:  2.21 W | Energia: 0.0397 Wh | Muestras: 58[2026-10-01 13:50:04.631] [PMIC] Power:  2.24 W | Energia: 0.0404 Wh | Muestras: 59[2026-10-01 13:50:05.671] [PMIC] Power:  2.47 W | Energia: 0.0411 Wh | Muestras: 60[2026-10-01 13:50:06.708] [PMIC] Power:  2.46 W | Energia: 0.0418 Wh | Muestras: 61[2026-10-01 13:50:07.756] [PMIC] Power:  2.51 W | Energia: 0.0425 Wh | Muestras: 62[2026-10-01 13:50:08.800] [PMIC] Power:  2.41 W | Energia: 0.0432 Wh | Muestras: 63[2026-10-01 13:50:09.848] [PMIC] Power:  2.45 W | Energia: 0.0439 Wh | Muestras: 64[2026-10-01 13:50:10.883] [PMIC] Power:  2.42 W | Energia: 0.0446 Wh | Muestras: 65[2026-10-01 13:50:11.926] [PMIC] Power:  2.48 W | Energia: 0.0454 Wh | Muestras: 66[2026-10-01 13:50:13.069] [PMIC] Power:  2.24 W | Energia: 0.0460 Wh | Muestras: 67[2026-10-01 13:50:14.109] [PMIC] Power:  2.22 W | Energia: 0.0467 Wh | Muestras: 68[2026-10-01 13:50:15.145] [PMIC] Power:  2.23 W | Energia: 0.0473 Wh | Muestras: 69[2026-10-01 13:50:16.179] [PMIC] Power:  2.25 W | Energia: 0.0480 Wh | Muestras: 70[2026-10-01 13:50:17.206] [PMIC] Power:  2.25 W | Energia: 0.0486 Wh | Muestras: 71[2026-10-01 13:50:18.245] [PMIC] Power:  2.46 W | Energia: 0.0493 Wh | Muestras: 72[2026-10-01 13:50:19.281] [PMIC] Power:  2.46 W | Energia: 0.0501 Wh | Muestras: 73[2026-10-01 13:50:20.316] [PMIC] Power:  2.41 W | Energia: 0.0507 Wh | Muestras: 74[2026-10-01 13:50:21.351] [PMIC] Power:  2.40 W | Energia: 0.0514 Wh | Muestras: 75[2026-10-01 13:50:22.378] [PMIC] Power:  2.48 W | Energia: 0.0521 Wh | Muestras: 76[2026-10-01 13:50:23.412] [PMIC] Power:  2.43 W | Energia: 0.0528 Wh | Muestras: 77[2026-10-01 13:50:24.453] [PMIC] Power:  2.19 W | Energia: 0.0535 Wh | Muestras: 78[2026-10-01 13:50:25.488] [PMIC] Power:  2.24 W | Energia: 0.0541 Wh | Muestras: 79[2026-10-01 13:50:26.524] [PMIC] Power:  2.24 W | Energia: 0.0548 Wh | Muestras: 80[2026-10-01 13:50:27.550] [PMIC] Power:  2.26 W | Energia: 0.0554 Wh | Muestras: 81[2026-10-01 13:50:28.585] [PMIC] Power:  2.22 W | Energia: 0.0560 Wh | Muestras: 82[2026-10-01 13:50:29.621] [PMIC] Power:  2.44 W | Energia: 0.0568 Wh | Muestras: 83[2026-10-01 13:50:30.655] [PMIC] Power:  2.49 W | Energia: 0.0575 Wh | Muestras: 84[2026-10-01 13:50:31.693] [PMIC] Power:  2.44 W | Energia: 0.0582 Wh | Muestras: 85[2026-10-01 13:50:32.720] [PMIC] Power:  2.46 W | Energia: 0.0589 Wh | Muestras: 86[2026-10-01 13:50:33.754] [PMIC] Power:  2.49 W | Energia: 0.0596 Wh | Muestras: 87[2026-10-01 13:50:34.789] [PMIC] Power:  2.48 W | Energia: 0.0603 Wh | Muestras: 88[2026-10-01 13:50:35.837] [PMIC] Power:  2.49 W | Energia: 0.0610 Wh | Muestras: 89[2026-10-01 13:50:36.881] [PMIC] Power:  2.20 W | Energia: 0.0617 Wh | Muestras: 90[2026-10-01 13:50:37.906] [PMIC] Power:  2.22 W | Energia: 0.0623 Wh | Muestras: 91[2026-10-01 13:50:38.952] [PMIC] Power:  2.23 W | Energia: 0.0629 Wh | Muestras: 92[2026-10-01 13:50:39.999] [PMIC] Power:  2.19 W | Energia: 0.0636 Wh | Muestras: 93[2026-10-01 13:50:41.047] [PMIC] Power:  2.22 W | Energia: 0.0642 Wh | Muestras: 94[2026-10-01 13:50:42.093] [PMIC] Power:  2.42 W | Energia: 0.0649 Wh | Muestras: 95[2026-10-01 13:50:43.118] [PMIC] Power:  2.45 W | Energia: 0.0656 Wh | Muestras: 96[2026-10-01 13:50:44.164] [PMIC] Power:  2.45 W | Energia: 0.0663 Wh | Muestras: 97[2026-10-01 13:50:45.212] [PMIC] Power:  2.39 W | Energia: 0.0670 Wh | Muestras: 98[2026-10-01 13:50:46.259] [PMIC] Power:  2.44 W | Energia: 0.0677 Wh | Muestras: 99[2026-10-01 13:50:47.307] [PMIC] Power:  2.52 W | Energia: 0.0685 Wh | Muestras: 100[2026-10-01 13:50:48.333] [PMIC] Power:  2.23 W | Energia: 0.0691 Wh | Muestras: 101[2026-10-01 13:50:49.366] [PMIC] Power:  2.31 W | Energia: 0.0698 Wh | Muestras: 102[2026-10-01 13:50:50.399] [PMIC] Power:  2.19 W | Energia: 0.0704 Wh | Muestras: 103[2026-10-01 13:50:51.439] [PMIC] Power:  2.26 W | Energia: 0.0711 Wh | Muestras: 104[2026-10-01 13:50:52.481] [PMIC] Power:  2.25 W | Energia: 0.0717 Wh | Muestras: 105[2026-10-01 13:50:53.506] [PMIC] Power:  2.45 W | Energia: 0.0724 Wh | Muestras: 106[2026-10-01 13:50:54.635] [PMIC] Power:  2.47 W | Energia: 0.0731 Wh | Muestras: 107[2026-10-01 13:50:55.677] [PMIC] Power:  2.47 W | Energia: 0.0739 Wh | Muestras: 108[2026-10-01 13:50:56.714] [PMIC] Power:  2.41 W | Energia: 0.0746 Wh | Muestras: 109[2026-10-01 13:50:57.750] [PMIC] Power:  2.51 W | Energia: 0.0753 Wh | Muestras: 110[2026-10-01 13:50:58.795] [PMIC] Power:  2.54 W | Energia: 0.0760 Wh | Muestras: 111[2026-10-01 13:50:59.838] [PMIC] Power:  2.52 W | Energia: 0.0768 Wh | Muestras: 112[2026-10-01 13:51:00.881] [PMIC] Power:  2.36 W | Energia: 0.0775 Wh | Muestras: 113[2026-10-01 13:51:01.915] [PMIC] Power:  2.22 W | Energia: 0.0781 Wh | Muestras: 114[2026-10-01 13:51:02.949] [PMIC] Power:  2.25 W | Energia: 0.0787 Wh | Muestras: 115[2026-10-01 13:51:03.985] [PMIC] Power:  2.24 W | Energia: 0.0794 Wh | Muestras: 116[2026-10-01 13:51:05.019] [PMIC] Power:  2.43 W | Energia: 0.0801 Wh | Muestras: 117[2026-10-01 13:51:06.053] [PMIC] Power:  2.47 W | Energia: 0.0808 Wh | Muestras: 118[2026-10-01 13:51:07.088] [PMIC] Power:  2.47 W | Energia: 0.0815 Wh | Muestras: 119[2026-10-01 13:51:08.129] [PMIC] Power:  2.37 W | Energia: 0.0822 Wh | Muestras: 120[2026-10-01 13:51:09.163] [PMIC] Power:  2.54 W | Energia: 0.0829 Wh | Muestras: 121[2026-10-01 13:51:10.201] [PMIC] Power:  2.48 W | Energia: 0.0836 Wh | Muestras: 122[2026-10-01 13:51:11.235] [PMIC] Power:  2.44 W | Energia: 0.0843 Wh | Muestras: 123[2026-10-01 13:51:12.270] [PMIC] Power:  2.13 W | Energia: 0.0850 Wh | Muestras: 124[2026-10-01 13:51:13.311] [PMIC] Power:  2.21 W | Energia: 0.0856 Wh | Muestras: 125[2026-10-01 13:51:14.358] [PMIC] Power:  2.25 W | Energia: 0.0862 Wh | Muestras: 126[2026-10-01 13:51:15.393] [PMIC] Power:  2.26 W | Energia: 0.0869 Wh | Muestras: 127[2026-10-01 13:51:16.427] [PMIC] Power:  2.33 W | Energia: 0.0876 Wh | Muestras: 128[2026-10-01 13:51:17.462] [PMIC] Power:  2.47 W | Energia: 0.0883 Wh | Muestras: 129[2026-10-01 13:51:18.496] [PMIC] Power:  2.48 W | Energia: 0.0890 Wh | Muestras: 130[2026-10-01 13:51:19.533] [PMIC] Power:  2.49 W | Energia: 0.0897 Wh | Muestras: 131[2026-10-01 13:51:20.573] [PMIC] Power:  2.47 W | Energia: 0.0904 Wh | Muestras: 132[2026-10-01 13:51:21.610] [PMIC] Power:  2.61 W | Energia: 0.0912 Wh | Muestras: 133[2026-10-01 13:51:22.646] [PMIC] Power:  2.57 W | Energia: 0.0919 Wh | Muestras: 134[2026-10-01 13:51:23.672] [PMIC] Power:  2.25 W | Energia: 0.0926 Wh | Muestras: 135[2026-10-01 13:51:24.707] [PMIC] Power:  2.22 W | Energia: 0.0932 Wh | Muestras: 136[2026-10-01 13:51:25.745] [PMIC] Power:  2.22 W | Energia: 0.0938 Wh | Muestras: 137[2026-10-01 13:51:26.779] [PMIC] Power:  2.20 W | Energia: 0.0945 Wh | Muestras: 138[2026-10-01 13:51:27.815] [PMIC] Power:  2.24 W | Energia: 0.0951 Wh | Muestras: 139[2026-10-01 13:51:28.855] [PMIC] Power:  2.42 W | Energia: 0.0958 Wh | Muestras: 140[2026-10-01 13:51:29.913] [PMIC] Power:  2.45 W | Energia: 0.0965 Wh | Muestras: 141[2026-10-01 13:51:30.959] [PMIC] Power:  2.45 W | Energia: 0.0972 Wh | Muestras: 142[2026-10-01 13:51:32.002] [PMIC] Power:  2.43 W | Energia: 0.0979 Wh | Muestras: 143[2026-10-01 13:51:33.048] [PMIC] Power:  2.46 W | Energia: 0.0986 Wh | Muestras: 144[2026-10-01 13:51:34.095] [PMIC] Power:  2.45 W | Energia: 0.0994 Wh | Muestras: 145[2026-10-01 13:51:35.139] [PMIC] Power:  2.45 W | Energia: 0.1001 Wh | Muestras: 146[2026-10-01 13:51:36.183] [PMIC] Power:  2.20 W | Energia: 0.1007 Wh | Muestras: 147[2026-10-01 13:51:37.228] [PMIC] Power:  2.22 W | Energia: 0.1014 Wh | Muestras: 148[2026-10-01 13:51:38.313] [PMIC] Power:  2.21 W | Energia: 0.1020 Wh | Muestras: 149[2026-10-01 13:51:39.357] [PMIC] Power:  2.22 W | Energia: 0.1027 Wh | Muestras: 150[2026-10-01 13:51:40.390] [PMIC] Power:  2.20 W | Energia: 0.1033 Wh | Muestras: 151[2026-10-01 13:51:41.430] [PMIC] Power:  2.45 W | Energia: 0.1040 Wh | Muestras: 152[2026-10-01 13:51:42.464] [PMIC] Power:  2.48 W | Energia: 0.1047 Wh | Muestras: 153[2026-10-01 13:51:43.498] [PMIC] Power:  2.37 W | Energia: 0.1054 Wh | Muestras: 154[2026-10-01 13:51:44.536] [PMIC] Power:  2.40 W | Energia: 0.1061 Wh | Muestras: 155[2026-10-01 13:51:45.570] [PMIC] Power:  2.42 W | Energia: 0.1068 Wh | Muestras: 156[2026-10-01 13:51:46.608] [PMIC] Power:  2.47 W | Energia: 0.1075 Wh | Muestras: 157[2026-10-01 13:51:47.643] [PMIC] Power:  2.19 W | Energia: 0.1081 Wh | Muestras: 158[2026-10-01 13:51:48.680] [PMIC] Power:  2.22 W | Energia: 0.1088 Wh | Muestras: 159[2026-10-01 13:51:49.715] [PMIC] Power:  2.24 W | Energia: 0.1094 Wh | Muestras: 160[2026-10-01 13:51:50.751] [PMIC] Power:  2.20 W | Energia: 0.1100 Wh | Muestras: 161[2026-10-01 13:51:51.785] [PMIC] Power:  2.23 W | Energia: 0.1107 Wh | Muestras: 162[2026-10-01 13:51:52.819] [PMIC] Power:  2.39 W | Energia: 0.1114 Wh | Muestras: 163[2026-10-01 13:51:53.860] [PMIC] Power:  2.44 W | Energia: 0.1121 Wh | Muestras: 164[2026-10-01 13:51:54.885] [PMIC] Power:  2.46 W | Energia: 0.1128 Wh | Muestras: 165[2026-10-01 13:51:55.923] [PMIC] Power:  2.43 W | Energia: 0.1135 Wh | Muestras: 166[2026-10-01 13:51:56.957] [PMIC] Power:  2.49 W | Energia: 0.1142 Wh | Muestras: 167[2026-10-01 13:51:57.995] [PMIC] Power:  2.50 W | Energia: 0.1149 Wh | Muestras: 168[2026-10-01 13:51:59.029] [PMIC] Power:  2.50 W | Energia: 0.1156 Wh | Muestras: 169[2026-10-01 13:52:00.064] [PMIC] Power:  2.22 W | Energia: 0.1163 Wh | Muestras: 170[2026-10-01 13:52:01.101] [PMIC] Power:  2.21 W | Energia: 0.1169 Wh | Muestras: 171[2026-10-01 13:52:02.136] [PMIC] Power:  2.24 W | Energia: 0.1175 Wh | Muestras: 172[2026-10-01 13:52:03.171] [PMIC] Power:  2.22 W | Energia: 0.1182 Wh | Muestras: 173[2026-10-01 13:52:04.208] [PMIC] Power:  2.21 W | Energia: 0.1188 Wh | Muestras: 174[2026-10-01 13:52:05.242] [PMIC] Power:  2.46 W | Energia: 0.1195 Wh | Muestras: 175[2026-10-01 13:52:06.280] [PMIC] Power:  2.47 W | Energia: 0.1202 Wh | Muestras: 176[2026-10-01 13:52:07.314] [PMIC] Power:  2.38 W | Energia: 0.1209 Wh | Muestras: 177[2026-10-01 13:52:08.348] [PMIC] Power:  2.39 W | Energia: 0.1216 Wh | Muestras: 178[2026-10-01 13:52:09.387] [PMIC] Power:  2.46 W | Energia: 0.1223 Wh | Muestras: 179[2026-10-01 13:52:10.423] [PMIC] Power:  2.49 W | Energia: 0.1230 Wh | Muestras: 180[2026-10-01 13:52:11.458] [PMIC] Power:  2.19 W | Energia: 0.1237 Wh | Muestras: 181[2026-10-01 13:52:12.492] [PMIC] Power:  2.21 W | Energia: 0.1243 Wh | Muestras: 182[2026-10-01 13:52:13.529] [PMIC] Power:  2.22 W | Energia: 0.1249 Wh | Muestras: 183[2026-10-01 13:52:14.562] [PMIC] Power:  2.23 W | Energia: 0.1256 Wh | Muestras: 184[2026-10-01 13:52:15.596] [PMIC] Power:  2.20 W | Energia: 0.1262 Wh | Muestras: 185[2026-10-01 13:52:16.630] [PMIC] Power:  2.40 W | Energia: 0.1269 Wh | Muestras: 186[2026-10-01 13:52:17.665] [PMIC] Power:  2.46 W | Energia: 0.1276 Wh | Muestras: 187[2026-10-01 13:52:18.699] [PMIC] Power:  2.45 W | Energia: 0.1283 Wh | Muestras: 188[2026-10-01 13:52:19.733] [PMIC] Power:  2.44 W | Energia: 0.1290 Wh | Muestras: 189[2026-10-01 13:52:20.786] [PMIC] Power:  2.42 W | Energia: 0.1297 Wh | Muestras: 190[2026-10-01 13:52:21.833] [PMIC] Power:  2.47 W | Energia: 0.1304 Wh | Muestras: 191[2026-10-01 13:52:22.878] [PMIC] Power:  2.44 W | Energia: 0.1311 Wh | Muestras: 192[2026-10-01 13:52:23.922] [PMIC] Power:  2.19 W | Energia: 0.1318 Wh | Muestras: 193[2026-10-01 13:52:24.965] [PMIC] Power:  2.22 W | Energia: 0.1324 Wh | Muestras: 194[2026-10-01 13:52:25.990] [PMIC] Power:  2.20 W | Energia: 0.1331 Wh | Muestras: 195[2026-10-01 13:52:27.035] [PMIC] Power:  2.21 W | Energia: 0.1337 Wh | Muestras: 196[2026-10-01 13:52:28.080] [PMIC] Power:  2.44 W | Energia: 0.1344 Wh | Muestras: 197[2026-10-01 13:52:29.129] [PMIC] Power:  2.45 W | Energia: 0.1351 Wh | Muestras: 198[2026-10-01 13:52:30.163] [PMIC] Power:  2.46 W | Energia: 0.1358 Wh | Muestras: 199[2026-10-01 13:52:31.200] [PMIC] Power:  2.38 W | Energia: 0.1365 Wh | Muestras: 200[2026-10-01 13:52:32.234] [PMIC] Power:  2.39 W | Energia: 0.1372 Wh | Muestras: 201[2026-10-01 13:52:33.268] [PMIC] Power:  2.47 W | Energia: 0.1379 Wh | Muestras: 202[2026-10-01 13:52:34.303] [PMIC] Power:  2.47 W | Energia: 0.1386 Wh | Muestras: 203[2026-10-01 13:52:35.337] [PMIC] Power:  2.24 W | Energia: 0.1393 Wh | Muestras: 204[2026-10-01 13:52:36.370] [PMIC] Power:  2.24 W | Energia: 0.1399 Wh | Muestras: 205[2026-10-01 13:52:37.403] [PMIC] Power:  2.24 W | Energia: 0.1405 Wh | Muestras: 206[2026-10-01 13:52:38.437] [PMIC] Power:  2.24 W | Energia: 0.1412 Wh | Muestras: 207[2026-10-01 13:52:39.471] [PMIC] Power:  2.23 W | Energia: 0.1418 Wh | Muestras: 208[2026-10-01 13:52:40.509] [PMIC] Power:  2.43 W | Energia: 0.1425 Wh | Muestras: 209[2026-10-01 13:52:41.550] [PMIC] Power:  2.45 W | Energia: 0.1432 Wh | Muestras: 210[2026-10-01 13:52:42.590] [PMIC] Power:  2.51 W | Energia: 0.1440 Wh | Muestras: 211[2026-10-01 13:52:43.627] [PMIC] Power:  2.76 W | Energia: 0.1448 Wh | Muestras: 212[2026-10-01 13:52:44.661] [PMIC] Power:  2.46 W | Energia: 0.1455 Wh | Muestras: 213[2026-10-01 13:52:45.695] [PMIC] Power:  2.41 W | Energia: 0.1462 Wh | Muestras: 214[2026-10-01 13:52:46.729] [PMIC] Power:  2.49 W | Energia: 0.1469 Wh | Muestras: 215[2026-10-01 13:52:47.762] [PMIC] Power:  2.23 W | Energia: 0.1475 Wh | Muestras: 216[2026-10-01 13:52:48.803] [PMIC] Power:  2.24 W | Energia: 0.1482 Wh | Muestras: 217[2026-10-01 13:52:49.846] [PMIC] Power:  2.20 W | Energia: 0.1488 Wh | Muestras: 218[2026-10-01 13:52:50.883] [PMIC] Power:  2.20 W | Energia: 0.1494 Wh | Muestras: 219[2026-10-01 13:52:51.918] [PMIC] Power:  3.32 W | Energia: 0.1504 Wh | Muestras: 220[2026-10-01 13:52:52.955] [PMIC] Power:  2.88 W | Energia: 0.1512 Wh | Muestras: 221[2026-10-01 13:52:53.992] [PMIC] Power:  2.43 W | Energia: 0.1519 Wh | Muestras: 222[2026-10-01 13:52:55.026] [PMIC] Power:  2.46 W | Energia: 0.1526 Wh | Muestras: 223[2026-10-01 13:52:56.052] [PMIC] Power:  2.52 W | Energia: 0.1533 Wh | Muestras: 224[2026-10-01 13:52:57.085] [PMIC] Power:  2.44 W | Energia: 0.1540 Wh | Muestras: 225[2026-10-01 13:52:58.119] [PMIC] Power:  2.49 W | Energia: 0.1548 Wh | Muestras: 226[2026-10-01 13:52:59.153] [PMIC] Power:  2.23 W | Energia: 0.1554 Wh | Muestras: 227[2026-10-01 13:53:00.186] [PMIC] Power:  2.21 W | Energia: 0.1560 Wh | Muestras: 228[2026-10-01 13:53:01.221] [PMIC] Power:  2.26 W | Energia: 0.1567 Wh | Muestras: 229[2026-10-01 13:53:02.265] [PMIC] Power:  2.45 W | Energia: 0.1574 Wh | Muestras: 230[2026-10-01 13:53:03.311] [PMIC] Power:  2.20 W | Energia: 0.1580 Wh | Muestras: 231[2026-10-01 13:53:04.344] [PMIC] Power:  2.43 W | Energia: 0.1587 Wh | Muestras: 232[2026-10-01 13:53:05.377] [PMIC] Power:  2.42 W | Energia: 0.1594 Wh | Muestras: 233[2026-10-01 13:53:06.418] [PMIC] Power:  2.52 W | Energia: 0.1601 Wh | Muestras: 234[2026-10-01 13:53:07.455] [PMIC] Power:  2.38 W | Energia: 0.1608 Wh | Muestras: 235[2026-10-01 13:53:08.488] [PMIC] Power:  2.47 W | Energia: 0.1615 Wh | Muestras: 236[2026-10-01 13:53:09.522] [PMIC] Power:  2.47 W | Energia: 0.1623 Wh | Muestras: 237[2026-10-01 13:53:10.557] [PMIC] Power:  2.48 W | Energia: 0.1630 Wh | Muestras: 238[2026-10-01 13:53:11.592] [PMIC] Power:  2.26 W | Energia: 0.1636 Wh | Muestras: 239[2026-10-01 13:53:12.641] [PMIC] Power:  2.25 W | Energia: 0.1643 Wh | Muestras: 240[2026-10-01 13:53:13.685] [PMIC] Power:  2.25 W | Energia: 0.1649 Wh | Muestras: 241[2026-10-01 13:53:14.730] [PMIC] Power:  2.24 W | Energia: 0.1656 Wh | Muestras: 242[2026-10-01 13:53:15.774] [PMIC] Power:  2.45 W | Energia: 0.1663 Wh | Muestras: 243[2026-10-01 13:53:16.821] [PMIC] Power:  2.46 W | Energia: 0.1670 Wh | Muestras: 244[2026-10-01 13:53:17.871] [PMIC] Power:  2.43 W | Energia: 0.1677 Wh | Muestras: 245[2026-10-01 13:53:18.941] [PMIC] Power:  2.39 W | Energia: 0.1684 Wh | Muestras: 246[2026-10-01 13:53:20.001] [PMIC] Power:  2.43 W | Energia: 0.1691 Wh | Muestras: 247[2026-10-01 13:53:21.039] [PMIC] Power:  2.47 W | Energia: 0.1698 Wh | Muestras: 248[2026-10-01 13:53:22.080] [PMIC] Power:  2.74 W | Energia: 0.1706 Wh | Muestras: 249[2026-10-01 13:53:23.113] [PMIC] Power:  2.19 W | Energia: 0.1713 Wh | Muestras: 250[2026-10-01 13:53:24.203] [PMIC] Power:  2.24 W | Energia: 0.1719 Wh | Muestras: 251[2026-10-01 13:53:25.238] [PMIC] Power:  2.26 W | Energia: 0.1726 Wh | Muestras: 252[2026-10-01 13:53:26.271] [PMIC] Power:  2.25 W | Energia: 0.1732 Wh | Muestras: 253[2026-10-01 13:53:27.297] [PMIC] Power:  1.97 W | Energia: 0.1738 Wh | Muestras: 254[2026-10-01 13:53:28.342] [PMIC] Power:  2.49 W | Energia: 0.1745 Wh | Muestras: 255[2026-10-01 13:53:29.377] [PMIC] Power:  2.51 W | Energia: 0.1752 Wh | Muestras: 256[2026-10-01 13:53:30.411] [PMIC] Power:  2.45 W | Energia: 0.1759 Wh | Muestras: 257[2026-10-01 13:53:31.446] [PMIC] Power:  2.40 W | Energia: 0.1766 Wh | Muestras: 258[2026-10-01 13:53:32.484] [PMIC] Power:  2.44 W | Energia: 0.1773 Wh | Muestras: 259[2026-10-01 13:53:33.521] [PMIC] Power:  2.51 W | Energia: 0.1781 Wh | Muestras: 260[2026-10-01 13:53:34.560] [PMIC] Power:  2.22 W | Energia: 0.1787 Wh | Muestras: 261[2026-10-01 13:53:35.597] [PMIC] Power:  2.25 W | Energia: 0.1794 Wh | Muestras: 262[2026-10-01 13:53:36.632] [PMIC] Power:  2.25 W | Energia: 0.1800 Wh | Muestras: 263[2026-10-01 13:53:37.673] [PMIC] Power:  2.19 W | Energia: 0.1806 Wh | Muestras: 264[2026-10-01 13:53:38.713] [PMIC] Power:  2.18 W | Energia: 0.1813 Wh | Muestras: 265[2026-10-01 13:53:39.747] [PMIC] Power:  3.33 W | Energia: 0.1822 Wh | Muestras: 266[2026-10-01 13:53:40.781] [PMIC] Power:  2.46 W | Energia: 0.1829 Wh | Muestras: 267[2026-10-01 13:53:41.816] [PMIC] Power:  2.49 W | Energia: 0.1836 Wh | Muestras: 268[2026-10-01 13:53:42.852] [PMIC] Power:  2.37 W | Energia: 0.1843 Wh | Muestras: 269[2026-10-01 13:53:43.891] [PMIC] Power:  2.44 W | Energia: 0.1850 Wh | Muestras: 270[2026-10-01 13:53:45.024] [PMIC] Power:  2.48 W | Energia: 0.1857 Wh | Muestras: 271[2026-10-01 13:53:46.067] [PMIC] Power:  2.49 W | Energia: 0.1865 Wh | Muestras: 272[2026-10-01 13:53:47.101] [PMIC] Power:  2.21 W | Energia: 0.1872 Wh | Muestras: 273[2026-10-01 13:53:48.135] [PMIC] Power:  2.22 W | Energia: 0.1878 Wh | Muestras: 274[2026-10-01 13:53:49.169] [PMIC] Power:  2.25 W | Energia: 0.1885 Wh | Muestras: 275[2026-10-01 13:53:50.203] [PMIC] Power:  2.24 W | Energia: 0.1891 Wh | Muestras: 276[2026-10-01 13:53:51.237] [PMIC] Power:  2.43 W | Energia: 0.1898 Wh | Muestras: 277[2026-10-01 13:53:52.278] [PMIC] Power:  2.61 W | Energia: 0.1905 Wh | Muestras: 278[2026-10-01 13:53:53.315] [PMIC] Power:  2.39 W | Energia: 0.1912 Wh | Muestras: 279[2026-10-01 13:53:54.349] [PMIC] Power:  2.40 W | Energia: 0.1919 Wh | Muestras: 280[2026-10-01 13:53:55.387] [PMIC] Power:  2.43 W | Energia: 0.1926 Wh | Muestras: 281[2026-10-01 13:53:56.421] [PMIC] Power:  2.48 W | Energia: 0.1933 Wh | Muestras: 282[2026-10-01 13:53:57.447] [PMIC] Power:  2.46 W | Energia: 0.1940 Wh | Muestras: 283[2026-10-01 13:53:58.491] [PMIC] Power:  2.21 W | Energia: 0.1947 Wh | Muestras: 284[2026-10-01 13:53:59.525] [PMIC] Power:  2.19 W | Energia: 0.1953 Wh | Muestras: 285[2026-10-01 13:54:00.559] [PMIC] Power:  2.20 W | Energia: 0.1959 Wh | Muestras: 286[2026-10-01 13:54:01.595] [PMIC] Power:  2.30 W | Energia: 0.1966 Wh | Muestras: 287[2026-10-01 13:54:02.711] [PMIC] Power:  2.23 W | Energia: 0.1972 Wh | Muestras: 288[2026-10-01 13:54:03.756] [PMIC] Power:  3.07 W | Energia: 0.1982 Wh | Muestras: 289
+
+=== Resumen de medicion (baseline_pre_lotus3_mononodo_node_rbp5-2_job1749) ===
+Inicio:           2026-10-01 13:49:03.184639
+Fin:              2026-10-01 13:54:03.765828
+Duracion:         300.6 s (5.01 min)
+Muestras tomadas: 289
+Energia total:    0.1982 Wh
+Potencia promedio: 2.37 W
+CSV guardado en:  energia_baseline_pre_lotus3_mononodo_node_rbp5-2_job1749_20261001_134903.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+[3/4] [TELEMETRIA] Iniciando medicion activa continua para las 3 muestras...
+[4/4] [PIPELINE] Procesando secuencialmente las 3 muestras...
+----------------------------------------------------------
+[MUESTRA 1/3] Iniciando c001 a las Thu Oct  1 13:54:08 -05 2026...
+----------------------------------------------------------
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:00 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 2
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    2
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:00 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:10 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:11 Finished primary read processing with sdm:
+          Reads processed: 8,208; 8,208 (pair 1;pair 2)
+          Accepted (High qual): 189; 0 (0; 1 end-trimmed)
+          Rejected: 8,019; 8,208
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:11 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:11 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Found 47 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:13 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 47 OTU's (1077 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:22 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 1077
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	100	100
+Class	100	100
+Order	100	100
+Family	100	100
+Genus	87	70
+Species	20	69
+
+--------------------------------------------------------------------------------
+ 00:00:22 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:23 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+[MUESTRA 1/3 COMPLETA] c001: exit 0 en 26s (49 predicciones)
+----------------------------------------------------------
+[MUESTRA 2/3] Iniciando c002 a las Thu Oct  1 13:54:34 -05 2026...
+----------------------------------------------------------
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:00 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 2
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    2
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:00 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:10 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:11 Finished primary read processing with sdm:
+          Reads processed: 11,159; 11,159 (pair 1;pair 2)
+          Accepted (High qual): 254; 0 (0; 0 end-trimmed)
+          Rejected: 10,905; 11,159
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:11 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:11 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Found 42 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:12 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 42 OTU's (2025 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:21 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 2025
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	99	83
+Class	99	83
+Order	99	83
+Family	95	71
+Genus	79	61
+Species	51	52
+
+--------------------------------------------------------------------------------
+ 00:00:21 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:22 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+[MUESTRA 2/3 COMPLETA] c002: exit 0 en 25s (44 predicciones)
+----------------------------------------------------------
+[MUESTRA 3/3] Iniciando e001 a las Thu Oct  1 13:54:59 -05 2026...
+----------------------------------------------------------
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:00 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 2
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    2
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:00 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:10 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:11 Finished primary read processing with sdm:
+          Reads processed: 10,416; 10,416 (pair 1;pair 2)
+          Accepted (High qual): 226; 0 (0; 0 end-trimmed)
+          Rejected: 10,190; 10,416
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:11 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:11 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 Found 40 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:13 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 40 OTU's (1596 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:21 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 1596
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	100	100
+Class	100	100
+Order	100	100
+Family	99	88
+Genus	85	62
+Species	35	54
+
+--------------------------------------------------------------------------------
+ 00:00:21 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:23 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+[MUESTRA 3/3 COMPLETA] e001: exit 0 en 25s (42 predicciones)
+----------------------------------------------------------
+[TELEMETRIA] Deteniendo medicion activa (PID 282269)...
+==========================================================
+=== LOTUS3 MONONODO FINALIZADO EXITOSAMENTE ===
+Tiempo total de lote: 76 s
+Fin ejecucion: Thu Oct  1 13:55:28 -05 2026
+==========================================================

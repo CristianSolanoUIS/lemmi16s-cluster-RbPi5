@@ -1,0 +1,14 @@
+{
+    "toolname":{
+        "0":"qiime2_multi_cluster",
+        "1":"qiime2_mono_cluster"
+    },
+    "sample":{
+        "0":"alfa_v1v2_SILVA",
+        "1":"alfa_v1v2_SILVA"
+    },
+    "value":{
+        "0":1,
+        "1":1
+    }
+}

@@ -1,0 +1,3 @@
+sample-id,absolute-filepath,direction
+alfa-v1v2-SILVA-c002,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c002/queryReads1.fq,forward
+alfa-v1v2-SILVA-c002,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c002/queryReads2.fq,reverse

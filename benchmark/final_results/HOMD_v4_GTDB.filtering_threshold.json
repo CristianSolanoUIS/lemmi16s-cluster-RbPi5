@@ -1,0 +1,26 @@
+{
+    "toolname":{
+        "0":"kraken2_multi_cluster",
+        "1":"kraken2_multi_cluster",
+        "2":"kraken2_multi_cluster",
+        "3":"kraken2_mono_cluster",
+        "4":"kraken2_mono_cluster",
+        "5":"kraken2_mono_cluster"
+    },
+    "rank":{
+        "0":"family",
+        "1":"genus",
+        "2":"species",
+        "3":"family",
+        "4":"genus",
+        "5":"species"
+    },
+    "value":{
+        "0":267,
+        "1":132,
+        "2":-1,
+        "3":267,
+        "4":132,
+        "5":-1
+    }
+}

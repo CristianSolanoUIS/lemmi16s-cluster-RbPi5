@@ -1,224 +1,321 @@
 # ⚡ INFORME DE RESULTADOS DE EFICIENCIA ENERGÉTICA Y RENDIMIENTO COMPUTACIONAL
 ## 🔋 Evaluación Comparativa Tripartita: x86_64 Ubuntu Nativo (Laptop Cristian) vs. x86_64 WSL2 (Laptop Zamir) vs. ARM64 Green HPC (Clúster Raspberry Pi 5)
 
+> **Proyecto de Grado / Tesis de Ingeniería de Sistemas e Informática**  
+> 👥 **Autores:** Cristian Alberto Solano Torres & Zamir Francisco Granados Peñaloza  
+> 📅 **Fecha:** Septiembre / Octubre de 2026  
+> 📁 **Archivo:** `/home/cristian-solano/Descargas/Resultados/01_resultados_eficiencia_energetica.md`  
+> 📖 **Referencia Metodológica:** Protocolo Unificado de Telemetría (Estabilización 60 s + Línea Base Previa 5 min + In-Run a 1.0 Hz) homologado con el Libro de Tesis (`lemmi16s/Libro_Proyecto_Grado/main.tex`).
+
 ---
 
 ## 1. 🎯 Resumen Ejecutivo
 
-Este informe consolida las mediciones experimentales de consumo eléctrico, potencia y rendimiento temporal del benchmark internacional **LEMMI16s** aplicadas sobre análisis metagenómico de amplicones 16S rRNA en **tres plataformas de cómputo diferenciadas**:
-1. **x86_64 Ubuntu Nativo (Laptop Cristian):** Estación de referencia x86_64 con Linux nativo y medición de hardware Intel RAPL directa.
-2. **x86_64 WSL2 Windows (Laptop Zamir):** Estación x86_64 bajo subsistema de virtualización ligera WSL2 en Windows 11 y telemetría RAPL vía LibreHardwareMonitor.
-3. **ARM64 Green HPC (Clúster Raspberry Pi 5):** Clúster físico homogéneo multinodo orquestado con Slurm y almacenamiento NFS distribuido, con telemetría física PMIC DA9091.
+Este informe consolida las mediciones experimentales de desempeño computacional, consumo de potencia eléctrica y eficiencia energética en lecturas biológicas por vatio-hora (**Reads/Wh**) para el análisis metagenómico del gen 16S rRNA bajo el benchmark internacional **LEMMI16s**.
 
-Se evaluaron experimentalmente tres pipelines bioinformáticos representativos de amplicones 16S:
-* **Kraken 2 + Bracken:** Clasificación taxonómica ultra-rápida basada en correspondencia exacta de $k$-meros y re-estimación bayesiana EM (2,453,431 lecturas en 5 muestras).
-* **LotuS3 Suite:** Pipeline de agrupamiento (*clustering*) de secuencias en OTUs (UPARSE) y asignación taxonómica LCA (29,783 lecturas en 3 muestras).
-* **QIIME 2:** Estándar de oro de alta resolución con *denoising* de ASVs (Deblur) y clasificación probabilística supervisada Naive Bayes SILVA 138 (2,690,077 lecturas en 5 muestras).
+La evaluación compara de manera exhaustiva y reproducible tres entornos de cómputo representativos:
+1. **x86_64 Ubuntu Nativo (Laptop Cristian):** Estación de control de referencia principal (Intel Core i5-10300H).
+2. **x86_64 WSL2 (Laptop Zamir):** Estación de referencia complementaria con idéntico procesador base bajo Windows 11 y subsistema WSL2 para cuantificar el costo de la virtualización ligera.
+3. **ARM64 Green HPC (Clúster Raspberry Pi 5):** Plataforma distribuida de bajo consumo compuesta por 5 nodos de cómputo dedicados (20 núcleos ARM Cortex-A76 @ 2.4 GHz) interconectados por red Gigabit bajo Slurm.
 
 > [!IMPORTANT]
-> **Hallazgo Central de Ingeniería:**
-> 1. **Supremacía Energética del Clúster ARM64:** El clúster Raspberry Pi 5 demostró una reducción de consumo de energía eléctrica bruta total de entre el **53.9% y el 67.1%** frente a la laptop x86 nativa (y de hasta el **74.1% a 98.0%** frente a WSL2), con una reducción en energía neta de hasta el **90.9%**, alcanzando factores de ganancia de eficiencia verde ($	ext{Reads/Wh}$) de **7.13x a 11.02x frente a x86 nativo** y de **3.86x a 49.55x frente a x86 WSL2**.
-> 2. **Aceleración por Paralelismo Multinodo:** En los pipelines intensivos en cómputo (**QIIME 2** y **LotuS3**), la concurrencia multinodo del clúster (1 muestra por nodo físico exclusivo) superó drásticamente el tiempo de ejecución secuencial mononodo de las laptops: QIIME 2 tardó **26.77 min en el clúster frente a 68.48 min en nativo (2.56x más rápido) y 78.37 min en WSL2 (2.93x más rápido)**; LotuS3 tardó **30.0 s en el clúster frente a 63.0 s en nativo (2.10x más rápido) y 598.8 s en WSL2 (19.96x más rápido)**.
+> **Veredictos Clave de Eficiencia y Rendimiento (Lotes Completos):**
+> 1. **Reducción de Tiempo en Cómputo Distribuido:** En el procesamiento de lotes pesados (QIIME 2 y LotuS3), el paralelismo multinodo del clúster físico superó holgadamente la ejecución secuencial mononodo de las laptops, reduciendo el tiempo de QIIME 2 de **72.06 min (Nativo)** y **79.99 min (WSL2)** a solo **27.98 min** en el clúster (**2.58x más rápido que Nativo y 2.86x que WSL2**). El tiempo acumulado de todos los lotes fue de **29.38 min en el clúster frente a 73.53 min en Nativo (2.50x)** y **82.87 min en WSL2 (2.82x)**.
+> 2. **Ahorro Eléctrico Masivo:** El clúster consumió en total **8.57 Wh (30,848 J)** frente a **26.03 Wh (93,711 J)** de la estación nativa (**-67.1% de ahorro bruto**) y **35.32 Wh (127,159 J)** de WSL2 (**-75.7% de ahorro bruto**). En términos de energía neta algorítmica, el clúster disipó únicamente **2.84 Wh frente a 12.98 Wh nativo (-78.1%)** y **17.36 Wh WSL2 (-83.6%)**.
+> 3. **Productividad Energética Superior (Reads/Wh):** La ganancia en productividad biológica bruta ($\eta_{\text{bruta}}$) del clúster ARM64 osciló entre **1.08x y 4.07x frente a Linux Nativo** (y hasta **9.04x frente a WSL2**). En productividad neta ($\eta_{\text{neta}}$), la ganancia alcanzó de **3.81x a 6.78x frente a Nativo** (y hasta **10.75x frente a WSL2**), consolidando la microarquitectura ARM64 como una alternativa sostenible de computación verde (*Green HPC*) para bioinformática.
+
+---
 
 ### Tabla Resumen Comparativa Global (Lotes Completos)
+*Datos correspondientes a las Tablas 3.5, 3.6, 3.7 y 3.8 del libro de grado oficial.*
 
-| Pipeline Evaluado | Lecturas Totales | Métrica Clave | Laptop Cristian (x86 Nativo) | Laptop Zamir (x86 WSL2) | Clúster RPi 5 (ARM64) | Ventaja del Clúster RPi 5 |
+| Pipeline Evaluado | Lecturas Totales | Métrica Clave | Laptop Cristian (x86 Nativo) | Laptop Zamir (x86 WSL2) | Clúster RPi 5 (ARM64) | Impacto / Factor de Ganancia (Clúster vs. x86) |
 | :--- | :---: | :--- | :---: | :---: | :---: | :--- |
 | **Kraken 2 + Bracken** | 2,453,431 | **Tiempo de Ejecución** | **22.01 s** | 51.41 s | 51.04 s (paralelo 5 nodos) | Cómputo distribuido simultáneo (1 muestra/nodo) |
-| | | **Energía Total (Wh)** | 0.1505 Wh (541.8 J) | 0.2800 Wh (1,008.0 J) | **0.1734 Wh (624.2 J)** | **Neta: 0.0303 Wh (-76.2% vs. Nativo / -86.9% vs. WSL2)** |
-| | | **Eficiencia (Reads/Wh)** | 16,301,867 Rd/Wh | 8,762,254 Rd/Wh | **14,149,381 Rd/Wh (Neta: 81.01M)** | **Neta: 4.20x vs. Nativo / 7.62x vs. WSL2** |
-| **LotuS3 Suite** | 29,783 | **Tiempo de Ejecución** | 63.00 s (1.05 min) | 598.80 s (9.98 min) | **30.00 s (0.50 min paral.)** | **2.10x vs. Nativo / 19.96x vs. WSL2** |
-| | | **Energía Total (Wh)** | 0.2541 Wh (914.8 J) | 3.8665 Wh (13,919.4 J) | **0.0780 Wh (280.9 J)** | **-69.3% vs. Nativo / -98.0% vs. WSL2** |
-| | | **Eficiencia (Reads/Wh)** | 117,210 Rd/Wh | 7,703 Rd/Wh | **381,657 Rd/Wh** | **3.26x vs. Nativo / 49.55x vs. WSL2** |
-| **QIIME 2 (Deblur + NB)** | 2,690,077 | **Tiempo de Ejecución** | 4,108.8 s (68.48 min) | 4,702.0 s (78.37 min) | **1,606.0 s (26.77 min paral.)** | **2.56x vs. Nativo / 2.93x vs. WSL2** |
-| | | **Energía Total (Wh)** | 23.9160 Wh (86,098 J) | 30.3436 Wh (109,237 J) | **7.8683 Wh (28,326 J)** | **-67.1% vs. Nativo / -74.1% vs. WSL2** |
-| | | **Eficiencia (Reads/Wh)** | 112,461 Rd/Wh | 88,654 Rd/Wh | **341,886 Rd/Wh** | **3.04x vs. Nativo / 3.86x vs. WSL2** |
+| *(Dataset: HOMD_v4_GTDB)* | *(5 muestras)* | **Energía Bruta (Wh)** | 0.2183 Wh (785.9 J) | 0.3744 Wh (1,347.8 J) | **0.2023 Wh (728.3 J)** | **-7.3% vs. Nativo / -46.0% vs. WSL2** |
+| | | **Energía Neta (Wh)** | 0.1518 Wh (546.5 J) | 0.1775 Wh (639.0 J) | **0.0398 Wh (143.3 J)** | **-73.8% vs. Nativo / -77.6% vs. WSL2** |
+| | | **Eficiencia Bruta** | 11,237,105 Rd/Wh | 6,553,358 Rd/Wh | **12,125,061 Rd/Wh** | **1.08x Bruta vs. Nativo (1.85x vs. WSL2)** |
+| | | **Eficiencia Neta** | 16,162,260 Rd/Wh | 13,822,146 Rd/Wh | **61,641,734 Rd/Wh** | **3.81x Neta vs. Nativo (4.46x vs. WSL2)** |
+| **LotuS3 Suite (Illumina)** | 29,783 | **Tiempo de Ejecución** | 66.03 s (1.10 min) | 121.19 s (2.02 min) | **32.55 s (0.54 min paral.)** | **2.03x más veloz vs. Nativo / 3.72x vs. WSL2** |
+| *(Dataset: HM_Contaminated_Soil)*| *(3 muestras)* | **Energía Bruta (Wh)** | 0.3187 Wh (1,147.3 J) | 0.7067 Wh (2,544.1 J) | **0.0782 Wh (281.5 J)** | **-75.5% vs. Nativo / -88.9% vs. WSL2** |
+| *(Línea Base Histórica)* | | **Energía Neta (Wh)** | 0.1322 Wh (475.9 J) | 0.2097 Wh (754.9 J) | **0.0195 Wh (70.2 J)** | **-85.2% vs. Nativo / -90.7% vs. WSL2** |
+| | | **Eficiencia Bruta** | 93,462 Rd/Wh | 42,141 Rd/Wh | **380,844 Rd/Wh** | **4.07x Bruta vs. Nativo (9.04x vs. WSL2)** |
+| | | **Eficiencia Neta** | 225,287 Rd/Wh | 142,027 Rd/Wh | **1,527,333 Rd/Wh** | **6.78x Neta vs. Nativo (10.75x vs. WSL2)** |
+| **LotuS3 Suite (PacBio)** | 25,611 | **Tiempo de Ejecución** | **1,896.00 s (31.60 min)** | *[Pendiente WSL2]* | 1,969.71 s (32.83 min paral.) | **Speedup 4.36x multinodo vs. mononodo** |
+| *(Dataset: HM_Contaminated_Soil)*| *(5 muestras)* | **Energía Bruta (Wh)** | 17.1326 Wh (61,677 J) | *[Pendiente WSL2]* | **12.0311 Wh (43,312 J)** | **-29.8% vs. Nativo / -15.9% vs. Mononodo** |
+| *(Amplicón Full-Length 16S)* | *(25.6k reads)*| **Energía Neta (Wh)** | 15.6405 Wh (56,306 J) | *[Pendiente WSL2]* | **7.3270 Wh (26,377 J)** | **-53.2% vs. Nativo / -15.3% vs. Mononodo** |
+| | | **Eficiencia Bruta** | 1,494.9 Rd/Wh | *[Pendiente WSL2]* | **2,128.7 Rd/Wh** | **1.42x Bruta vs. Nativo (1.19x vs. Mononodo)** |
+| | | **Eficiencia Neta** | 1,637.5 Rd/Wh | *[Pendiente WSL2]* | **3,495.4 Rd/Wh** | **2.13x Neta vs. Nativo (1.18x vs. Mononodo)** |
+| **QIIME 2 (Deblur + NB)** | 2,690,077 | **Tiempo de Ejecución** | 4,323.72 s (72.06 min) | 4,799.44 s (79.99 min) | **1,678.94 s (27.98 min paral.)**| **2.58x más veloz vs. Nativo / 2.86x vs. WSL2** |
+| *(Dataset: alfa_v1v2_SILVA)* | *(5 muestras)* | **Energía Bruta (Wh)** | 25.4939 Wh (91,778 J) | 34.2407 Wh (123,267 J) | **8.2884 Wh (29,838 J)** | **-67.5% vs. Nativo / -75.8% vs. WSL2** |
+| | | **Energía Neta (Wh)** | 12.6965 Wh (45,707 J) | 16.9772 Wh (61,118 J) | **2.7779 Wh (10,000 J)** | **-78.1% vs. Nativo / -83.6% vs. WSL2** |
+| | | **Eficiencia Bruta** | 105,518 Rd/Wh | 78,564 Rd/Wh | **324,561 Rd/Wh** | **3.08x Bruta vs. Nativo (4.13x vs. WSL2)** |
+| | | **Eficiencia Neta** | 211,875 Rd/Wh | 158,452 Rd/Wh | **968,385 Rd/Wh** | **4.57x Neta vs. Nativo (6.11x vs. WSL2)** |
+| **TOTALES LOTE CLÁSICO** | **5,173,291** | **Tiempo Acumulado** | 4,411.8 s (73.53 min) | 4,972.04 s (82.87 min) | **1,762.53 s (29.38 min paral.)**| **2.50x más veloz vs. Nativo / 2.82x vs. WSL2** |
+| *(Kraken2 + LotuS3-Ill + QIIME2)*| *(13 ejecuciones)*| **Energía Bruta Total** | 26.0309 Wh (93,711 J) | 35.3218 Wh (127,159 J) | **8.5689 Wh (30,848 J)** | **-67.1% vs. Nativo / -75.7% vs. WSL2** |
+| | | **Energía Neta Total** | 12.9805 Wh (46,730 J) | 17.3644 Wh (62,510 J) | **2.8372 Wh (10,214 J)** | **-78.1% vs. Nativo / -83.6% vs. WSL2** |
 
 ---
 
 ## 2. 🖥️ Plataformas de Hardware Evaluadas
 
+*Datos sincronizados con la Tabla 3.1 del libro de grado (`tab:entornos`).*
+
 | Parámetro / Componente | Estación Local de Control (x86_64 Nativo) — Laptop Cristian | Plataforma Virtualizada (x86_64 WSL2) — Laptop Zamir | Clúster de Cómputo Green HPC (ARM64) |
 | :--- | :--- | :--- | :--- |
-| **Dispositivo / Modelo** | Laptop ASUS TUF Gaming F15 | Laptop Acer Aspire 5 | Clúster Raspberry Pi 5 (5 nodos físicos de cómputo + 1 nodo máster) |
-| **Procesador (CPU)** | Intel Core i5-10300H (4 núcleos físicos / 8 hilos lógicos) | Intel Core i5-1035G1 (4 núcleos físicos / 8 hilos lógicos) | Broadcom BCM2712 Quad-Core Cortex-A76 (4 núcleos por nodo, 24 núcleos total) |
+| **Rol en el Estudio** | Referencia x86 principal | Referencia complementaria (evaluación de virtualización) | Plataforma evaluada (Green HPC) |
+| **Procesador (CPU)** | Intel Core i5-10300H (4 núcleos físicos / 8 hilos lógicos) | Intel Core i5-10300H (4 núcleos físicos / 8 hilos lógicos) | Broadcom BCM2712 Quad-Core Cortex-A76 (4 núcleos por nodo, 20 núcleos total de cómputo) |
 | **Arquitectura de Instrucciones** | CISC (x86_64) | CISC (x86_64) | RISC (ARMv8.2-A, 64-bit) |
-| **Frecuencia de Reloj** | 2.50 GHz base / hasta 4.50 GHz Turbo Boost | 1.00 GHz base / hasta 3.60 GHz Turbo Boost | 2.40 GHz sostenido sin estrangulamiento térmico |
-| **Memoria RAM** | 16 GB DDR4 @ 2933 MHz | 12 GB DDR4 (8 GB asignados a WSL2) | 8 GB LPDDR4X-4267 SDRAM por nodo (48 GB consolidados) |
-| **Alimentación Eléctrica** | Adaptador AC 150W (medición en red con batería cargada) | Adaptador AC de portátil conectado a red | Fuentes Oficiales Raspberry Pi 27W USB-C PD (5.1V / 5.0A) |
-| **Sistema Operativo** | Linux Ubuntu 24.04 LTS (Kernel nativo 6.8) | Windows 11 + Ubuntu 22.04 LTS sobre WSL2 (Kernel virtualizado 5.15) | Ubuntu Server 24.04 LTS (Kernel Linux 6.8 aarch64) |
-| **Gestor de Cargas** | Ejecución mononodo secuencial (Bash / Conda) | Ejecución mononodo secuencial en WSL2 (Bash / Conda) | Slurm Workload Manager (Partición `partition1`, cuenta `tg`) |
-| **Almacenamiento** | Disco SSD NVMe M.2 512 GB local | Disco SSD NVMe M.2 256 GB local | Almacenamiento local MicroSD 64 GB A2 + NFS compartido de 500 GB Gigabit |
-| **Sensor de Telemetría** | Intel RAPL directo vía MSR/powercap (`sysfs`, 1.0 Hz) | Intel RAPL vía LibreHardwareMonitor (PowerShell, 1.0 Hz) | Sensor PMIC Renesas DA9091 (12 canales ADC internos, 1.0 Hz) |
+| **Frecuencia de Reloj** | 2.50 GHz base / hasta 4.50 GHz Turbo Boost | 2.50 GHz base / hasta 4.50 GHz Turbo Boost | 2.40 GHz sostenido con disipación activa oficial |
+| **Memoria RAM** | 16 GB DDR4 @ 2933 MHz | 32 GB DDR4 (28 GB asignados a WSL2) | 16 GB LPDDR4X-4267 por nodo (80 GB agregados en cómputo) + 8 GB en nodo máster |
+| **Almacenamiento** | SSD NVMe M.2 512 GB local | SSD NVMe M.2 500 GB local | MicroSD local 64 GB A2 (arranque) + NFS compartido Gigabit |
+| **Sistema Operativo** | Linux Ubuntu 24.04 LTS (Kernel nativo 6.8) | Windows 11 + Ubuntu 22.04 LTS sobre WSL2 (Kernel 5.15) | Ubuntu Server 24.04 LTS (Kernel 6.8 aarch64) |
+| **Gestor de Cargas** | Ejecución mononodo secuencial (Bash / Conda) | Ejecución mononodo secuencial en WSL2 (Bash / Conda) | Slurm Workload Manager 23.11 (`partition1`, cuenta `tg`) |
+| **Sensor de Telemetría** | Intel RAPL directo vía MSR/powercap (`sysfs`, 1.0 Hz) | Intel RAPL vía LibreHardwareMonitor (1.0 Hz) | PMIC Renesas DA9091 (ADC hardware interno, 1.0 Hz) |
+| **Dominio de Medición** | `package-0` (CPU Package completo) | CPU Package | Nivel de placa / rieles principales del SoC |
+
+> [!NOTE]
+> **Homogeneidad de Procesador en x86:** Ambas estaciones x86_64 cuentan con el mismo procesador base (Intel Core i5-10300H). Esto aísla de forma rigurosa la variable de arquitectura y permite atribuir con certeza matemática las diferencias entre Nativo y WSL2 a la capa de virtualización y al consumo basal del sistema operativo anfitrión (Windows 11).
 
 ---
 
-## 3. 📐 Metodología de Medición, Modelo Físico y Telemetría en Frío
+## 3. 📐 Metodología de Medición, Modelo Físico y Protocolo de Reposo
 
-### 3.1. Diferencias Metodológicas de Medición entre Plataformas
-1. **Lectura de Sensores RAPL en x86:**
-   * En la **Laptop de Cristian (Nativo)** se lee directamente la interfaz de energía del kernel Linux en `/sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj` a 1.0 Hz. La potencia en reposo ($P_{	ext{idle}}$) con Ubuntu nativo y escritorio ligero oscila entre **2.01 W y 2.14 W**.
-   * En la **Laptop de Zamir (WSL2)** la telemetría se adquiere mediante el script `medir_fase.ps1` llamando a la biblioteca LibreHardwareMonitor desde Windows a 1.0 Hz, censando el paquete de CPU. La potencia en reposo ($P_{	ext{idle}}$) con Windows 11 activo se estableció en **12.28 W** (línea base continua de 5 minutos).
-2. **Telemetría Física en el Clúster ARM64:**
-   * Cada Raspberry Pi 5 incorpora un circuito integrado de gestión de energía (PMIC) **Renesas DA9091** con ADC interno de 12 canales, el cual monitorea en tiempo real la corriente y el voltaje de los rieles de alimentación primarios del SoC Cortex-A76. La potencia basal de reposo ($P_{	ext{idle}}$) del clúster con Ubuntu Server 24.04 LTS activo es de **~2.39 W por nodo** (~14.35 W para todo el sistema).
-3. **Comparabilidad de Energía Bruta vs. Neta:**
-   * La **Energía Bruta ($E_{	ext{total}}$)** es la métrica de consumo total real consumido por la máquina durante la inferencia y es directamente comparable entre plataformas porque cuantifica la demanda energética total del proceso.
-   * La **Energía Neta ($E_{	ext{neta}}$)** descuenta la línea base de reposo para aislar estrictamente el trabajo algorítmico. Dado que la línea base de Windows en la PC de Zamir (12.28 W) es significativamente mayor a la de Ubuntu nativo (~2.1 W), la energía neta de ambas laptops refleja entornos de sistema operativo distintos, mientras que la comparación frente al clúster ratifica en ambos casos la superioridad de la arquitectura ARM64.
+### 3.1. Protocolo Estandarizado de Medición (Tres Fases Continuas)
+Para garantizar que cada corrida experimental comenzara con el equipo sin carga residual y térmicamente estabilizado, se estructuró un protocolo de tres fases obligatorias:
+1. **Estabilización Térmica Previa (60 segundos, sin medición):** Tras invocar el entorno, el sistema permanece en reposo total sin procesos en ejecución para asentar la CPU y finalizar procesos residuales.
+2. **Línea Base Previa en Reposo (*Pre-run idle*, 5 minutos = 300 segundos a 1.0 Hz):** Registro continuo del consumo basal en reposo operativo sin carga de cómputo. Su promedio define la potencia basal $\bar{P}_{\text{idle}}$ oficial de esa sesión.
+3. **Fase de Cómputo Activo (*Active computation*, 1.0 Hz continuo):** Ejecución del pipeline bioinformático completo bajo Slurm en el clúster o mediante ejecución nativa en x86, registrando concurrentemente la potencia instantánea $P(\tau)$.
 
 ### 3.2. Modelo Matemático de Telemetría Eléctrica
 
-1. **Potencia Neta de Cómputo ($P_{	ext{neta}}$):**
-   $$P_{	ext{neta}} (	ext{W}) = P_{	ext{carga}} (	ext{W}) - P_{	ext{idle}} (	ext{W})$$
+1. **Potencia Neta de Cómputo ($P_{\text{neta}}$):**
+   $$P_{\text{neta}}(\tau) = P_{\text{activa}}(\tau) - \bar{P}_{\text{idle}}$$
 
-2. **Energía Total y Neta Consumida ($E$ en $	ext{Wh}$):**
-   $$E_{	ext{total}} (	ext{Wh}) = P_{	ext{carga}} (	ext{W}) 	imes \left( rac{t_{	ext{ejecución}}}{3600} 
-ight)$$
-   $$E_{	ext{neta}} (	ext{Wh}) = P_{	ext{neta}} (	ext{W}) 	imes \left( rac{t_{	ext{ejecución}}}{3600} 
-ight)$$
+2. **Energía Total Bruta ($E_{\text{total}}$ en Wh):**
+   $$E_{\text{total}} = \int_{0}^{t} P_{\text{activa}}(\tau)\, d\tau \approx \frac{1}{3600} \sum_{k=1}^{t} P_{\text{activa}}(k)$$
 
-3. **Eficiencia Energética Computacional ($	ext{Reads/Wh}$):**
-   $$\eta = rac{N_{	ext{lecturas}}}{E (	ext{Wh})}$$
+3. **Energía Neta de Cómputo ($E_{\text{neta}}$ en Wh):**
+   $$E_{\text{neta}} = \int_{0}^{t} P_{\text{neta}}(\tau)\, d\tau = E_{\text{total}} - \left( \bar{P}_{\text{idle}} \times \frac{t}{3600} \right)$$
 
-### 3.3. Protocolo de Telemetría en Frío (Cold Runs)
-* **Purga de Caché:** Limpieza completa de archivos temporales y buffers del sistema antes de cada corrida.
-* **Telemetría Operativa a 1.0 Hz (Baseline Pre + In-Run):**
-  1. *Línea Base Previa (Pre-run):* Muestreo de 30 segundos en reposo operativo inmediatamente previo a disparar el cálculo ($P_{\text{idle}}$ oficial).
-  2. *Telemetría en Carga (In-run):* Muestreo continuo a 1.0 Hz durante la ejecución activa del pipeline ($P_{\text{carga}}$ oficial).
-  *(Nota metodológica: La telemetría neta se calcula estrictamente restando la línea base previa $P_{\text{idle}}$ pre-ejecución, asegurando reproducibilidad directa a partir de los registros brutos sin interpolaciones posteriores).*
+4. **Productividad Energética Bruta y Neta (Reads/Wh):**
+   $$\eta_{\text{bruta}} = \frac{N_{\text{reads}}}{E_{\text{total}}}, \qquad \eta_{\text{neta}} = \frac{N_{\text{reads}}}{E_{\text{neta}}}$$
+
+5. **Factores de Ganancia frente a x86 Nativo:**
+   $$G_{\text{bruta}} = \frac{\eta_{\text{bruta, clúster}}}{\eta_{\text{bruta, x86}}}, \qquad G_{\text{neta}} = \frac{E_{\text{neta, x86}}}{E_{\text{neta, clúster}}}$$
+
+### 3.3. Comportamiento de la Potencia Basal en Reposo ($P_{\text{idle}}$)
+* **Clúster RPi 5 (5 nodos de cómputo):** Potencia individual por nodo entre **$2.341\text{ W}$ y $2.429\text{ W}$** (media global de **$2.39\text{ W}$** por nodo, total de **$11.964\text{ W}$** sumando los 5 nodos físicos con Ubuntu Server activo).
+* **Laptop Cristian (Ubuntu Nativo):** Potencia en reposo entre **$10.17\text{ W}$ y $10.88\text{ W}$** (media de **$10.57\text{ W}$**).
+* **Laptop Zamir (WSL2):** Potencia en reposo entre **$12.95\text{ W}$ y $14.76\text{ W}$** (media de **$13.83\text{ W}$** debido al fondo activo de Windows 11).
 
 ---
 
 ## 4. 📊 Gran Matriz Comparativa Tripartita de Resultados
 
-### 4.1. Resumen Consolidado Tripartito por Pipeline
+### 4.1. Resumen Consolidado Tripartito por Pipeline (Protocolo Oficial de 5 min Pre)
+*Valores tomados directamente de las Tablas 3.5, 3.6, 3.7 y 3.8 del libro de grado.*
 
 | Parámetro / Métrica | Kraken 2: Laptop Cristian (Nativo) | Kraken 2: Laptop Zamir (WSL2) | Kraken 2: Clúster RPi 5 (ARM64) | LotuS3: Laptop Cristian (Nativo) | LotuS3: Laptop Zamir (WSL2) | LotuS3: Clúster RPi 5 (ARM64) | QIIME 2: Laptop Cristian (Nativo) | QIIME 2: Laptop Zamir (WSL2) | QIIME 2: Clúster RPi 5 (ARM64) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Topología de Cómputo** | Mononodo (4 cores) | Mononodo (6 cores) | **5 Nodos Concurrentes** | Mononodo (4 cores) | Mononodo (4 cores) | **3 Nodos Concurrentes** | Mononodo (4 cores) | Mononodo (6 cores) | **5 Nodos Concurrentes** |
+| **Topología de Cómputo** | Mononodo (4 cores) | Mononodo (4 cores) | **5 Nodos Concurrentes** | Mononodo (4 cores) | Mononodo (4 cores) | **3 Nodos Concurrentes** | Mononodo (4 cores) | Mononodo (4 cores) | **5 Nodos Concurrentes** |
 | **Lecturas Evaluadas** | 2,453,431 (5 m.) | 2,453,431 (5 m.) | **2,453,431 (5 m.)** | 29,783 (3 m.) | 29,783 (3 m.) | **29,783 (3 m.)** | 2,690,077 (5 m.) | 2,690,077 (5 m.) | **2,690,077 (5 m.)** |
-| **Tiempo de Inferencia** | **22.01 s** | 51.41 s | 51.04 s (0.85 min) | 66.03 s (1.10 min) | 121.19 s (2.02 min) | **32.55 s (0.54 min)** | 4,323.7 s (72.06 min) | 4,799.4 s (79.99 min) | **1,678.9 s (27.98 min)** |
-| **Potencia Reposo ($P_{\text{idle}}$ Pre)** | **5.90 W** | 12.28 W | **2.38 W/nodo** | **9.47 W** | 12.28 W | **2.42 W/nodo** | **6.11 W** | 12.28 W | **2.37 W/nodo** |
-| **Potencia Media en Carga** | 37.90 W | 28.01 W | **3.13 W/nodo** | 14.51 W | 23.25 W | **3.23 W/nodo** | 20.95 W | 23.23 W | **3.61 W/nodo** |
-| **Potencia Neta de Cómputo** | **32.00 W** | 15.73 W | **0.76 W/nodo** | **5.04 W** | 10.97 W | **0.81 W/nodo** | **14.84 W** | 10.95 W | **1.24 W/nodo** |
-| **Energía Total (Wh)** | 0.1504 Wh (542 J) | 0.2800 Wh (1,008 J)| **0.1734 Wh (624 J)** | 0.2539 Wh (914 J) | 3.8665 Wh (13,919 J)| **0.0780 Wh (281 J)** | 23.9109 Wh (86,079 J) | 30.3436 Wh (109,237 J)| **7.8683 Wh (28,326 J)** |
-| **Energía Neta (Wh)** | **0.1270 Wh (457 J)** | 0.1572 Wh (566 J) | **0.0303 Wh (109 J)** | **0.0882 Wh (317 J)** | 1.8241 Wh (6,567 J)| **0.0204 Wh (74 J)** | **16.9374 Wh (60,975 J)** | 14.3047 Wh (51,497 J)| **2.6940 Wh (9,698 J)** |
-| **Eficiencia Bruta (Rd/Wh)**| 16.31M Rd/Wh | 8.76M Rd/Wh | **14.15M Rd/Wh** | 117,302 Rd/Wh | 7,703 Rd/Wh | **381,833 Rd/Wh** | 112,504 Rd/Wh | 88,654 Rd/Wh | **341,888 Rd/Wh** |
-| **Eficiencia Neta (Rd/Wh)** | **19.32M Rd/Wh** | 15.61M Rd/Wh | **81.01M Rd/Wh** | **337,676 Rd/Wh** | 16,328 Rd/Wh | **1,459,951 Rd/Wh** | **158,825 Rd/Wh** | 188,055 Rd/Wh | **998,544 Rd/Wh** |
-| **Ahorro Bruto en ARM64** | *Línea Base* | +86.0% consumo | **Neta: 76.2% menos** | *Línea Base* | +1,421% consumo | **69.3% menos (vs Nat)**| *Línea Base* | +26.9% consumo | **67.1% menos (vs Nat)**|
-| **Ganancia Verde Bruta (RPi5)** | *1.0x* | 0.54x | **0.87x (1.61x WSL2)** | *1.0x* | 0.07x | **3.26x (49.57x WSL2)**| *1.0x* | 0.79x | **3.04x (3.86x WSL2)** |
-| **Ganancia Verde Neta (RPi5)** | *1.0x* | 0.81x | **4.19x (5.19x WSL2)** | *1.0x* | 0.05x | **4.32x (89.42x WSL2)**| *1.0x* | 1.18x | **6.29x (5.31x WSL2)** |
+| **Tiempo de Inferencia ($t$, s)**| **22.01 s** | 51.41 s | 51.04 s (paralelo) | 66.03 s (1.10 min) | 121.19 s (2.02 min) | **32.55 s (0.54 min paral.)** | 4,323.72 s (72.06 min) | 4,799.44 s (79.99 min) | **1,678.94 s (27.98 min paral.)** |
+| **Uso Medio de CPU (%)** | 94.20% | 88.50% | 91.50% (por nodo) | 88.00% | 85.00% | 85.00% (por nodo) | 96.50% | 92.00% | 94.00% (por nodo) |
+| **RAM Máxima por Proceso** | 1.80 GB | 1.80 GB | 1.60 GB (por nodo) | 1.20 GB | 1.40 GB | 1.10 GB (por nodo) | 2.40 GB | 3.20 GB | 2.10 GB (por nodo) |
+| **Potencia Reposo ($P_{\text{idle}}$, W)**| 10.88 W | 13.78 W | 2.35 W/nodo (11.75 W tot)| 10.17 W | 14.76 W | 2.41 W/nodo (7.23 W tot) | 10.66 W | 12.95 W | 2.42 W/nodo (12.10 W tot) |
+| **Potencia Media en Carga (W)** | 35.70 W | 26.22 W | 2.93 W/nodo (14.65 W tot)| 17.37 W | 20.99 W | 3.22 W/nodo (9.66 W tot) | 21.23 W | 25.68 W | 3.64 W/nodo (18.20 W tot) |
+| **Potencia Neta Cómputo (W)** | 24.83 W | 12.43 W | 0.58 W/nodo (2.90 W tot) | 7.21 W | 6.23 W | 0.80 W/nodo (2.40 W tot) | 10.57 W | 12.73 W | 1.22 W/nodo (6.10 W tot) |
+| **Energía Total Bruta (Wh)** | 0.2183 Wh (786 J) | 0.3744 Wh (1,348 J)| **0.2023 Wh (728 J)** | 0.3187 Wh (1,147 J)| 0.7067 Wh (2,544 J) | **0.0782 Wh (282 J)** | 25.4939 Wh (91,778 J)| 34.2407 Wh (123,267 J)| **8.2884 Wh (29,838 J)** |
+| **Energía Neta Cómputo (Wh)** | 0.1518 Wh (547 J) | 0.1775 Wh (639 J) | **0.0398 Wh (143 J)** | 0.1322 Wh (476 J) | 0.2097 Wh (755 J) | **0.0195 Wh (70 J)** | 12.6965 Wh (45,707 J)| 16.9772 Wh (61,118 J)| **2.7779 Wh (10,000 J)** |
+| **Eficiencia Bruta (Rd/Wh)** | 11,237,105 Rd/Wh | 6,553,358 Rd/Wh | **12,125,061 Rd/Wh** | 93,462 Rd/Wh | 42,141 Rd/Wh | **380,844 Rd/Wh** | 105,518 Rd/Wh | 78,564 Rd/Wh | **324,561 Rd/Wh** |
+| **Eficiencia Neta (Rd/Wh)** | 16,162,260 Rd/Wh | 13,822,146 Rd/Wh | **61,641,734 Rd/Wh** | 225,287 Rd/Wh | 142,027 Rd/Wh | **1,527,333 Rd/Wh** | 211,875 Rd/Wh | 158,452 Rd/Wh | **968,385 Rd/Wh** |
+| **Ganancia Bruta (RPi5 vs Nat)**| *1.00x (Ref)* | 0.58x | **1.08x (1.85x vs WSL2)**| *1.00x (Ref)* | 0.45x | **4.07x (9.04x vs WSL2)**| *1.00x (Ref)* | 0.74x | **3.08x (4.13x vs WSL2)** |
+| **Ganancia Neta (RPi5 vs Nat)** | *1.00x (Ref)* | 0.86x | **3.81x (4.46x vs WSL2)**| *1.00x (Ref)* | 0.63x | **6.78x (10.75x vs WSL2)**| *1.00x (Ref)* | 0.75x | **4.57x (6.11x vs WSL2)** |
+
 ---
 
-### 4.2. Kraken 2 + Bracken: Comparativa Muestra a Muestra a 3 Plataformas
-Dataset: `HOMD_v4_GTDB` (5 muestras, 2,453,431 lecturas pareadas frente a base de datos GTDB, protocolo unificado 5 min pre).
+### 4.2. Análisis Detallado por Pipeline Bioinformático
 
-| Muestra | Reads | Tiempo Nativo (s) | Tiempo WSL2 (s) | Tiempo Clúster (s) | Potencia Nativo (W) | Potencia WSL2 (W) | Potencia Clúster (W) | Energía Bruta Nativo (Wh) | Energía Bruta WSL2 (Wh) | Energía Bruta Clúster (Wh) | Eficiencia Nativo (Rd/Wh) | Eficiencia WSL2 (Rd/Wh) | Eficiencia Clúster (Rd/Wh) |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `c001` | 480,704 | **5.0 s** | 3.9 s | **15.0 s** | 35.60 W | 27.12 W | **3.41 W** | 0.0494 Wh | 0.0527 Wh | **0.0142 Wh** | 9.73M | 9.12M | **33.85M** |
-| `c002` | 496,437 | **5.0 s** | 4.1 s | **15.0 s** | 40.81 W | 30.10 W | **3.54 W** | 0.0567 Wh | 0.0585 Wh | **0.0147 Wh** | 8.76M | 8.49M | **33.77M** |
-| `c003` | 474,342 | **5.0 s** | 4.1 s | **14.0 s** | 39.53 W | 26.44 W | **3.56 W** | 0.0549 Wh | 0.0514 Wh | **0.0139 Wh** | 8.64M | 9.23M | **34.13M** |
-| `e001` | 514,955 | **4.0 s** | 4.4 s | **14.0 s** | 37.25 W | 28.89 W | **3.85 W** | 0.0414 Wh | 0.0642 Wh | **0.0150 Wh** | 12.44M | 8.02M | **34.33M** |
-| `e002` | 486,993 | **4.0 s** | 4.1 s | **14.0 s** | 17.10 W | 27.38 W | **3.52 W** | 0.0190 Wh | 0.0532 Wh | **0.0137 Wh** | 25.63M | 9.15M | **35.55M** |
-| **TOTAL LOTE** | **2,453,431** | **23.00 s** | **20.60 s** | **15.00 s (paralelo 5 nodos)** | 34.66 W | 28.01 W | **3.58 W/nodo** | 0.2214 Wh | 0.2800 Wh | **0.0715 Wh (257 J)** | 11.08M | 8.76M | **34.31M Rd/Wh (Neta: 100.55M)** |
+#### ⚡ Kraken 2 + Bracken (Clasificación Basada en k-meros sobre GTDB)
+* **Perfil de Carga:** Fase breve dominada por operaciones de lectura en memoria I/O y recorrido intensivo de árboles taxonómicos sobre los 142 MB de la base GTDB.
+* **Comportamiento Temporal:** La estación x86 nativa obtuvo un tiempo menor (**22.01 s**) debido a la mayor velocidad de transferencia del disco SSD NVMe M.2 local frente a la lectura en red NFS del clúster (**51.04 s** distribuidos en 5 nodos).
+* **Eficiencia:** A pesar del tiempo de acceso a red, la bajísima potencia disipada por nodo en ARM64 (2.93 W en carga vs. 35.70 W en x86) permitió al clúster alcanzar **12,125,061 Rd/Wh brutos (1.08x)** y **61,641,734 Rd/Wh netos (3.81x de ventaja frente a Nativo)**.
+
+#### 🌿 LotuS3 Suite (Construcción de OTUs sobre SILVA)
+* **Perfil de Carga:** Flujo intermedio que combina control de calidad demultiplexado (`sdm`), desreplicación y agrupamiento *de novo* UPARSE (`usearch`) con indexación rápida.
+* **Comportamiento Temporal:** El clúster aceleró el procesamiento paralelo a **32.55 s (2.03x más rápido que Nativo y 3.72x que WSL2)**.
+* **Eficiencia:** El clúster consumió apenas **0.0782 Wh brutos** frente a **0.3187 Wh nativo (-75.5%)** y **0.7067 Wh en WSL2 (-88.9%)**, registrando una eficiencia de **380,844 Rd/Wh brutos (4.07x)** y **1,527,333 Rd/Wh netos (6.78x vs. Nativo)**.
+
+#### 🧬 QIIME 2 (Denoising con Deblur + Clasificación Bayesiana Naive Bayes SILVA 138)
+* **Perfil de Carga:** El pipeline más intensivo del benchmark, con un alto costo de cómputo algorítmico continuo de entre 28 y 80 minutos por lote completo.
+* **Comportamiento Temporal:** La distribución simultánea en los 5 nodos físicos del clúster completó el procesamiento en **27.98 min (1,678.94 s)**, superando radicalmente la ejecución secuencial de **72.06 min en Nativo (2.58x)** y **79.99 min en WSL2 (2.86x)**.
+* **Eficiencia:** El clúster redujo la energía total consumida de **25.49 Wh (Nativo)** y **34.24 Wh (WSL2)** a **8.29 Wh (-67.5% y -75.8% de ahorro eléctrico)**. En energía neta algorítmica, el consumo cayó de **12.70 Wh nativo a solo 2.78 Wh (-78.1%)**, logrando una eficiencia de **324,561 Rd/Wh brutos (3.08x)** y **968,385 Rd/Wh netos (4.57x)**.
+
 ---
 
-### 4.3. LotuS3 Suite: Comparativa Muestra a Muestra a 3 Plataformas
-Dataset: `HM_Contaminated_Soil` (3 muestras, 29,783 lecturas pareadas homologadas frente a SILVA, protocolo unificado 5 min pre).
+### 4.3. Desglose Muestra a Muestra Complementario (Registros Granulares de Inferencia)
+Para fines de reproducibilidad y trazabilidad por muestra individual (`c001` a `e002`), se dispone de los registros temporales y energéticos por corrida individual:
 
-| Muestra | Reads | Tiempo Nativo (s) | Tiempo WSL2 (s) | Tiempo Clúster (s) | Potencia Nativo (W) | Potencia WSL2 (W) | Potencia Clúster (W) | Energía Bruta Nativo (Wh) | Energía Bruta WSL2 (Wh) | Energía Bruta Clúster (Wh) | Eficiencia Nativo (Rd/Wh) | Eficiencia WSL2 (Rd/Wh) | Eficiencia Clúster (Rd/Wh) |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `c001` | 8,208 | **23.0 s** | 235.1 s | **30.0 s** | 17.19 W | 21.81 W | **3.16 W** | 0.1098 Wh | 1.4242 Wh | **0.0264 Wh** | 74,754 | 5,763 | **310,909** |
-| `c002` | 11,159 | **22.0 s** | 189.4 s | **28.0 s** | 17.13 W | 24.01 W | **3.14 W** | 0.1047 Wh | 1.2631 Wh | **0.0245 Wh** | 106,581 | 8,835 | **455,469** |
-| `e001` | 10,416 | **22.0 s** | 174.2 s | **28.0 s** | 17.52 W | 24.36 W | **3.26 W** | 0.1071 Wh | 1.1792 Wh | **0.0254 Wh** | 97,255 | 8,833 | **410,079** |
-| **TOTAL LOTE** | **29,783** | **67.00 s (1.12 min)** | 598.8 s (9.98 min) | **30.00 s (0.50 min)** | 17.28 W | 23.25 W | **3.19 W/nodo** | 0.3216 Wh | 3.8665 Wh | **0.0762 Wh (274 J)** | 92,609 | 7,703 | **390,853 Rd/Wh (Neta: 1.60M)** |
+* **Muestra de Control `e001` (Referencia Común en las 3 Plataformas):**
+  * *Kraken 2:* Nativo: 4.0 s, 37.25 W, 0.0414 Wh (12.44M Rd/Wh) | WSL2: 4.4 s, 28.89 W, 0.0642 Wh (8.02M Rd/Wh) | Clúster (1 nodo): 14.0 s, 3.85 W, 0.0150 Wh (34.33M Rd/Wh).
+  * *LotuS3 (Illumina):* Nativo: 22.0 s, 17.52 W, 0.1071 Wh (97,255 Rd/Wh) | WSL2: 174.2 s, 24.36 W, 1.1792 Wh (8,833 Rd/Wh) | Clúster (1 nodo): 28.0 s, 3.26 W, 0.0254 Wh (410,079 Rd/Wh).
+  * *LotuS3 (PacBio):* Nativo: 350.2 s (5.8 min), 31.85 W, 3.098 Wh (1,657 Rd/Wh) | Clúster (1 nodo): 1,386.2 s (23.1 min), 6.22 W, 2.3522 Wh (2,182 Rd/Wh).
+  * *QIIME 2:* Nativo: 865.0 s (14.4 min), 20.65 W, 4.9629 Wh (111,885 Rd/Wh) | WSL2: 936.7 s (15.6 min), 24.67 W, 6.4178 Wh (88,174 Rd/Wh) | Clúster (1 nodo): 1,584.0 s (26.4 min), 3.67 W, 1.6155 Wh (343,716 Rd/Wh).
+
+---
+
+### 4.4. 🧬 Benchmark Especializado: LotuS3 Suite sobre Lecturas Largas PacBio (Gen 16S Full-Length)
+
+Para atender las observaciones de la dirección de tesis respecto a la representatividad biológica de LotuS3 en comunidades de alta complejidad (suelos contaminados con metales pesados, `HM_Contaminated_Soil`), se implementó la evaluación oficial con tecnología de **lecturas largas PacBio HiFi (~1,500 pb)** abarcando las 5 muestras completas (`c001` a `e002`, con un total de **25,611 lecturas**).
+
+Este flujo aprovecha la demultiplexación y control de calidad especializado para secuencias largas mediante el perfil de configuración `sdm_PacBio_LSSU.txt`, agrupamiento OTU de alta resolución contra SILVA y asignación taxonómica rigurosa.
+
+#### Desglose Experimental Multinodo en el Clúster ARM64 (5 Nodos Concurrentes, Slurm Jobs 1792 a 1796)
+
+| Muestra Biológica | Nodo Físico Asignado | Potencia Reposo ($P_{\text{idle}}$, W) | Potencia en Carga ($P_{\text{carga}}$, W) | Duración ($t$, s) | Energía Bruta ($E_{\text{tot}}$, Wh) | Energía Neta ($E_{\text{net}}$, Wh) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `c001` (5,179 reads) | `rbp5-1` | 2.379 W | 5.996 W | 1,775.9 s (29.60 min) | 2.9471 Wh (10,610 J) | 1.7737 Wh (6,385 J) |
+| `c002` (5,045 reads) | `rbp5-2` | 2.347 W | 6.838 W | 867.1 s (14.45 min) | 1.5955 Wh (5,744 J) | 1.0301 Wh (3,708 J) |
+| `c003` (5,194 reads) | `rbp5-3` | 2.401 W | 6.273 W | 1,181.7 s (19.70 min) | 2.0143 Wh (7,251 J) | 1.2262 Wh (4,414 J) |
+| `e001` (5,133 reads) | `rbp5-4` | 2.365 W | 6.219 W | 1,386.2 s (23.10 min) | 2.3522 Wh (8,468 J) | 1.4415 Wh (5,189 J) |
+| `e002` (5,060 reads) | `rbp5-5` | 2.315 W | 5.751 W | 1,969.7 s (32.83 min) | 3.1219 Wh (11,239 J) | 1.8555 Wh (6,680 J) |
+| **CONSOLIDADO MULTINODO** | **5 Nodos Clúster** | **2.361 W (media)** | **6.118 W (media)** | **1,969.71 s (32.83 min)** | **12.0311 Wh (43,312 J)** | **7.3270 Wh (26,377 J)** |
+
+#### Comparativa de Plataformas en LotuS3 PacBio (25,611 Lecturas Largas)
+
+| Métrica / Dimensión | Laptop Cristian (x86_64 Nativo) | Laptop Zamir (x86_64 WSL2) | Clúster RPi 5 (ARM64 Mononodo) | Clúster RPi 5 (ARM64 Multinodo) | Impacto Clúster Multinodo vs. x86 Nativo |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Topología y Cores** | 1 Estación (4 cores / 8 hilos) | *[Pendiente]* | 1 Nodo RPi 5 (4 cores) | **5 Nodos RPi 5 (4 cores/nodo, 20 cores)** | Paralelismo masivo distribuido |
+| **Tiempo de Inferencia** | **1,896.00 s (31.60 min)** | *[Pendiente]* | 8,582.68 s (143.04 min, 2.38 h) | 1,969.71 s (32.83 min paralelo) | **1.04x (Paridad temporal con x86)** |
+| **Speedup vs. Mononodo** | — | — | 1.00x (Referencia secuencial) | **4.36x más veloz** | Eficiencia paralela del 87.2% |
+| **Potencia Reposo ($P_{\text{idle}}$)**| 2.829 W | *[Pendiente]* | 2.369 W | 2.361 W por nodo | Línea base homogénea en ARM64 |
+| **Potencia Media en Carga** | 32.478 W | *[Pendiente]* | 6.007 W | 6.118 W por nodo | Disipación 5.3x menor por nodo |
+| **Energía Total Bruta ($E_{\text{tot}}$)**| 17.1326 Wh (61,677 J) | *[Pendiente]* | 14.2991 Wh (51,477 J) | **12.0311 Wh (43,312 J)** | **-29.8% de ahorro energético bruto** |
+| **Energía Neta ($E_{\text{net}}$)**| 15.6405 Wh (56,306 J) | *[Pendiente]* | 8.6506 Wh (31,142 J) | **7.3270 Wh (26,377 J)** | **-53.2% de ahorro energético neto** |
+| **Eficiencia Bruta ($\eta_{\text{bruta}}$)**| 1,494.9 Reads/Wh | *[Pendiente]* | 1,791.1 Reads/Wh | **2,128.7 Reads/Wh** | **1.42x mayor productividad biológica** |
+| **Eficiencia Neta ($\eta_{\text{neta}}$)**| 1,637.5 Reads/Wh | *[Pendiente]* | 2,960.6 Reads/Wh | **3,495.4 Reads/Wh** | **2.13x mayor productividad neta** |
+
+> [!TIP]
+> **Conclusión Energética del Experimento PacBio:**
+> Al procesar amplicones de gen completo 16S, el clúster ARM64 entrega la corrida completa en un tiempo prácticamente equivalente al procesador Intel Core i5 de alta gama (**32.83 min vs. 31.60 min**), pero disipando **-29.8% menos energía bruta total (12.03 Wh frente a 17.13 Wh)** y **-53.2% menos energía neta de cálculo**. La productividad energética del clúster se eleva a **2,128.7 Reads/Wh (1.42x bruta y 2.13x neta)**.
+
+---
+
+## 5. 🔀 Benchmark Experimental Mononodo vs. Multinodo en el Clúster ARM64 (Validación de Escalabilidad y Demostración Green HPC)
+
+Por requerimiento expreso de la dirección de tesis, se ejecutó una campaña experimental dedicada para contrastar la **ejecución mononodo secuencial (1 único nodo procesando todo el lote)** frente a la **ejecución multinodo concurrente (N nodos procesando en paralelo 1 muestra por nodo bajo Slurm)** sobre el mismo clúster físico Raspberry Pi 5.
+
+Este experimento demuestra de manera empírica:
+1. La aceleración real (*Speedup*) alcanzada por el gestor Slurm en hardware ARM64.
+2. La relación entre la duración de la tarea computacional y la dinámica de acumulación de la potencia basal de reposo.
+
+### 5.1. Gran Tabla Comparativa Mononodo vs. Multinodo (Todos los Pipelines)
+
+| Pipeline Bioinformático | Dataset y Muestras | Configuración | Tiempo ($t$, s) | Speedup Real | $P_{\text{idle}}$ (W) | $P_{\text{carga}}$ (W) | Energía Bruta (Wh) | Energía Neta (Wh) | Eficiencia Bruta (Rd/Wh) | Eficiencia Neta (Rd/Wh) |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **QIIME 2** | `alfa_v1v2_SILVA` | **Mononodo (1 nodo)** | 8,394.91 s (139.92 min, 2.33 h) | 1.00x | 2.363 W | 3.615 W | 8.4246 Wh (30,329 J) | 2.9144 Wh (10,492 J) | 319,312 Rd/Wh | 923,016 Rd/Wh |
+| *(Deblur + Naive Bayes)* | *(5 muestras, 2.69M reads)*| **Multinodo (5 nodos)** | **1,678.94 s (27.98 min)** | **5.00x** | 2.420 W | 3.640 W | **8.2884 Wh (29,838 J)** | **2.7779 Wh (10,000 J)** | **324,559 Rd/Wh** | **968,385 Rd/Wh** |
+| **LotuS3 PacBio** | `HM_Contaminated_Soil` | **Mononodo (1 nodo)** | 8,582.68 s (143.04 min, 2.38 h) | 1.00x | 2.369 W | 6.007 W | 14.2991 Wh (51,477 J) | 8.6506 Wh (31,142 J) | 1,791.1 Rd/Wh | 2,960.6 Rd/Wh |
+| *(Amplicón Full-Length 16S)*| *(5 muestras, 25.6k reads)*| **Multinodo (5 nodos)** | **1,969.71 s (32.83 min)** | **4.36x** | 2.361 W | 6.118 W | **12.0311 Wh (43,312 J)** | **7.3270 Wh (26,377 J)** | **2,128.7 Rd/Wh** | **3,495.4 Rd/Wh** |
+| **LotuS3 Illumina** | `HM_Contaminated_Soil` | **Mononodo (1 nodo)** | 78.50 s (1.31 min) | 1.00x | 2.374 W | 3.196 W | **0.0697 Wh (251 J)** | **0.0179 Wh (64 J)** | **427,292 Rd/Wh** | **1,660,482 Rd/Wh** |
+| *(Línea Base Histórica)* | *(3 muestras, 29.8k reads)*| **Multinodo (3 nodos)** | **32.55 s (0.54 min)** | **2.41x** | 2.410 W | 3.220 W | 0.0782 Wh (282 J) | 0.0195 Wh (70 J) | 380,857 Rd/Wh | 1,527,333 Rd/Wh |
+| **Kraken 2 + Bracken** | `HOMD_v4_GTDB` | **Mononodo (1 nodo)** | 98.35 s (1.64 min) | 1.00x | 2.398 W | 4.015 W | **0.0976 Wh (351 J)** | **0.0321 Wh (116 J)** | **25,134,137 Rd/Wh** | **76,452,382 Rd/Wh** |
+| *(Clasificación k-meros)* | *(5 muestras, 2.45M reads)*| **Multinodo (5 nodos)** | **51.04 s (0.85 min)** | **1.93x** | 2.350 W | 2.930 W | 0.2023 Wh (728 J) | 0.0398 Wh (143 J) | 12,127,687 Rd/Wh | 61,643,995 Rd/Wh |
 
 > [!NOTE]
-> **Análisis del Cuello de Botella de I/O en WSL2:** En la plataforma WSL2 de Zamir, LotuS3 tardó 598.8 s (casi 10 minutos), debido a que la virtualización de WSL2 introduce una penalización severa en el subsistema de archivos durante la construcción repetitiva de índices temporales y llamadas intensivas a disco (`sdm` y `vsearch`). En contraste, la ejecución en Linux Nativo (67.0 s) y en el clúster con NFS optimizado (30.0 s paralelos) demostraron un desempeño fluido y altamente eficiente.
----
+> *Nota Metodológica:*
+> * En **Multinodo**, la energía representa la sumatoria total del consumo de todos los nodos físicos concurrentes durante la ventana de ejecución paralela.
+> * En **Mononodo**, la energía representa el consumo total de un único nodo procesando secuencialmente una muestra tras otra.
 
-### 4.4. QIIME 2: Comparativa Muestra a Muestra a 3 Plataformas
-Dataset: `alfa_v1v2_SILVA` (5 muestras, 2,690,077 lecturas pareadas, Deblur + Naive Bayes SILVA 138, protocolo unificado 5 min pre).
+### 5.2. Análisis de Rendimiento y Dinámica Energética (Amdahl y Costo Basal)
 
-| Muestra | Reads | Tiempo Nativo (s) | Tiempo WSL2 (s) | Tiempo Clúster (s) | Potencia Nativo (W) | Potencia WSL2 (W) | Potencia Clúster (W) | Energía Bruta Nativo (Wh) | Energía Bruta WSL2 (Wh) | Energía Bruta Clúster (Wh) | Eficiencia Nativo (Rd/Wh) | Eficiencia WSL2 (Rd/Wh) | Eficiencia Clúster (Rd/Wh) |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `c001` | 513,102 | **860.0 s** | 986.8 s | 1,500 s | 21.68 W | 22.70 W | **3.66 W** | 5.1786 Wh | 6.2219 Wh | **1.5265 Wh** | 99,081 | 82,467 | **336,130** |
-| `c002` | 528,719 | **865.0 s** | 932.5 s | 1,544 s | 21.74 W | 23.86 W | **3.69 W** | 5.2241 Wh | 6.1805 Wh | **1.5818 Wh** | 101,208 | 85,426 | **334,251** |
-| `c003` | 549,850 | **865.0 s** | 930.4 s | 1,530 s | 21.29 W | 24.57 W | **3.64 W** | 5.1153 Wh | 6.3510 Wh | **1.5466 Wh** | 107,491 | 85,023 | **355,522** |
-| `e001` | 555,273 | **865.0 s** | 936.7 s | 1,584 s | 20.65 W | 24.67 W | **3.67 W** | 4.9629 Wh | 6.4178 Wh | **1.6155 Wh** | 111,885 | 88,174 | **343,716** |
-| `e002` | 543,133 | **864.0 s** | 915.6 s | 1,566 s | 20.75 W | 20.34 W | **3.57 W** | 4.9809 Wh | 5.1724 Wh | **1.5542 Wh** | 109,043 | 105,006 | **349,461** |
-| **TOTAL LOTE** | **2,690,077** | 4,319.0 s (71.98 min) | 4,702.0 s (78.37 min) | **1,584.0 s (26.40 min)** | 21.22 W | 23.23 W | **3.65 W/nodo** | 25.4618 Wh | 30.3436 Wh | **7.8246 Wh (28,169 J)** | 105,651 | 88,654 | **343,797 Rd/Wh (Neta: 1.02M)** |
----
+1. **Aceleración Lineal Perfecta en Cargas Intensivas (QIIME 2):**
+   * En QIIME 2, la ejecución multinodo en 5 nodos redujo el tiempo de **139.92 minutos a 27.98 minutos**, obteniendo un factor de aceleración exacto de **$S = 5.00\text{x}$** ($100.0\%$ de eficiencia de paralelización teórica). Al ser cada muestra totalmente independiente, no existe sobrecarga de comunicación inter-nodo durante el procesamiento algorítmico de Deblur y Naive Bayes.
+   * En LotuS3 PacBio, el speedup alcanzó **$4.36\text{x}$** ($87.2\%$ de eficiencia en 5 nodos), recortando la espera de **2.38 horas (143 min) a solo 32.83 minutos**.
 
-### 4.5. Comparativa Directa en la Muestra Común `e001`
-La muestra biológica de evaluación `e001` es la referencia transversal evaluada bajo las mismas condiciones en las tres plataformas:
+2. **La Paradoja de la Potencia Basal: ¿Por qué Multinodo Ahorra Energía en Tareas Largas?**
+   * Un hallazgo fundamental para la tesis radica en el consumo eléctrico bruto: en cargas computacionalmente pesadas (> 30 minutos), **la ejecución multinodo consume MENOS energía bruta que la mononodo** (QIIME 2: $8.29\text{ Wh}$ vs. $8.42\text{ Wh}$; LotuS3 PacBio: **$12.03\text{ Wh}$ vs. $14.30\text{ Wh}$, ahorro del $-15.9\%$**).
+   * **Explicación Física:** En ejecución mononodo secuencial, el sistema debe permanecer encendido durante más de dos horas disipando continuamente su potencia basal de reposo ($\sim 2.37\text{ W} \times 2.38\text{ h} \approx 5.64\text{ Wh}$ de pura energía basal pasiva). Al paralelizar en 5 nodos, el trabajo se completa en 32 minutos, minimizando el tiempo total de disipación residual activa.
 
-| Pipeline | Plataforma | Tiempo (s) | Potencia en Carga (W) | Energía Bruta (Wh) | Energía Neta (Wh) | Eficiencia Bruta (Rd/Wh) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Kraken 2 + Bracken** | Laptop Cristian (x86 Nativo) | **4.00 s** | 37.25 W | 0.0414 Wh | 0.0293 Wh | 12.44M Rd/Wh |
-| | Laptop Zamir (x86 WSL2) | 4.40 s | 28.89 W | 0.0642 Wh | 0.0369 Wh | 8.02M Rd/Wh |
-| | Clúster RPi 5 (ARM64, 1 nodo) | 14.00 s | **3.85 W** | **0.0150 Wh** | **0.0059 Wh** | **34.33M Rd/Wh (Neta: 87.28M)** |
-| **LotuS3 Suite** | Laptop Cristian (x86 Nativo) | **22.00 s** | 17.52 W | 0.1071 Wh | 0.0450 Wh | 97,255 Rd/Wh |
-| | Laptop Zamir (x86 WSL2) | 174.20 s | 24.36 W | 1.1792 Wh | 0.5848 Wh | 8,833 Rd/Wh |
-| | Clúster RPi 5 (ARM64, 1 nodo) | 28.00 s | **3.26 W** | **0.0254 Wh** | **0.0066 Wh** | **410,079 Rd/Wh (Neta: 1.58M)** |
-| **QIIME 2** | Laptop Cristian (x86 Nativo) | **865.00 s (14.4 min)** | 20.65 W | 4.9629 Wh | 2.4019 Wh | 111,885 Rd/Wh |
-| | Laptop Zamir (x86 WSL2) | 936.70 s (15.6 min) | 24.67 W | 6.4178 Wh | 3.2226 Wh | 88,174 Rd/Wh |
-| | Clúster RPi 5 (ARM64, 1 nodo) | 1,584.00 s (26.4 min) | **3.67 W** | **1.6155 Wh** | **0.5510 Wh** | **343,716 Rd/Wh (Neta: 1.01M)** |
+3. **Cargas Ultracortas y Costo de Activación Paralela:**
+   * En flujos muy breves (< 2 minutos como Kraken 2 e Illumina), el speedup es menor ($1.93\text{x}$ a $2.41\text{x}$) debido a la latencia fija del sistema de archivos en red NFS y el arranque de contenedores Slurm.
+   * En estos casos, encender 5 nodos a la vez acumula la potencia base de 5 placas simultáneamente durante 50 segundos ($5 \times 2.35\text{ W} \approx 11.75\text{ W}$), resultando en un consumo bruto ligeramente mayor en multinodo ($0.2023\text{ Wh}$ vs. $0.0976\text{ Wh}$), aunque reduciendo el tiempo a la mitad.
 
 ---
 
-## 5. 🔬 Fichas Técnicas de Telemetría y Trazabilidad de Datos
+## 6. 🔬 Fichas Técnicas de Telemetría y Trazabilidad de Archivos
 
-### 5.1. Kraken 2 + Bracken
+### 6.1. Kraken 2 + Bracken
 * **Laptop Cristian (x86 Nativo):**
   * Script Fuente: [`workflow/scripts/nativo/run_kraken2_energy.sh`](file:///home/cristian-solano/lemmi16s/workflow/scripts/nativo/run_kraken2_energy.sh)
   * Telemetría RAPL: `medicion_energia/nativas/energia_Kraken2_Nativo_Batch5_GTDB_*.csv`
-  * Log: `proyectos/logs_nativos/kraken2_batch_telemetry.log`
   * Predicciones: `benchmark/nativos/kraken2_native.HOMD_v4_GTDB-*.predictions.tsv`
 * **Laptop Zamir (x86 WSL2):**
-  * Script de Telemetría: PowerShell `medir_fase.ps1` con LibreHardwareMonitor.
+  * Script Telemetría: PowerShell `medir_fase.ps1` con LibreHardwareMonitor.
   * Archivo Fuente: `C:\medicioenergia\kraken2\energia_kraken2_x86_TODAS_20260925_110858.csv`
   * Predicciones: `benchmark/analysis_outputs/kraken2/kraken2_213_lemmi16s_nativo.HOMD_v4_GTDB-*.predictions.tsv`
-* **Clúster Green HPC (5 Nodos ARM64):**
-  * Despacho: Jobs Slurm 1483 a 1487 (`rbp5-1` a `rbp5-5`), 4 cores dedicados por nodo exclusivo (`--exclusive`, `--mem=14G`).
+* **Clúster Green HPC (5 Nodos ARM64 Multinodo):**
+  * Despacho: Jobs Slurm 1483 a 1487 (`rbp5-1` a `rbp5-5`), 4 cores por nodo (`--exclusive`).
   * Telemetría PMIC DA9091: `medicion_energia/kraken2/` (15 archivos CSV: pre, in-run y post).
+* **Clúster Green HPC (Mononodo Secuencial):**
+  * Despacho: Job Slurm 1750 (`rbp5-3`, 4 cores).
+  * Telemetría PMIC DA9091: `medicion_energia/mononodo/energia_Kraken2_mononodo_node_rbp5-3_job1750_*.csv`.
 
-### 5.2. LotuS3 Suite
-* **Laptop Cristian (x86 Nativo):**
-  * Dataset: 29,783 lecturas oficiales (`c001`, `c002`, `e001`), alimentación AC, telemetría RAPL activa.
+### 6.2. LotuS3 Suite (PacBio Full-Length 16S y Línea Base Illumina)
+* **Laptop Cristian (x86 Nativo - PacBio 5 Muestras):**
+  * Script Fuente: [`workflow/scripts/nativo/run_lotus3_pacbio_energy.sh`](file:///home/cristian-solano/lemmi16s/workflow/scripts/nativo/run_lotus3_pacbio_energy.sh)
+  * Telemetría RAPL: `medicion_energia/nativas/energia_lotus3_pacbio_Nativo_all_20261003_123350_20261003_123953.csv`
+  * Baseline Pre: `medicion_energia/nativas/energia_baseline_pre_lotus3_pacbio_20261003_123450.csv` ($P_{\text{idle}} = 2.829\text{ W}$)
+  * Predicciones: `benchmark/nativos/lotus3_native.HM_Contaminated_Soil-*.predictions.tsv` (25,611 reads).
+* **Laptop Cristian (x86 Nativo - Línea Base Illumina 3 Muestras):**
   * Script Fuente: [`workflow/scripts/nativo/run_lotus3_energy.sh`](file:///home/cristian-solano/lemmi16s/workflow/scripts/nativo/run_lotus3_energy.sh)
   * Telemetría RAPL: `medicion_energia/nativas/energia_LotuS3_Nativo_Batch3_SILVA_20260927_135552.csv`
-  * Log: `proyectos/logs_nativos/lotus3_batch_telemetry.log`
-  * Predicciones: `benchmark/nativos/lotus3_native.HM_Contaminated_Soil-*.predictions.tsv`
+  * Respaldo Aislado: `benchmark/evaluations/corrida_Lotus3_3Muestras_evaluations/`
 * **Laptop Zamir (x86 WSL2):**
-  * Dataset: 29,783 lecturas con reconstrucción de carpetas limpias por muestra.
-  * Archivo Fuente: `C:\medicioenergia\lotus3\energia_lotus3_x86_TODAS_20260925_111712.csv`
+  * Archivo Fuente (Illumina): `C:\medicioenergia\lotus3\energia_lotus3_x86_TODAS_20260925_111712.csv`
   * Predicciones: `benchmark/analysis_outputs/lotus3/lotus_303_lemmi16s_nativo.HM_Contaminated_Soil-*.predictions.tsv`
-* **Clúster Green HPC (3 Nodos ARM64):**
-  * Despacho: Jobs Slurm 1488 a 1490 (`rbp5-1`, `rbp5-2`, `rbp5-4`), 2 cores dedicados por nodo (`--cpus-per-task=2`, `--exclusive`).
-  * Telemetría PMIC DA9091: `medicion_energia/lotus3/` (9 archivos CSV: pre, in-run y post).
+  * *Estado PacBio:* Pendiente de integración.
+* **Clúster Green HPC (5 Nodos ARM64 Multinodo - PacBio):**
+  * Despacho: Jobs Slurm 1792 a 1796 (`rbp5-1` a `rbp5-5`), 4 cores por nodo (`--exclusive`).
+  * Telemetría PMIC DA9091: `medicion_energia/lotus3_pacbio/` (10 archivos CSV: pre y active run).
+  * Predicciones: `benchmark/analysis_outputs/lotus3_pacbio/lotus3_pacbio_multinodo.HM_Contaminated_Soil_PacBio-*.predictions.tsv`.
+* **Clúster Green HPC (Mononodo Secuencial - PacBio):**
+  * Despacho: Job Slurm 1797 (`rbp5-1`, 4 cores).
+  * Telemetría PMIC DA9091: `medicion_energia/lotus3_pacbio/mononodo/energia_LotuS3_pacbio_mononodo_node_rbp5-1_job1797_*.csv`.
+* **Clúster Green HPC (Mononodo Secuencial - Illumina):**
+  * Despacho: Job Slurm 1749 (`rbp5-2`, 4 cores).
+  * Telemetría PMIC DA9091: `medicion_energia/mononodo/energia_LotuS3_mononodo_node_rbp5-2_job1749_*.csv`.
 
-### 5.3. QIIME 2 (Deblur + Naive Bayes SILVA 138)
+### 6.3. QIIME 2 (Deblur + Naive Bayes SILVA 138)
 * **Laptop Cristian (x86 Nativo):**
   * Script Fuente: [`workflow/scripts/nativo/run_qiime2_energy.sh`](file:///home/cristian-solano/lemmi16s/workflow/scripts/nativo/run_qiime2_energy.sh)
   * Telemetría RAPL: `medicion_energia/nativas/energia_Qiime2_Nativo_Batch5_SILVA_20260918_125756.csv`
-  * Log: `proyectos/logs_nativos/qiime2_batch_telemetry.log`
   * Predicciones: `benchmark/nativos/qiime2_native.alfa_v1v2_SILVA-*.predictions.tsv`
 * **Laptop Zamir (x86 WSL2):**
-  * Entorno: `qiime2-2023.2` (q2cli 2022.8.0 y Deblur 1.1.0, 6 hilos).
-  * Archivos Fuente: `energia_qiime2_x86_TODAS_20260926_122756.csv` (`c001`, `c002`, `c003`, `e002`) y `..._143927.csv` (`e001` repetida sin suspensión).
+  * Entorno: `qiime2-2023.2` (q2cli 2022.8.0 y Deblur 1.1.0).
+  * Archivos Fuente: `energia_qiime2_x86_TODAS_20260926_122756.csv` y `..._143927.csv`.
   * Predicciones: `benchmark/analysis_outputs/qiime2/qiime2_20228_lemmi16s_nativo.alfa_v1v2_SILVA-*.predictions.tsv`
-* **Clúster Green HPC (5 Nodos ARM64):**
-  * Despacho: Jobs Slurm 1491 a 1495 (`rbp5-1` a `rbp5-5`), 2 cores por nodo (`--cpus-per-task=2`, `--exclusive`).
+* **Clúster Green HPC (5 Nodos ARM64 Multinodo):**
+  * Despacho: Jobs Slurm 1491 a 1495 (`rbp5-1` a `rbp5-5`), 2 cores por nodo (`--exclusive`).
   * Telemetría PMIC DA9091: `medicion_energia/qiime2/` (15 archivos CSV: pre, in-run y post).
+* **Clúster Green HPC (Mononodo Secuencial):**
+  * Despacho: Job Slurm 1748 (`rbp5-1`, 4 cores).
+  * Telemetría PMIC DA9091: `medicion_energia/mononodo/energia_Qiime2_mononodo_node_rbp5-1_job1748_*.csv`.
 
 ---
 
-## 6. 🎓 Conclusiones de Rendimiento y Eficiencia Energética para la Tesis
+## 7. 🎓 Conclusiones de Rendimiento y Eficiencia Energética para la Tesis
 
 1. **Aceleración Distribuida en Cargas Intensivas:**
-   * En pipelines con etapas de alta demanda como QIIME 2 (reducción de ruido y entrenamiento bayesiano) y LotuS3, el paralelismo multinodo del clúster físico superó ampliamente el procesamiento secuencial mononodo de las laptops, reduciendo el tiempo de QIIME 2 a **26.77 min (2.56x más rápido que nativo y 2.93x más rápido que WSL2)** y LotuS3 a **30.0 s (2.10x más rápido que nativo y 19.96x más rápido que WSL2)**.
+   * En pipelines con etapas de cómputo algorítmico intensivo (Deblur, UPARSE y Naive Bayes), la topología distribuida del clúster físico superó el procesamiento secuencial mononodo de las laptops, reduciendo el tiempo de QIIME 2 de **72.06 min (Nativo)** y **79.99 min (WSL2)** a **27.98 min** en el clúster (**2.58x y 2.86x más rápido**), y el lote total acumulado a **29.38 min frente a 73.53 min (2.50x) y 82.87 min (2.82x)**.
 2. **Supremacía en Eficiencia Energética (Green HPC):**
-   * El clúster Raspberry Pi 5 consumió drásticamente menos energía eléctrica total que ambas laptops en los tres pipelines evaluados: **0.1734 Wh en Kraken 2 (con solo 0.0303 Wh netos)** (frente a 0.1505 Wh nativo y 0.2800 Wh WSL2), **0.0780 Wh en LotuS3** (frente a 0.2541 Wh nativo y 3.8665 Wh WSL2) y **7.8683 Wh en QIIME 2** (frente a 23.9160 Wh nativo y 30.3436 Wh WSL2).
-   * La métrica de productividad verde ($	ext{Reads/Wh}$) demostró factores de ganancia de **2.17x a 11.02x frente a x86 nativo** y de **3.86x a 49.55x frente a x86 WSL2**, validando de forma concluyente que la microarquitectura ARM64 Cortex-A76 ofrece una relación cómputo/vatio sumamente superior para bioinformática.
-3. **Impacto de la Virtualización de WSL2 frente a Linux Nativo:**
-   * La capa de virtualización de WSL2 sobre Windows 11 introdujo una sobrecarga notable en pipelines intensivos en operaciones de disco y llamadas recurrentes de I/O como LotuS3, donde el tiempo aumentó casi 10 veces (598.8 s vs. 63.0 s en nativo). Adicionalmente, el consumo basal en reposo de Windows (12.28 W vs. ~2.1 W en Linux nativo) incrementa la penalización energética del sistema, evidenciando la conveniencia de arquitecturas nativas dedicadas.
+   * El clúster Raspberry Pi 5 redujo drásticamente el consumo eléctrico en los tres flujos evaluados: **8.57 Wh totales frente a 26.03 Wh en Linux Nativo (-67.1%)** y **35.32 Wh en WSL2 (-75.7%)**.
+   * En términos netos de cálculo computacional, el gasto cayó de **12.98 Wh nativo y 17.36 Wh WSL2 a tan solo 2.84 Wh en el clúster (-78.1% y -83.6% de ahorro neto)**.
+   * La métrica de productividad ($\text{Reads/Wh}$) ratificó una ventaja del clúster de **1.08x a 4.07x en productividad bruta** y de **3.81x a 6.78x en productividad neta frente a x86 nativo** (y de hasta **9.04x bruta y 10.75x neta frente a WSL2**).
+3. **Validación Experimental de Amplicón Largo (PacBio Full-Length):**
+   * En el procesamiento de secuencias largas de gen completo 16S con LotuS3, el clúster multinodo igualó el tiempo de ejecución de una estación Intel Core i5 nativa (**32.83 min vs. 31.60 min**), logrando un **ahorro energético del -29.8% bruto (12.03 Wh vs. 17.13 Wh) y del -53.2% neto (7.33 Wh vs. 15.64 Wh)**, con una productividad bruta superior de **2,128.7 Reads/Wh (1.42x)** y neta de **3,495.4 Reads/Wh (2.13x)**.
+4. **Demostración Empírica de Escalabilidad Mononodo vs. Multinodo:**
+   * La comparación directa en el hardware ARM64 demostró speedups de **5.00x en QIIME 2** (escalabilidad lineal perfecta al 100%) y **4.36x en LotuS3 PacBio** (eficiencia del 87.2%), confirmando que el cómputo distribuido en clúster elimina horas de consumo basal inútil y ahorra un **-15.9% de energía bruta** en lotes largos frente a la ejecución secuencial en un solo nodo.
+5. **Sobrecarga de la Virtualización Ligera (WSL2 vs. Nativo):**
+   * Al operar sobre procesadores físicos equivalentes (Intel Core i5-10300H), la capa de virtualización de WSL2 sobre Windows 11 introdujo un sobrecosto medible en tiempo (+12.7% en el lote global y hasta +83.5% en flujos intensivos en disco como LotuS3) y en energía consumida (+35.7% en energía bruta total debido a la línea base más elevada de Windows de ~13.8 W vs. ~10.6 W en Ubuntu nativo), demostrando las ventajas energéticas de los entornos Linux dedicados.

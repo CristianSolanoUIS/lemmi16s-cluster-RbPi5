@@ -1,0 +1,24 @@
+=================================================================
+=== Medicion de Energia Raspberry Pi 5 (PMIC Hardware) ===
+=================================================================
+Etiqueta:          Kraken2_multinodo_c001_node_rbp5-1_job1645
+Intervalo:         1.0 s
+Hardware:          Renesas DA9091 PMIC (12 Canales ADC)
+Directorio salida: /shared/users/grupo1/lemmi16s/medicion_energia/kraken2
+Archivo de salida: energia_Kraken2_multinodo_c001_node_rbp5-1_job1645_20260929_110258.csv
+Presiona Ctrl+C o envia SIGTERM para detener la medicion.
+
+[2026-09-29 11:02:59.765] [PMIC] Power:  2.49 W | Energia: 0.0007 Wh | Muestras: 1[2026-09-29 11:03:00.801] [PMIC] Power:  3.91 W | Energia: 0.0018 Wh | Muestras: 2[2026-09-29 11:03:01.847] [PMIC] Power:  6.04 W | Energia: 0.0036 Wh | Muestras: 3[2026-09-29 11:03:02.887] [PMIC] Power:  6.02 W | Energia: 0.0053 Wh | Muestras: 4[2026-09-29 11:03:03.926] [PMIC] Power:  6.41 W | Energia: 0.0071 Wh | Muestras: 5[2026-09-29 11:03:04.973] [PMIC] Power:  3.62 W | Energia: 0.0082 Wh | Muestras: 6[2026-09-29 11:03:12.661] [PMIC] Power:  3.45 W | Energia: 0.0092 Wh | Muestras: 7[2026-09-29 11:03:14.143] [PMIC] Power:  2.24 W | Energia: 0.0140 Wh | Muestras: 8[2026-09-29 11:03:15.434] [PMIC] Power:  2.32 W | Energia: 0.0149 Wh | Muestras: 9[2026-09-29 11:03:22.982] [PMIC] Power:  2.33 W | Energia: 0.0158 Wh | Muestras: 10[2026-09-29 11:03:35.961] [PMIC] Power:  2.21 W | Energia: 0.0204 Wh | Muestras: 11[2026-09-29 11:03:38.832] [PMIC] Power:  2.44 W | Energia: 0.0292 Wh | Muestras: 12[2026-09-29 11:03:47.122] [PMIC] Power:  2.28 W | Energia: 0.0310 Wh | Muestras: 13[2026-09-29 11:03:48.162] [PMIC] Power:  3.10 W | Energia: 0.0382 Wh | Muestras: 14[2026-09-29 11:03:49.210] [PMIC] Power:  2.37 W | Energia: 0.0388 Wh | Muestras: 15
+
+=== Resumen de medicion (Kraken2_multinodo_c001_node_rbp5-1_job1645) ===
+Inicio:           2026-09-29 11:02:58.735565
+Fin:              2026-09-29 11:03:50.115065
+Duracion:         51.4 s (0.86 min)
+Muestras tomadas: 15
+Energia total:    0.0388 Wh
+Potencia promedio: 2.72 W
+CSV guardado en:  energia_Kraken2_multinodo_c001_node_rbp5-1_job1645_20260929_110258.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+

@@ -1,0 +1,43 @@
+==========================================================
+=== KRAKEN 2 + BRACKEN MULTINODO (1 muestra por nodo) ===
+==========================================================
+[NODOS] Idle en partition1: rbp5-1 rbp5-2 rbp5-3 rbp5-4 rbp5-5 (5 nodos)
+[MUESTRAS] c001 c002 c003 e001 e002 (5 muestras)
+----------------------------------------------------------
+[LANZANDO] Asignando 1 nodo exclusivo por muestra...
+----------------------------------------------------------
+[+] Muestra c001 -> Job 1578 asignado a nodo rbp5-1
+[+] Muestra c002 -> Job 1579 asignado a nodo rbp5-2
+[+] Muestra c003 -> Job 1580 asignado a nodo rbp5-3
+[+] Muestra e001 -> Job 1581 asignado a nodo rbp5-4
+[+] Muestra e002 -> Job 1582 asignado a nodo rbp5-5
+[+] Esperando finalizacion concurrente de: 1578,1579,1580,1581,1582
+[MONITOR 19:24:59] Tareas activas: 5   [MONITOR 19:25:04] Tareas activas: 5   [MONITOR 19:25:09] Tareas activas: 5   [MONITOR 19:25:14] Tareas activas: 5   [MONITOR 19:25:19] Tareas activas: 5   [MONITOR 19:25:24] Tareas activas: 5   [MONITOR 19:25:29] Tareas activas: 5   [MONITOR 19:25:34] Tareas activas: 5   [MONITOR 19:25:40] Tareas activas: 5   [MONITOR 19:25:45] Tareas activas: 5   [MONITOR 19:25:50] Tareas activas: 5   [MONITOR 19:25:55] Tareas activas: 5   [MONITOR 19:26:00] Tareas activas: 5   [MONITOR 19:26:05] Tareas activas: 5   [MONITOR 19:26:10] Tareas activas: 5   [MONITOR 19:26:15] Tareas activas: 5   [MONITOR 19:26:20] Tareas activas: 5   [MONITOR 19:26:25] Tareas activas: 5   [MONITOR 19:26:30] Tareas activas: 5   [MONITOR 19:26:35] Tareas activas: 5   [MONITOR 19:26:40] Tareas activas: 5   [MONITOR 19:26:45] Tareas activas: 5   [MONITOR 19:26:50] Tareas activas: 5   
+[+] Todas las muestras de Kraken 2 finalizaron.
+==========================================================
+=== RESUMEN POR ARCHIVO DE PREDICCIONES ===
+==========================================================
+Muestra c001 (job 1578): 379 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c001.predictions.tsv
+Muestra c002 (job 1579): 450 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c002.predictions.tsv
+Muestra c003 (job 1580): 381 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-c003.predictions.tsv
+Muestra e001 (job 1581): 449 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-e001.predictions.tsv
+Muestra e002 (job 1582): 459 lineas -> /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-e002.predictions.tsv
+==========================================================
+=== RESUMEN ENERGETICO CONSOLIDADO DEL CLUSTER (KRAKEN 2) ===
+==========================================================
+-------------------------------------------------------------------------------------
+Muestra    | Job      | Nodo      | Pre(W)  | Post(W) | Base(W) | Dur(s) | Bruta(Wh) | Neta(Wh) 
+-------------------------------------------------------------------------------------
+c001       | 1578     | rbp5-1    | 2.416   | 2.432   | 2.424   | 14     | 0.0128    | 0.0034   
+c002       | 1579     | rbp5-2    | 2.398   | 2.416   | 2.407   | 14     | 0.0129    | 0.0036   
+c003       | 1580     | rbp5-3    | 2.490   | 2.407   | 2.448   | 14     | 0.0132    | 0.0037   
+e001       | 1581     | rbp5-4    | 2.384   | 2.445   | 2.415   | 11     | 0.0105    | 0.0031   
+e002       | 1582     | rbp5-5    | 2.345   | 2.341   | 2.343   | 14     | 0.0136    | 0.0044   
+-------------------------------------------------------------------------------------
+ENERGIA TOTAL BRUTA CLUSTER:   0.0630 Wh (226.7 J)
+ENERGIA TOTAL NETA CLUSTER:    0.0182 Wh (65.4 J)
+TOTAL LECTURAS PROCESADAS:     2,453,431
+TIEMPO PARALELO (MAX MUESTRA): 14 s (0.23 min)
+EFICIENCIA BRUTA CLUSTER:      38,968,434.7 Reads/Wh
+EFICIENCIA NETA CLUSTER:       135,078,641.3 Reads/Wh
+=====================================================================================

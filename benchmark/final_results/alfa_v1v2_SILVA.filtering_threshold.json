@@ -1,0 +1,26 @@
+{
+    "toolname":{
+        "0":"qiime2_mono_cluster",
+        "1":"qiime2_mono_cluster",
+        "2":"qiime2_mono_cluster",
+        "3":"qiime2_multi_cluster",
+        "4":"qiime2_multi_cluster",
+        "5":"qiime2_multi_cluster"
+    },
+    "rank":{
+        "0":"family",
+        "1":"genus",
+        "2":"species",
+        "3":"family",
+        "4":"genus",
+        "5":"species"
+    },
+    "value":{
+        "0":0,
+        "1":0,
+        "2":0,
+        "3":0,
+        "4":0,
+        "5":0
+    }
+}

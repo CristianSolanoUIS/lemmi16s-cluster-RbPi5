@@ -1,0 +1,17 @@
++ set -e
++ sample_folder=HOMD_v4_GTDB-e002
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-e002.predictions.tsv
++ mkdir -p tmp_HOMD_v4_GTDB-e002
++ cd tmp_HOMD_v4_GTDB-e002
++ '[' -z x ']'
++ kraken2 --threads 4 --db /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database --output query.out --report query.report --paired /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002/queryReads1.fq /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002/queryReads2.fq
+Loading database information... done.
+486993 sequences (194.80 Mbp) processed in 4.167s (7011.6 Kseq/m, 2804.65 Mbp/m).
+  486993 sequences classified (100.00%)
+  0 sequences unclassified (0.00%)
++ bracken -d /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database -i query.report -o query.bracken -l G -r 150
+>> Checking report file: query.report
++ editResult.py query_bracken_genuses.report results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken2/kraken2_multinodo.HOMD_v4_GTDB-e002.predictions.tsv

@@ -1,0 +1,6 @@
+#LEMMI16s_dm:v1.0|SILVA:release_138.1
+toolname	rank	value
+lotus3_pacbio_multi_cluster	family	3
+lotus3_pacbio_multi_cluster	genus	0
+lotus3_pacbio_mono_cluster	family	3
+lotus3_pacbio_mono_cluster	genus	0

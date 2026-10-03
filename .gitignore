@@ -1,40 +1,66 @@
-# Environments and virtualenvs
+# ==============================================================================
+# .gitignore para Repositorio Oficial del Clúster ARM64 (LEMMI16s Backup)
+# ==============================================================================
+
+# Entornos virtuales y Conda
 lemmi16s_env/
 qiime2_arm64/
 Pi-Monitor/venv/
 *venv*/
 *.env
 
-# Large datasets and reference databases
-instances/
-**/instances/
+# Archivos de secuencias crudas y lecturas masivas (>10MB)
 *.fasta
 *.fastaORG
 *.fastq
 *.fq
 *.fq.gz
 *.fastq.gz
+*.fna
+*.fa
+*.bam
+*.sam
 *.k2d
 *.qza
 *.qzv
 
-# Temporary and cache files
-tmp/
-**/tmp/
+# Paquetes comprimidos y respaldos locales pesados
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tgz
+*.zip
+*.rar
+
+# Enlaces simbólicos locales y temporales del framework LEMMI
+benchmark/instances
+benchmark/repository
+benchmark/yaml
+benchmark/tmp/
+**/benchmark/tmp/
 *.tmp
+.evaluation.yaml
+
+# Directorio de predicciones intermedias de preparación (duplicadas en analysis_outputs)
+eval_ready_predictions/
+
+# Caché de Snakemake y Python
 __pycache__/
 *.py[cod]
 *$py.class
 .snakemake/
 
-# Compiled objects
+# Objetos compilados
 *.o
 *.d
 
-# Singularity / Apptainer images (>100MB)
+# Imágenes de contenedores Apptainer/Singularity (>100MB)
 *.sif
 *.img
 
-# OS / Editor junk
+# Archivos del sistema y editores
 .DS_Store
 .vscode/
+*.swp
+*~

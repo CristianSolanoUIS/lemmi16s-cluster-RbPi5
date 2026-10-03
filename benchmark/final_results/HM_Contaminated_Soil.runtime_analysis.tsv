@@ -1,0 +1,8 @@
+#LEMMI16s_dm:v1.0
+toolname	sample	value
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-e001	1716
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil-e002	1716
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-e001	394
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil-e002	394
+lotus3_pacbio_mono_cluster	HM_Contaminated_Soil	1716.0
+lotus3_pacbio_multi_cluster	HM_Contaminated_Soil	394.0

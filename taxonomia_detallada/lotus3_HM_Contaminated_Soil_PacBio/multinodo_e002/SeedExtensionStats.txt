@@ -1,0 +1,7 @@
+Found 2314 seeds of 2314 OTU's in 4874 mappings.
+Of these, 0 were merged paired reads.
+Stats of Seed sequences (0th/10th/50th/90th/100th) percentile:
+     - Sequence Length :   1253/1390/1513/1576/1674
+     - Quality :      30/30/80.3391/91.1311/92.6707
+     - Accum. Error : 0.123382/1.08017/2.78824/11.8505/15.7919
+     - Sim2Consensus: 100/100/100/100/1604
