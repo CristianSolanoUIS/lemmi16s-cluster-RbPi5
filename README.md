@@ -2,9 +2,9 @@
 
 Trabajo de grado de Ingeniería de Sistemas e Informática, Universidad Industrial de Santander (2026).
 
-**Título:** Implementación y análisis del desempeño de un pipeline para el estudio de amplicones 16S en un clúster energéticamente eficiente basado en Raspberry Pi 5.
-**Autores:** Cristian Alberto Solano Torres y Zamir Francisco Granados Peñaloza
-**Director:** Bernardo Andrés Benavides Arévalo, PhD
+- **Título:** Implementación y análisis del desempeño de un pipeline para el estudio de amplicones 16S en un clúster energéticamente eficiente basado en Raspberry Pi 5.
+- **Autores:** Cristian Alberto Solano Torres y Zamir Francisco Granados Peñaloza
+- **Director:** Bernardo Andrés Benavides Arévalo, PhD
 
 El libro aprobado está en [`docs/LibroAmpliconesRBPI5.pdf`](docs/LibroAmpliconesRBPI5.pdf) y las diapositivas de la sustentación en [`docs/Sustentacion_RBPi5.pdf`](docs/Sustentacion_RBPi5.pdf).
 
