@@ -3,7 +3,7 @@
 
 > **Proyecto de Grado / Tesis de Ingeniería de Sistemas y Computación**  
 > 👥 **Autores:** Cristian Solano & Zamir Peñaloza  
-> 📅 **Fecha:** Septiembre de 2026  
+> 📅 **Fecha:** Septiembre de 2026 (actualizado en octubre con las corridas finales)  
 
 ---
 
@@ -21,34 +21,21 @@ Este directorio reúne los manuales técnicos, operacionales y de reproducibilid
 
 ---
 
-## 🚀 Resumen Rápido: Comandos de Ejecución por Entorno
+## 🚀 Scripts de las corridas finales
 
-| Pipeline | Metodología Principal | Modo PC Local (Intel RAPL) | Modo Clúster Slurm (Telemetría PMIC) |
+| Pipeline | PC x86 (RAPL) | Clúster, 5 nodos (PMIC) | Clúster, 1 nodo |
 | :--- | :--- | :--- | :--- |
-| **Kraken 2** | $k$-meros exactos + Bracken (-t 10) | `bash ~/lemmi16s/workflow/scripts/nativo/run_kraken2_energy.sh [c001\|all]` | `bash /shared/.../scripts/distribuido/runscripts/kraken2/sbatch_multinodo_energy.sh kraken2 [c001]` |
-| **LotuS3** | Clustering OTU + SDM derep | `bash ~/lemmi16s/workflow/scripts/nativo/run_lotus3_energy.sh [c001\|all]` | `bash /shared/.../scripts/distribuido/runscripts/lotus3/sbatch_multinodo_energy.sh [c001 c002 e001]` |
-| **QIIME 2** | Deblur denoising + Naive Bayes L7 | `bash ~/lemmi16s/workflow/scripts/nativo/run_qiime2_energy.sh [c001\|all]` | `bash /shared/.../scripts/distribuido/runscripts/qiime2/sbatch_multinodo_energy.sh [c001 c002 c003]` |
+| **Kraken 2** | `scripts/medicion/x86_nativo/run_kraken2_energy.sh` · `scripts/medicion/x86_wsl2/run_kraken2_x86_lote.ps1` | `scripts/cluster/multinodo/kraken2/sbatch_multinodo_energy.sh` | `scripts/cluster/mononodo/sbatch_kraken2_mononodo.sh` |
+| **LotuS3 (PacBio)** | `scripts/medicion/x86_wsl2/run_lotus3_pacbio_x86_lote.ps1` | `scripts/cluster/lotus3_pacbio/lanzar_lotus3_pacbio_5nodos.sh` | `scripts/cluster/lotus3_pacbio/sbatch_lotus3_pacbio_mononodo.sh` |
+| **QIIME 2** | `scripts/medicion/x86_nativo/run_qiime2_energy.sh` · `scripts/medicion/x86_wsl2/run_qiime2_x86_lote.ps1` | `scripts/cluster/multinodo/qiime2/sbatch_multinodo_energy.sh` | `scripts/cluster/mononodo/sbatch_qiime2_mononodo.sh` |
+
+En el clúster cada muestra corre completa en un nodo. Los resultados de estas corridas están en [`resultados/`](../../resultados/README.md).
 
 ---
 
-## 📂 Carpetas del Proyecto y Ubicación de Archivos
+## 📂 Ubicación en el repositorio
 
-```
-Descargas/
-├── Resultados/                         # EXCLUSIVO: Resultados cuantitativos del proyecto
-│   ├── 01_resultados_eficiencia_energetica.md # Potencia, Wh, Reads/Wh, comparativa x86 vs ARM
-│   ├── 02_resultados_fidelidad_biologica.md   # Ground Truth, F1-scores, 0 diffs en 13 corridas
-│   ├── README.md                              # Resumen ejecutivo de resultados
-│   └── *.txt                                  # Reportes crudos de telemetría y benchmark
-│
-└── proyecto_Guia/                      # EXCLUSIVO: Guías operacionales y reproducibilidad
-    ├── 01_guia_pipeline_kraken2.md     # Pipeline Kraken 2 (PC y Clúster)
-    ├── 02_guia_pipeline_lotus3.md      # Pipeline LotuS3 (PC y Clúster)
-    ├── 03_guia_pipeline_qiime2.md      # Pipeline QIIME 2 (PC y Clúster)
-    ├── 04_guia_cluster_slurm_hpc.md    # Clúster RPi 5, Slurm y PMIC
-    ├── 05_guia_framework_lemmi16s.md   # Framework LEMMI16s y evaluación
-    └── README.md                       # Índice y navegación
-```
+Estas guías están en `docs/guias/`. Los resultados, los datos de energía y los scripts están en las carpetas `resultados/`, `datos_energia/` y `scripts/` de la raíz del repositorio (ver el [README principal](../../README.md)).
 
 ---
 

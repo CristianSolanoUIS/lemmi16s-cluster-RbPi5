@@ -5,7 +5,13 @@
 > 📄 **Documento:** `02_guia_pipeline_lotus3.md`  
 > 📅 **Fecha:** Septiembre 2026  
 > 🔬 **Pipeline:** LotuS3 (v3.0.3)  
-> 📊 **Dataset Oficial:** `HM_Contaminated_Soil` (3 muestras: `c001`, `c002`, `e001`, 29,783 lecturas pareadas)
+> 📊 **Dataset Oficial:** `HM_Contaminated_Soil_PacBio` (5 muestras: `c001` a `e002`, 25,611 lecturas PacBio HiFi de gen 16S completo)
+
+> [!IMPORTANT]
+> Esta guía describe la instalación de LotuS3 y una corrida inicial con lecturas cortas Illumina (`HM_Contaminated_Soil`, 3 muestras, 29,783 lecturas). Los resultados finales del libro usan lecturas largas PacBio HiFi; ver [`resultados/lotus3_pacbio/`](../../resultados/lotus3_pacbio/README.md).
+
+> [!NOTE]
+> **Corrida final del libro:** LotuS3 3.03 con asignación taxonómica por VSEARCH contra SILVA 138.1 (LAMBDA3 no existe para ARM64). En el clúster, una muestra por nodo con `scripts/cluster/lotus3_pacbio/lanzar_lotus3_pacbio_5nodos.sh` y en 1 nodo con `scripts/cluster/lotus3_pacbio/sbatch_lotus3_pacbio_mononodo.sh`. Resultado: 31.65 min en x86 nativo frente a 32.87 min en el clúster, 2.14× menos energía neta y las mismas familias, géneros y F1 en las tres plataformas (0.8667 en familia y 0.8762 en género).
 
 ---
 

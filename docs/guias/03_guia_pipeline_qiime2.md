@@ -7,6 +7,9 @@
 > 🔬 **Pipeline:** QIIME 2 (Release 2023.2 / LEMMI 2022.8)  
 > 📊 **Dataset Oficial:** `alfa_v1v2_SILVA` (5 muestras: `c001` a `e002`, 2,690,077 lecturas pareadas)
 
+> [!NOTE]
+> **Corrida final del libro:** en el clúster cada muestra corrió completa en un nodo (5 muestras en 5 nodos), con `scripts/cluster/multinodo/qiime2/sbatch_multinodo_energy.sh c001 c002 c003 e001 e002`, y en 1 nodo con `scripts/cluster/mononodo/sbatch_qiime2_mononodo.sh`. Resultado: 72.06 min en x86 nativo frente a 27.98 min en el clúster (2.58× más rápido), aceleración de 5.00× de 1 a 5 nodos, 4.57× menos energía neta y predicciones idénticas bit a bit (F1 0.8286 en familia y 0.7083 en género). Detalle en [`resultados/qiime2/`](../../resultados/qiime2/README.md). Los tiempos de 5 chunks de esta guía son pruebas preliminares con la muestra `c001`.
+
 ---
 
 
@@ -127,7 +130,7 @@ Divide los 513k pares de lecturas en 5 chunks simultáneos acelerando radicalmen
 /home/cristian-solano/lemmi16s-cluster-backup/scripts_cluster_5nodos/run_5chunks_native.sh qiime2 alfa_v1v2_SILVA-c001
 ```
 
-| Métrica en Laptop | Corrida en 1 Bloque | Corrida en 5 Chunks |
+| Métrica en Laptop (prueba preliminar, muestra c001) | Corrida en 1 Bloque | Corrida en 5 Chunks |
 | :--- | :---: | :---: |
 | **Tiempo de Ejecución** | **814.0 s (13.57 min)** | **195.0 s (3.25 min)** |
 | **Aceleración (Speedup)** | Línea base 1.0x | **4.17x de aceleración** |

@@ -95,4 +95,4 @@ Snakemake produce tablas TSV detalladas por cada rango taxonómico:
 * **`benchmark/results/l2.{dataset}.tsv`**: Error cuadrático de abundancias relativas.
 
 > [!NOTE]
-> **Reproducibilidad Garantizada:** Como se demostró en las 13 corridas del proyecto, tanto las ejecuciones nativas en PC como en el clúster ARM64 producen exactamente las mismas tablas `#LEMMI16s`, alcanzando idénticas puntuaciones F1-score sin ninguna desviación biológica.
+> **Reproducibilidad entre plataformas:** En las corridas finales, Kraken 2 y QIIME 2 produjeron tablas `#LEMMI16s` idénticas bit a bit en x86 nativo, WSL2 y el clúster; LotuS3 obtuvo las mismas familias, géneros y F1, con pequeñas diferencias en las abundancias. El F1 se recalculó con el `queryTaxo.tsv` de cada muestra, porque el evaluador de LEMMI16s usa el de la primera muestra para todas (ver `resultados/comparaciones/f1_corregido_kraken2_qiime2.txt`).

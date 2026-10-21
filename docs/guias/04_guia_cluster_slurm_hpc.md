@@ -16,8 +16,8 @@ El clúster de cómputo de alto rendimiento está compuesto por nodos de placa �
 | Componente / Nodo | Hardware / Especificación | Dirección de Red / Rol | Capacidad |
 | :--- | :--- | :--- | :---: |
 | **Nodo Maestro** (`rbpi4-master`) | Raspberry Pi 4 (8 GB RAM) | IP Tailscale: `100.125.160.56`<br>Controlador Slurm (`slurmctld`), Servidor NFS | Gestión y almacenamiento |
-| **Partición 1 (`grupo1`)** | 5x RPi 5 (`rbp5-1` a `rbp5-5`) | BCM2712 Quad Cortex-A76 @ 2.4 GHz, 8 GB RAM | 20 núcleos físicos dedicados |
-| **Partición 2 (`grupo2`)** | 5x RPi 5 (`rbp5-6` a `rbp5-10`) | BCM2712 Quad Cortex-A76 @ 2.4 GHz, 8 GB RAM | 20 núcleos físicos asignados |
+| **Partición 1 (`grupo1`)** | 5x RPi 5 (`rbp5-1` a `rbp5-5`) | BCM2712 Quad Cortex-A76 @ 2.4 GHz, 16 GB RAM | 20 núcleos físicos dedicados |
+| **Partición 2 (`grupo2`)** | 5x RPi 5 (`rbp5-6` a `rbp5-10`) | BCM2712 Quad Cortex-A76 @ 2.4 GHz, 16 GB RAM | 20 núcleos físicos asignados |
 | **Almacenamiento Compartido** | Montaje NFS en `/shared` | Directorio distribuido montado idéntico en todos los nodos | `/shared/users/grupo1/` |
 
 ---
@@ -111,14 +111,12 @@ En cada nodo de cómputo se ejecuta como servicio de systemd el agente `pimonito
 curl -s http://rbp5-1:5000/metrics
 ```
 
-### 📊 Automatización de Toma de Datos con `medir_energia_rpi5.py`
-El script de telemetría sondea periódicamente cada 500 ms los endpoints HTTP de los nodos involucrados durante la ejecución de Slurm:
+### 📊 Toma de datos con `medir_energia_pmic.py`
+En las corridas finales cada nodo registra su propia potencia leyendo el PMIC a 1 Hz con `scripts/medicion/cluster_pmic/medir_energia_pmic.py`, lanzado por los scripts de Slurm de cada pipeline:
 ```bash
-python3 /shared/users/grupo1/medicion_energia/medir_energia_rpi5.py \
-  --nodes rbp5-1,rbp5-2,rbp5-3,rbp5-4,rbp5-5 \
-  --output telemetria_cluster_5nodos.csv
+python3 medir_energia_pmic.py --etiqueta kraken2_c001 --intervalo 1.0 --outdir <carpeta_de_salida>
 ```
-El archivo resultante registra potencia instantánea ($W$) y energía acumulada ($Wh$), permitiendo comparar con precisión física la eficiencia frente a Intel RAPL de la laptop.
+Cada corrida sigue el mismo protocolo: 60 s de estabilización, 5 min de reposo y la ejecución del pipeline. La energía se integra por la regla del trapecio y la energía neta resta el reposo. En reposo cada Raspberry Pi 5 consume 2.38 W (11.90 W los cinco nodos). Los datos crudos están en `datos_energia/`.
 
 ---
 

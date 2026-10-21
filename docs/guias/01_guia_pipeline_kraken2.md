@@ -7,6 +7,9 @@
 > 🔬 **Pipeline:** Kraken 2 (v2.1.3) + Bracken (v3.0.1 alineado)  
 > 📊 **Dataset Oficial:** `HOMD_v4_GTDB` (5 muestras: `c001` a `e002`, 2,453,431 lecturas pareadas)
 
+> [!NOTE]
+> **Corrida final del libro:** en el clúster cada muestra corrió completa en un nodo (5 muestras en 5 nodos), con `scripts/cluster/multinodo/kraken2/sbatch_multinodo_energy.sh`, y en 1 nodo con `scripts/cluster/mononodo/sbatch_kraken2_mononodo.sh`. Resultado: 22.01 s en x86 nativo frente a 51.04 s en el clúster, 3.81× menos energía neta y predicciones idénticas bit a bit (F1 0.5223 en familia y 0.3545 en género). Detalle en [`resultados/kraken2/`](../../resultados/kraken2/README.md). Las opciones de 5 chunks de esta guía son pruebas preliminares con una sola muestra.
+
 ---
 
 ## 1. 🎯 Fundamento Teórico y Estructura del Índice
