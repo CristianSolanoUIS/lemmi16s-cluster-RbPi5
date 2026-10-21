@@ -1,0 +1,5 @@
+plataforma,nombre,nodos,tiempo_s,reposo_w,carga_w,energia_total_wh,energia_neta_wh,eficiencia_bruta,eficiencia_neta,f1_familia,f1_genero,speedup_vs_mono
+x86_pc_cristian,x86 Ubuntu nativo (Cristian),1,1899.24,2.829,32.479,17.1442,15.6519,1493.9,1636.3,0.8667,0.8762,4.52
+x86_pc_zamir,x86 WSL2 (Zamir),1,1775.85,15.195,35.762,17.6435,10.1478,1451.6,2523.8,0.8667,0.8762,4.83
+cluster_rpi5,Cluster RBPi5 multinodo (5 nodos),5,1972.46,2.361,6.216,12.0311,7.327,2128.7,3495.4,0.8667,0.8762,4.35
+cluster_rpi5_mononodo,Cluster RBPi5 mononodo (1 nodo),1,8582.68,2.369,6.007,14.2991,8.6506,1791.1,2960.6,0.8667,0.8762,1.0

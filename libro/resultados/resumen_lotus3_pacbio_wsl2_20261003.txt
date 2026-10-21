@@ -1,0 +1,25 @@
+LotuS3 PacBio, 5 muestras, mi PC (WSL2) - corrida 20261003_001356
+Protocolo: 60 s sin medir + 5 min de reposo medido + las 5 muestras seguidas (una ventana), LibreHardwareMonitor 1 Hz
+LotuS3 3.03 (lotus3_pacbio_303): -derepMin 1:1,1:2,1:3 -p PacBio -s sdm_PacBio_LSSU.txt -buildPhylo 0 -lulu 0 -t 4 -taxAligner vsearch
+Las 5 muestras con "using VSEARCH" (VSEARCH v2.31.0, igual que el cluster).
+
+Reposo (baseline)    15.20 W   (297 lecturas)
+Carga media          35.76 W   (1,760 lecturas, intervalo max 1.1 s)
+Tiempo (ventana)     1,775.85 s (29.6 min)
+Energia total        17.6435 Wh
+Energia neta         10.1478 Wh
+Lecturas             25,611
+Eficiencia bruta     1,451.6 lecturas/Wh
+Eficiencia neta      2,523.8 lecturas/Wh
+
+Tiempo por muestra: c001 358.3 s | c002 351.2 s | c003 355.1 s | e001 346.1 s | e002 361.5 s
+
+F1 (metodo LEMMI, compute_f1_pacbio.py; umbral de calibracion c001-c003 = max)
+  Familia: umbral 3 -> e001 0.8667 | e002 0.8667 | media 0.8667
+  Genero:  umbral 0 -> e001 0.8406 | e002 0.9118 | media 0.8762
+  Identico al cluster (multinodo y mononodo). Mismos generos por muestra en las 3 corridas;
+  pequenas diferencias en lecturas asignadas (35-201 por muestra).
+
+Referencia cluster (mismas muestras, VSEARCH): multinodo 1,969.7 s, neta 7.33 Wh; mononodo 8,582.7 s, neta 8.65 Wh
+Predicciones: WSL ~/proyecto_grado/lemmi16s/benchmark/analysis_outputs/lotus3_pacbio/
+Crudos y log: C:\medicioenergia\lotus3\pacbio_5muestras\

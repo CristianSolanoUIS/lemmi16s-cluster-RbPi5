@@ -1,0 +1,33 @@
+MONONODO vs MULTINODO (clúster RBPi5)
+
+== Kraken 2 + Bracken  (multinodo: 5 nodos)
+  lecturas PMIC corrida=64  intervalo máx entre lecturas=7.1 s
+  Tiempo           mono      98.35 s   multi      51.04 s   speedup T_mono/T_multi = 1.93x
+  Reposo (nodo)    mono      2.398 W   multi       2.35 W/nodo
+  Carga (nodo)     mono      4.015 W   multi       2.93 W/nodo  (x5 nodos = 14.65 W)
+  Energía total    mono     0.0976 Wh  multi     0.2023 Wh   mono/multi = 0.48
+  Energía neta     mono     0.0321 Wh  multi     0.0398 Wh   mono/multi = 0.81
+  Eficiencia bruta mono   25,134,137   multi   12,127,687 reads/Wh
+  Eficiencia neta  mono   76,452,382   multi   61,643,995 reads/Wh
+
+== LotuS3  (multinodo: 5 nodos)
+  lecturas PMIC corrida=7484  intervalo máx entre lecturas=4.5 s
+  Tiempo           mono    8582.68 s   multi    1972.46 s   speedup T_mono/T_multi = 4.35x
+  Reposo (nodo)    mono      2.369 W   multi       2.36 W/nodo
+  Carga (nodo)     mono      6.007 W   multi       6.22 W/nodo  (x5 nodos = 31.08 W)
+  Energía total    mono    14.2991 Wh  multi    12.0311 Wh   mono/multi = 1.19
+  Energía neta     mono     8.6506 Wh  multi     7.3270 Wh   mono/multi = 1.18
+  Eficiencia bruta mono        1,791   multi        2,129 reads/Wh
+  Eficiencia neta  mono        2,961   multi        3,495 reads/Wh
+
+== QIIME 2  (multinodo: 5 nodos)
+  lecturas PMIC corrida=8034  intervalo máx entre lecturas=7.3 s
+  Tiempo           mono    8394.91 s   multi    1678.94 s   speedup T_mono/T_multi = 5.00x
+  Reposo (nodo)    mono      2.363 W   multi       2.42 W/nodo
+  Carga (nodo)     mono      3.615 W   multi       3.64 W/nodo  (x5 nodos = 18.20 W)
+  Energía total    mono     8.4246 Wh  multi     8.2884 Wh   mono/multi = 1.02
+  Energía neta     mono     2.9144 Wh  multi     2.7779 Wh   mono/multi = 1.05
+  Eficiencia bruta mono      319,312   multi      324,559 reads/Wh
+  Eficiencia neta  mono      923,016   multi      968,385 reads/Wh
+
+Guardado: resumen_mononodo_vs_multinodo.csv

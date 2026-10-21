@@ -4,7 +4,7 @@
 > **Universidad Industrial de Santander (UIS)**  
 > **Autores:** Cristian Alberto Solano Torres & Zamir Francisco Granados Peñaloza  
 > **Fecha:** Septiembre / Octubre de 2026  
-> **Título:** Implementación y evaluación de pipelines bioinformáticos para análisis de amplicones 16S en un clúster de bajo consumo energético basado en Raspberry Pi 5 frente a arquitectura x86_64.
+> **Título:** Implementación y análisis del desempeño de un pipeline para el estudio de amplicones 16S en un clúster energéticamente eficiente basado en Raspberry Pi 5.
 
 ---
 
@@ -70,6 +70,7 @@ lemmi16s-cluster-backup/
 ├── build/                              # Binarios y código fuente adaptado para ARM64
 │   ├── LCA/                            # Herramienta Lowest Common Ancestor compilada en AArch64
 │   └── usearch12/                      # Binario nativo usearch12 para Linux ARM64
+├── libro/                              # Libro aprobado (PDF y LaTeX), datos de energía x86/HPL y scripts de análisis
 └── README.md                           # Este documento
 ```
 
@@ -81,14 +82,14 @@ El clúster fue configurado como un entorno de computación de alto rendimiento 
 
 | Componente | Especificación Técnica | Rol en el Clúster |
 | :--- | :--- | :--- |
-| **Nodo Maestro** | 1x Raspberry Pi 4 Model B (4 núcleos Cortex-A72 @ 1.8 GHz, 4 GB RAM) | Orquestador Slurm (`slurmctld`), Servidor NFS (`/shared`), pasarela SSH |
-| **Nodos de Cómputo** | 5x Raspberry Pi 5 (`rbp5-1` a `rbp5-5`), Broadcom BCM2712 Quad-Core Cortex-A76 @ 2.4 GHz | Nodos de cómputo dedicados (`slurmd`, partición `partition1`) |
+| **Nodo Maestro** | 1x Raspberry Pi 4 Model B (4 núcleos Cortex-A72 @ 1.8 GHz, 8 GB RAM) | Orquestador Slurm (`slurmctld`), Servidor NFS (`/shared`), pasarela SSH |
+| **Nodos de Cómputo** | 5x Raspberry Pi 5 (`rbp5-1` a `rbp5-5`, de los 10 nodos del clúster), Broadcom BCM2712 Quad-Core Cortex-A76 @ 2.4 GHz | Nodos de cómputo dedicados (`slurmd`, partición `partition1`) |
 | **Núcleos Totales** | 20 núcleos de cómputo dedicados (4 núcleos por SBC) | Cómputo paralelo distribuido |
-| **Memoria RAM** | 40 GB RAM agregada (8 GB LPDDR4X-4267 por nodo) | Espacio para asignación de bases de datos y clasificación |
+| **Memoria RAM** | 80 GB RAM agregada (16 GB LPDDR4X-4267 por nodo) | Espacio para asignación de bases de datos y clasificación |
 | **Interconexión** | Conmutador Gigabit Ethernet (1000BASE-T, 1 Gbps dúplex) | Red interna de baja latencia |
-| **Almacenamiento** | Disco SSD externo NVMe/SATA compartido mediante NFS v4 en `/shared` | Directorio compartido para lecturas, bases de datos y resultados |
+| **Almacenamiento** | microSD de 64 GB por nodo (sistema operativo) y directorio compartido mediante NFS v4 en `/shared` | Lecturas, bases de datos y resultados compartidos |
 | **Telemetría Energética** | Renesas DA9091 PMIC con ADC de 12 canales integrado en placa | Polling a 1.0 Hz con script nativo `medir_energia_pmic.py` |
-| **Potencia en Reposo** | ~3.33 W por nodo (~16.65 W en los 5 nodos de cómputo combinados) | Línea base (*stand-by*) para cálculo de energía neta |
+| **Potencia en Reposo** | 2.38 W por nodo (11.90 W en los 5 nodos de cómputo combinados) | Línea base (*stand-by*) para cálculo de energía neta |
 
 ---
 
@@ -145,19 +146,23 @@ Para garantizar rigor científico y reproducibilidad absoluta, las mediciones en
 
 ## 5. Resultados Clave: Eficiencia Energética y Fidelidad Biológica
 
-### Rendimiento y Ganancia Verde (Laptop x86 vs. Clúster ARM64)
+### Rendimiento y eficiencia energética (x86 nativo vs. clúster de 5 nodos)
 
-| Pipeline | Métrica | Laptop ASUS TUF (x86_64, RAPL) | Clúster 5x RPi 5 (ARM64, PMIC) | Impacto / Factor de Ahorro |
+Valores del libro aprobado (Tabla 3.4). Energía total integrada por la regla del trapecio; energía neta = total − reposo. Lecturas/Wh con energía total.
+
+| Pipeline | Métrica | x86 nativo (i5-10300H, RAPL) | Clúster 5x RPi 5 (PMIC) | Factor |
 | :--- | :--- | :--- | :--- | :--- |
-| **Kraken 2** | Tiempo activo (s) | **22.01 s** | 51.04 s | Laptop 2.32x más rápida |
-| | Energía activa neta (Wh) | 0.2447 Wh | **0.0642 Wh** | **Clúster 3.81x más eficiente (73.76% ahorro neto)** |
-| | Eficiencia (*Reads/Wh*) | 10,026,281 | **38,215,436** | **+281.16% más lecturas por Wh en clúster** |
-| **LotuS3** | Tiempo activo (s) | 66.03 s | **32.55 s** | **Clúster 2.03x más rápido** |
-| | Energía activa neta (Wh) | 0.3340 Wh | **0.0493 Wh** | **Clúster 6.78x más eficiente (85.24% ahorro neto)** |
-| | Eficiencia (*Reads/Wh*) | 89,171 | **604,118** | **+577.48% más lecturas por Wh en clúster** |
-| **QIIME 2** | Tiempo activo (s) | 4,323.70 s | **1,678.90 s** | **Clúster 2.58x más rápido** |
-| | Energía activa neta (Wh) | 25.100 Wh | **5.492 Wh** | **Clúster 4.57x más eficiente (78.12% ahorro neto)** |
-| | Eficiencia (*Reads/Wh*) | 107,174 | **489,817** | **+357.03% más lecturas por Wh en clúster** |
+| **Kraken 2 + Bracken** | Tiempo | **22.01 s** | 51.04 s | x86 2.32x más rápido (espera por NFS) |
+| | Energía neta | 0.1518 Wh | **0.0398 Wh** | **3.81x menos en el clúster** |
+| | Lecturas/Wh (total) | 11.2 M | **12.1 M** | 1.08x |
+| **LotuS3 (PacBio HiFi)** | Tiempo | 31.65 min | 32.87 min | 0.96x (similar) |
+| | Energía neta | 15.65 Wh | **7.33 Wh** | **2.14x menos en el clúster** |
+| | Lecturas/Wh (total) | 1,494 | **2,129** | 1.42x |
+| **QIIME 2** | Tiempo | 72.06 min | **27.98 min** | **Clúster 2.58x más rápido** |
+| | Energía neta | 12.70 Wh | **2.78 Wh** | **4.57x menos en el clúster** |
+| | Lecturas/Wh (total) | 105,518 | **324,561** | 3.08x |
+
+El PMIC mide la placa completa y RAPL solo el procesador, por lo que la comparación favorece al x86. Los datos crudos de las tres plataformas, la prueba HPL y los scripts de cálculo están en [`libro/`](libro/README.md).
 
 ### Fidelidad Biológica y Concordancia Oficial LEMMI16s
 
@@ -166,7 +171,7 @@ Para garantizar rigor científico y reproducibilidad absoluta, las mediciones en
 * **Kraken 2 (`HOMD_v4_GTDB`):** Concordancia **100% idéntica bit-por-bit** entre Clúster (Multi/Mono) y PC.
   * F1 Familia: **0.5223** | F1 Género: **0.3545** | F1 Especie: **0.0000**
 * **LotuS3 PacBio (`HM_Contaminated_Soil`):** Consistencia clúster multi vs mononodo **>99.9%** (Pearson $r \ge 0.9993$).
-  * F1 Familia: **0.8667** | F1 Género: **0.8762** *(superior a la secuenciación corta Illumina de PC)*
+  * F1 Familia: **0.8667** | F1 Género: **0.8762** (igual en las tres plataformas)
 
 ---
 
@@ -182,5 +187,8 @@ Para garantizar rigor científico y reproducibilidad absoluta, las mediciones en
   - [Informe 01: Evaluación de Rendimiento y Eficiencia Energética (Reads/Wh)](Resultados/01_resultados_eficiencia_energetica.md)
   - [Informe 02: Evaluación de Fidelidad Biológica y Concordancia Taxonómica](Resultados/02_resultados_fidelidad_biologica.md)
   - [Reporte Comparativo PC vs Clúster](Resultados/comparacion_biologica_pc_vs_cluster.txt)
+- [Libro aprobado, datos de energía y análisis](libro/README.md)
+  - [Libro (PDF)](libro/LibroAmpliconesRBPI5.pdf)
+  - [Diapositivas de la sustentación (PDF)](libro/Sustentacion_RBPi5.pdf)
 - [Suite de Evaluación Biológica](scripts/evaluacion/README.md)
 - [Entornos Conda ARM64](environments/README.md)

@@ -1,0 +1,16 @@
+F1 de Kraken 2 y QIIME 2 corregido (2026-10-03)
+El evaluador oficial de LEMMI v1 (workflow/rules/eval.smk) usa input.truth[0]: evalua e001 y e002 con la
+verdad de e001. Recalculado con la verdad de cada muestra (misma logica LEMMI: umbral de calibracion
+c001-c003, best_f1, funcion max). Script: WSL ~/proyecto_grado/lemmi16s/benchmark/tmp/compute_f1_kraken2_qiime2.py
+Predicciones: corridas nativas del 2026-09-29 (iguales en las 3 plataformas, diff -u 100 %).
+Coincide con lo que recalculo Cristian.
+
+Kraken 2 + Bracken (HOMD_v4_GTDB_500k, GCN si)
+  familia  umbral 267   e001 0.5349  e002 0.5098  media 0.5223   (con el error de LEMMI: 0.5548)
+  genero   umbral 132   e001 0.3756  e002 0.3333  media 0.3545   (con el error: 0.3649)
+  especie               0.0000 (Bracken a nivel de genero, -l G)
+QIIME 2 (alfa_v1v2_SILVA, GCN no)
+  familia  umbral 0     e001 0.8571  e002 0.8000  media 0.8286   (con el error: 0.8286)
+  genero   umbral 0     e001 0.7500  e002 0.6667  media 0.7083   (con el error: 0.6793)
+  especie  umbral 0     e001 0.5000  e002 0.4000  media 0.4500   (con el error: 0.4605)
+LotuS3 PacBio (HM_Contaminated_Soil_PacBio): ver resumen_lotus3_pacbio.csv

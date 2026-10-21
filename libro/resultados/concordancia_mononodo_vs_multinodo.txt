@@ -1,0 +1,15 @@
+kraken2 | c001 | idéntico
+kraken2 | c002 | idéntico
+kraken2 | c003 | idéntico
+kraken2 | e001 | idéntico
+kraken2 | e002 | idéntico
+lotus3 | c001 | distinto | fam: 16 vs 16 taxones, comunes 16, solo en uno ninguno, máx dif abundancia 0.49 pp | gen: 34 vs 34 taxones, comunes 34, solo en uno ninguno, máx dif abundancia 0.49 pp
+lotus3 | c002 | distinto | fam: 16 vs 16 taxones, comunes 16, solo en uno ninguno, máx dif abundancia 0.00 pp | gen: 28 vs 28 taxones, comunes 28, solo en uno ninguno, máx dif abundancia 0.00 pp
+lotus3 | c003 | distinto | fam: 18 vs 18 taxones, comunes 18, solo en uno ninguno, máx dif abundancia 0.00 pp | gen: 32 vs 32 taxones, comunes 32, solo en uno ninguno, máx dif abundancia 0.00 pp
+lotus3 | e001 | distinto | fam: 16 vs 16 taxones, comunes 16, solo en uno ninguno, máx dif abundancia 0.00 pp | gen: 32 vs 32 taxones, comunes 32, solo en uno ninguno, máx dif abundancia 0.00 pp
+lotus3 | e002 | distinto | fam: 17 vs 17 taxones, comunes 17, solo en uno ninguno, máx dif abundancia 0.00 pp | gen: 33 vs 33 taxones, comunes 33, solo en uno ninguno, máx dif abundancia 0.00 pp
+qiime2 | c001 | idéntico
+qiime2 | c002 | idéntico
+qiime2 | c003 | idéntico
+qiime2 | e001 | idéntico
+qiime2 | e002 | idéntico

@@ -1,0 +1,52 @@
+
+==========================================================================================
+=== DESGLOSE MULTINODO LOTUS3 PACBIO (5 NODOS) ===
+==========================================================================================
+Muestra  | Nodo                 | P_rep(W) | P_carg(W) | Dur(s)   | Bruta(Wh)  | Neta(Wh)  
+----------------------------------------------------------------------------------------
+c001     | rbp5-1               | 2.379    | 5.996    | 1775.9   | 2.9471     | 1.7737    
+c002     | rbp5-2               | 2.347    | 6.838    | 867.1    | 1.5955     | 1.0301    
+c003     | rbp5-3               | 2.401    | 6.273    | 1181.7   | 2.0143     | 1.2262    
+e001     | rbp5-4               | 2.365    | 6.219    | 1386.2   | 2.3522     | 1.4415    
+e002     | rbp5-5               | 2.315    | 5.751    | 1969.7   | 3.1219     | 1.8555    
+
+===================================================================================================================
+=== RESULTADOS LOTUS3 PACBIO: MULTINODO (5 NODOS) ===
+===================================================================================================================
+Tiempo paralelo (cuello de botella): 1969.71 s (32.83 min)
+Potencia promedio reposo:           2.361 W
+Potencia promedio en carga:         6.118 W
+Energia total bruta (5 nodos):      12.0311 Wh (43311.9 J)
+Energia neta (5 nodos):             7.3270 Wh (26377.4 J)
+Eficiencia bruta:                   2,128.7 reads/Wh
+Eficiencia neta:                    3,495.4 reads/Wh
+
+===================================================================================================================
+=== RESULTADOS LOTUS3 PACBIO: MONONODO (1 NODO SECUENCIAL) ===
+===================================================================================================================
+Tiempo secuencial total:            8582.68 s (143.04 min)
+Speedup multinodo (T_mono/T_multi): 4.36x
+Potencia reposo (1 nodo):           2.369 W
+Potencia en carga (1 nodo):         6.007 W
+Energia total bruta (1 nodo):       14.2991 Wh (51476.8 J)
+Energia neta (1 nodo):              8.6506 Wh (31142.2 J)
+Eficiencia bruta:                   1,791.1 reads/Wh
+Eficiencia neta:                    2,960.6 reads/Wh
+
+=============================================================================================================================
+=== TABLA COMPARATIVA CONSOLIDADA (LOTUS3 PACBIO) ===
+=============================================================================================================================
+Config       | T(s)       | Speedup    | P_rep(W) | P_carg(W) | E_tot(Wh)  | E_net(Wh)   | Eff_bruta   | Eff_neta    | Lecturas   
+-----------------------------------------------------------------------------------------------------------------------------
+Multinodo(5) | 1969.71    | 4.36x      | 2.361    | 6.118     | 12.0311    | 7.3270      | 2129        | 3495        | 25611      
+Mononodo(1)  | 8582.68    | 1.00x      | 2.369    | 6.007     | 14.2991    | 8.6506      | 1791        | 2961        | 25611      
+=============================================================================================================================
+
+==========================================================================================
+=== VERIFICACION TAXONOMICA (diff -u): PACBIO MULTINODO vs MONONODO ===
+==========================================================================================
+  [DIFERENCIA UPARSE] Muestra c001: 4184 lineas diff (esperado por heuristica)
+  [DIFERENCIA UPARSE] Muestra c002: 4059 lineas diff (esperado por heuristica)
+  [DIFERENCIA UPARSE] Muestra c003: 4157 lineas diff (esperado por heuristica)
+  [DIFERENCIA UPARSE] Muestra e001: 4106 lineas diff (esperado por heuristica)
+  [DIFERENCIA UPARSE] Muestra e002: 4138 lineas diff (esperado por heuristica)

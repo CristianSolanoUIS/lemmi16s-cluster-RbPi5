@@ -1,0 +1,4 @@
+pipeline,nodos_multi,T_mono_s,T_multi_s,speedup,reposo_mono_W,carga_mono_W,reposo_multi_W_nodo,carga_multi_W_nodo,Etotal_mono_Wh,Etotal_multi_Wh,Eneta_mono_Wh,Eneta_multi_Wh,eta_bruta_mono,eta_bruta_multi,eta_neta_mono,eta_neta_multi
+kraken2,5,98.35,51.04,1.93,2.398,4.015,2.35,2.93,0.0976,0.2023,0.0321,0.0398,25134137,12127687,76452382,61643995
+lotus3,5,8582.68,1972.46,4.35,2.369,6.007,2.361,6.216,14.2991,12.0311,8.6506,7.327,1791,2129,2961,3495
+qiime2,5,8394.91,1678.94,5.0,2.363,3.615,2.42,3.64,8.4246,8.2884,2.9144,2.7779,319312,324559,923016,968385
